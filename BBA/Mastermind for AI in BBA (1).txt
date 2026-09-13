@@ -1,0 +1,73 @@
+Mastermind for AI in BBA
+Navigating the AI Revolution: From Undergraduate Management Student to Future-Ready Business Leader.
+
+Why a Technologist is Talking to BBA Students?
+•
+AI isn't written by IT departments alone anymore—it dictates business strategy, ROI, and organizational structure.
+•
+The gap between corporate strategy and technical execution is shrinking rapidly.
+•
+Objective: To give you a pragmatic framework to leverage AI rather than fear it.
+Meet Your Instructor
+TenCore Digital Labs
+Devendra Vaja
+Founder: TenCore Digital Labs
+Background: 24+ years building core systems across firmware, mobile architecture (Android), and tech-driven platforms globally.
+Perspective: Bridging deep technology architecture with real-world business execution and consumer security dynamics.
+
+The Great AI Reality Check
+Addressing your ongoing concerns, hype vs. reality, and what modern companies actually look for.
+
+The Myth
+"AI will completely replace human managers, financial analysts, and marketers, leaving no roles for fresh BBA graduates."
+The Reality
+AI replaces routine operational tasks, not strategic judgment, empathy, negotiation, or contextual leadership.
+The Opportunity
+The job market won't be "Humans vs. AI", but rather "Humans using AI vs. Humans not using AI."
+Will AI Take My Future Management Job?
+
+Methodology: Live Show of Hands & Prompting
+Key Takeaway for BBA Students
+Prompt engineering in business is essentially about structuring the correct operational constraints, financial boundaries, and customer goals. Your management curriculum provides the thinking framework; AI is just the accelerator.
+Ask the hall: Who has used AI to write an assignment vs. build a business model?
+Give students a live 3-minute challenge: Prompt an AI model to solve a supply chain failure case study.
+Compare generic output vs. contextual management prompting.
+Interactive Exercise: The Prompt Challenge
+TenCore Digital Labs
+
+AI Across Core Business Pillars
+How Finance, Marketing, Operations, and HR are transforming right now.
+
+Finance & FinTech
+Moving from manual Excel ledger checks to predictive cash flow analysis, automated risk scoring, and dynamic budgeting.
+Marketing & Growth
+Hyper-segmentation, personalized consumer journeys, real-time sentiment tracking, and high-velocity content strategy.
+Operations & Supply Chain
+Demand forecasting, inventory optimization, and automated vendor performance evaluation frameworks.
+Modernizing Functions with AI
+
+The Managerial Edge
+Building ethics, governance, and leadership traits that algorithms cannot replicate.
+
+Why BBA Leaders Matter Here
+Technologists build systems to scale; business managers must decide if they should scale them.
+Understanding data privacy, algorithmic bias in hiring or loan approvals, and regulatory compliance is a core management responsibility.
+The Core Skills to Cultivate
+Critical cross-functional evaluation of tech solutions.
+Managing human-AI collaborative workflows.
+Continuous adaptability and rapid unlearning.
+Ethics, Bias, and Risk Management
+
+Your 3-Step Action Plan
+What you should do starting tomorrow morning as a final year BBA student.
+
+Build a Daily Habit
+Stop treating AI as a search engine. Use it as a sparring partner to critique your business plans and case studies.
+Upskill in Data Literacy
+You don't need to code in Python, but you must know how to interpret data dashboards and ask the right questions.
+Showcase Projects
+Include AI-assisted business proposals or workflow optimization projects in your portfolio before placement interviews.
+Your Blueprint to Stand Out
+
+Questions & Answers
+Thank you for your energy and engagement! Let's discuss your future in an AI-powered business world.

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Presence Proposal — Vinay Graphics</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --paper: #ECE8DF;
+    --paper-dark: #DFDACD;
+    --ink: #18181A;
+    --ink-soft: #4A4A48;
+    --cyan: #0089C8;
+    --magenta: #D6006F;
+    --yellow: #F2C200;
+    --press-red: #B5341F;
+    --line: rgba(24, 24, 26, 0.18);
+    --shadow: rgba(24, 24, 26, 0.06);
+    --shadow-hover: rgba(24, 24, 26, 0.12);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--paper-dark);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 0;
+  }
+
+  /* Utility font classes */
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .slab { font-family: 'Roboto Slab', serif; }
+  
+  /* Page container */
+  .document-container {
+    max-width: 210mm;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* A4 Page Styling */
+  .page {
+    background: var(--paper);
+    width: 210mm;
+    min-height: 297mm;
+    padding: 24mm 20mm;
+    box-shadow: 0 10px 35px rgba(24, 24, 26, 0.12);
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  /* Registration Marks (Print/Graphic theme) */
+  .reg-mark {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    color: var(--ink-soft);
+    opacity: 0.35;
+    transition: transform 0.8s ease-in-out;
+  }
+  .page:hover .reg-mark {
+    transform: rotate(180deg);
+  }
+  .reg-mark::before, .reg-mark::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+  }
+  .reg-mark::before {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+  }
+  .reg-mark::after {
+    height: 100%;
+    width: 1px;
+    left: 50%;
+    top: 0;
+  }
+  .reg-mark-circle {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+  }
+  .reg-top-left { top: 12mm; left: 12mm; }
+  .reg-top-right { top: 12mm; right: 12mm; }
+  .reg-bottom-left { bottom: 12mm; left: 12mm; }
+  .reg-bottom-right { bottom: 12mm; right: 12mm; }
+
+  /* Masthead & Brand Header */
+  .masthead {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+  .brand-line-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .tencore-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tencore-logo .regmark-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    position: relative;
+    color: var(--press-red);
+  }
+  .tencore-logo .regmark-icon::before, .tencore-logo .regmark-icon::after {
+    content: ""; position: absolute; background: currentColor;
+  }
+  .tencore-logo .regmark-icon::before { width: 100%; height: 1px; top: 50%; left: 0; }
+  .tencore-logo .regmark-icon::after { height: 100%; width: 1px; left: 50%; top: 0; }
+  .tencore-logo .regmark-circle {
+    position: inset: 2px; border: 1px solid currentColor; border-radius: 50%;
+  }
+  .brand-name {
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+  }
+  .brand-tagline {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* CMYK Color block */
+  .cmyk-indicator {
+    display: flex;
+    gap: 3px;
+  }
+  .cmyk-patch {
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(24, 24, 26, 0.1);
+  }
+  .patch-c { background: var(--cyan); }
+  .patch-m { background: var(--magenta); }
+  .patch-y { background: var(--yellow); }
+  .patch-k { background: var(--ink); }
+
+  /* Headings & Document Titles */
+  .proposal-title-area {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--press-red);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .doc-title {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .doc-subtitle {
+    font-size: 18px;
+    color: var(--ink-soft);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Meta Info Grid */
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0;
+    margin-bottom: 40px;
+    font-size: 13px;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .meta-label {
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .meta-value {
+    font-weight: 500;
+  }
+
+  /* Letter Area */
+  .letter-body {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    flex-grow: 1;
+  }
+  .letter-body p {
+    margin-bottom: 18px;
+  }
+  .letter-body p strong {
+    color: var(--ink);
+  }
+  .salutation {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .sign-off {
+    margin-top: 30px;
+    font-size: 14px;
+  }
+  .sign-off-title {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Section Styles */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+  .section-num {
+    font-size: 14px;
+    color: var(--press-red);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .content-block {
+    margin-bottom: 30px;
+  }
+  .block-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+  }
+  .block-desc {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+
+  /* Cards Grid */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  .card {
+    background: var(--paper-dark);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-hover);
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .card-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .card-badge {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 6px;
+    border-radius: 2px;
+  }
+  .badge-negative {
+    background: rgba(181, 52, 31, 0.12);
+    color: var(--press-red);
+  }
+  .badge-positive {
+    background: rgba(0, 137, 200, 0.12);
+    color: var(--cyan);
+  }
+  .badge-concept {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .card-body {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    flex-grow: 1;
+  }
+  .card-list {
+    margin-top: 8px;
+    padding-left: 16px;
+  }
+  .card-list li {
+    margin-bottom: 4px;
+  }
+
+  /* Interactive actions inside proposal */
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 8px 14px;
+    border-radius: 3px;
+    font-size: 11.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+  }
+  .action-btn:hover {
+    background: var(--press-red);
+  }
+  .action-btn.secondary {
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+  }
+  .action-btn.secondary:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Table styling */
+  .plans-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 12px;
+  }
+  .plans-table th, .plans-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+  }
+  .plans-table th {
+    background: var(--paper-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 11px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .plans-table td.feature-title {
+    font-weight: 600;
+    color: var(--ink);
+    width: 25%;
+  }
+  .plans-table td.plan-col {
+    width: 25%;
+  }
+  .plans-table tr.highlight-row {
+    background: rgba(181, 52, 31, 0.04);
+  }
+  .plans-table tr.highlight-row td {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .price-value {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--press-red);
+  }
+  .price-placeholder {
+    font-style: italic;
+    font-size: 10px;
+    color: var(--ink-soft);
+    display: block;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .transparency-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+  .bullet-list {
+    padding-left: 18px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .bullet-list li {
+    margin-bottom: 8px;
+  }
+  .bullet-list li strong {
+    color: var(--ink);
+  }
+
+  /* Page Footer Layout */
+  .page-footer {
+    border-top: 1px solid var(--line);
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: var(--ink-soft);
+  }
+  .page-num {
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  /* Print preview overlay (web-only) */
+  .no-print-bar {
+    max-width: 210mm;
+    margin: 0 auto 20px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .no-print-bar p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+  }
+
+  /* Contact Links styling */
+  .contact-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--press-red);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .contact-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive Adjustments for Screens */
+  @media (max-width: 220mm) {
+    body {
+      padding: 0;
+      background: var(--paper);
+    }
+    .document-container {
+      max-width: 100%;
+      gap: 0;
+    }
+    .page {
+      width: 100%;
+      min-height: auto;
+      padding: 30px 20px;
+      box-shadow: none;
+      border-bottom: 2px solid var(--line);
+    }
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+    .transparency-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .no-print-bar {
+      margin: 0;
+      border-radius: 0;
+    }
+    .reg-mark {
+      display: none;
+    }
+  }
+
+  /* Print Stylesheet */
+  @media print {
+    body {
+      background: #ffffff !important;
+      color: #000000 !important;
+      padding: 0 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .no-print {
+      display: none !important;
+    }
+    .document-container {
+      gap: 0 !important;
+      max-width: 100% !important;
+    }
+    .page {
+      background: #ffffff !important;
+      box-shadow: none !important;
+      width: 210mm !important;
+      height: 297mm !important;
+      padding: 20mm 15mm 15mm 15mm !important;
+      page-break-after: always !important;
+      position: relative !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+    }
+    .card {
+      background: #fcfbf9 !important;
+      border: 1px solid #d0cfcb !important;
+    }
+    .plans-table th {
+      background: #eae9e4 !important;
+    }
+    .action-btn {
+      display: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Web-only guidance bar -->
+  <div class="no-print-bar no-print">
+    <p>DIGITAL PROPOSAL DRAFT · STAGE 1 (OUTLOOK)</p>
+    <button class="action-btn" onclick="window.print()">
+      <span class="mono">CTRL+P / Print to PDF</span>
+    </button>
+  </div>
+
+  <div class="document-container">
+    
+    <!-- ================================= PAGE 1 ================================= -->
+    <div class="page">
+      <!-- Decorative Registration Marks -->
+      <div class="reg-mark reg-top-left"><div class="reg-mark-circle"></div></div>
+      <div class="reg-mark reg-top-right"><div class="reg-mark-circle"></div></div>
+      <div class="reg-mark reg-bottom-left"><div class="reg-mark-circle"></div></div>
+      <div class="reg-mark reg-bottom-right"><div class="reg-mark-circle"></div></div>
+
+      <div>
+        <!-- Masthead -->
+        <header class="masthead">
+          <div class="brand-line-1">
+            <div class="tencore-logo">
+              <img src="tencore_logo.svg" alt="TenCore Logo" style="height: 22px; width: auto; display: block;">
+              <span class="brand-name mono">TENCORE DIGITAL LABS</span>
+              <span class="brand-divider mono" style="opacity: 0.5;">|</span>
+              <a href="https://www.tencorelabs.com" target="_blank" style="text-decoration:none;"><span class="brand-link mono" style="font-size: 11px; color: var(--press-red); font-weight: 600;">www.tencorelabs.com</span></a>
+            </div>
+            <div class="cmyk-indicator">
+              <div class="cmyk-patch patch-c"></div>
+              <div class="cmyk-patch patch-m"></div>
+              <div class="cmyk-patch patch-y"></div>
+              <div class="cmyk-patch patch-k"></div>
+            </div>
+          </div>
+          <div class="brand-tagline mono">Digital Product Engineering • AI • Automation</div>
+        </header>
+
+        <!-- Title Area -->
+        <div class="proposal-title-area">
+          <span class="eyebrow mono">Client Proposal</span>
+          <h1 class="doc-title slab">DIGITAL PRESENCE PROPOSAL</h1>
+          <p class="doc-subtitle slab">Helping Vinay Graphics turn every search into an enquiry.</p>
+        </div>
+
+        <!-- Meta Grid -->
+        <div class="meta-grid mono">
+          <div class="meta-item">
+            <span class="meta-label">Prepared For</span>
+            <span class="meta-value">Bhavesh, Vinay Graphics</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Date &amp; Version</span>
+            <span class="meta-value">August 10, 2026 · v1.0</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Reference</span>
+            <span class="meta-value">BLL SprintConnect Meeting (8th Aug)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Prepared By</span>
+            <span class="meta-value">Devendra Vaja, Founder</span>
+          </div>
+        </div>
+
+        <!-- Introductory Letter -->
+        <section class="letter-body">
+          <p class="salutation">Hi Bhavesh,</p>
+          <p>Great meeting you at the <strong>BLL SprintConnect</strong> on 8th August in Andheri West. I thoroughly enjoyed hearing how your father built <strong>Vinay Graphics</strong> into a trusted, full-fledged printing solutions business, and I appreciate your vision to take it to the next digital level.</p>
+          <p>Following our conversation, I put together this practical digital strategy. Instead of just speaking in abstracts, we have already built live concept mockups so you can see exactly what the user journey looks like. Our focus is to turn online searches in your territory into actual business leads.</p>
+          <p>Below, you will find our comparison of the digital opportunities, the concepts we've developed for you, and a breakdown of our implementation packages. I look forward to your thoughts.</p>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer class="page-footer">
+        <span class="mono">TENCORE DIGITAL LABS · PROPOSAL FOR VINAY GRAPHICS</span>
+        <span class="page-num mono">PAGE 01</span>
+      </footer>
+    </div>
+
+    <!-- ================================= PAGE 2 ================================= -->
+    <div class="page">
+      <div class="reg-mark reg-top-left"><div class="reg-mark-circle"></div></div>
+      <div class="reg-mark reg-top-right"><div class="reg-mark-circle"></div></div>
+      <div class="reg-mark reg-bottom-left"><div class="reg-mark-circle"></div></div>
+      <div class="reg-mark reg-bottom-right"><div class="reg-mark-circle"></div></div>
+
+      <div>
+        <header class="masthead">
+          <div class="brand-line-1">
+            <div class="tencore-logo">
+              <img src="tencore_logo.svg" alt="TenCore Logo" style="height: 22px; width: auto; display: block;">
+              <span class="brand-name mono">TENCORE DIGITAL LABS</span>
+              <span class="brand-divider mono" style="opacity: 0.5;">|</span>
+              <a href="https://www.tencorelabs.com" target="_blank" style="text-decoration:none;"><span class="brand-link mono" style="font-size: 11px; color: var(--press-red); font-weight: 600;">www.tencorelabs.com</span></a>
+            </div>
+            <div class="cmyk-indicator">
+              <div class="cmyk-patch patch-c"></div>
+              <div class="cmyk-patch patch-m"></div>
+              <div class="cmyk-patch patch-y"></div>
+              <div class="cmyk-patch patch-k"></div>
+            </div>
+          </div>
+        </header>
+
+        <section class="section-header">
+          <span class="section-num mono">01 /</span>
+          <h2 class="section-title slab">Opportunity &amp; Concept Mockups</h2>
+        </section>
+
+        <!-- The Opportunity Today -->
+        <div class="content-block">
+          <h3 class="block-title slab">The Opportunity Today</h3>
+          <p class="block-desc">
+            Currently, <strong>vinaygraphics.in</strong> points to a static "Coming Soon" page. Meanwhile, local printing competitors are capturing daily search intent. A to Z Digital Prints has 1,300+ reviews and a direct-to-WhatsApp pipeline. Just Print lists individual services separately to dominate specific print-type keywords. Right now, a customer searching for "Vinay Graphics" or printing solutions in your area has very few pathways to engage.
+          </p>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Vinay Graphics (Current)</span>
+                <span class="card-badge badge-negative">Inactive</span>
+              </div>
+              <div class="card-body">
+                Website is offline (Coming Soon page). High risk of word-of-mouth clients getting distracted by competitor listings when searching for contact details online.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Local Competitors</span>
+                <span class="card-badge badge-positive">Capturing Market</span>
+              </div>
+              <div class="card-body">
+                Leveraging active websites with individual service SEO and immediate WhatsApp click-to-chat triggers to close local print jobs instantly.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proposed Concepts -->
+        <div class="content-block">
+          <h3 class="block-title slab">What We Have Built (Concepts)</h3>
+          <p class="block-desc">
+            To demonstrate the shift, we have designed two custom digital concepts tailored specifically for Vinay Graphics. Click the buttons below to preview the active web layouts.
+          </p>
+
+          <div class="cards-grid">
+            <div class="card">
+              <div>
+                <div class="card-header">
+                  <span class="card-title">1. One-Page Website Concept</span>
+                  <span class="card-badge badge-concept">Mockup</span>
+                </div>
+                <p class="card-body" style="margin-bottom:0;">
+                  A clean, professional landing page showcasing your capabilities by category (Stationery, Events, Cards), telling your brand history, listing key services, and prompting visitors with a WhatsApp chat button.
+                </p>
+              </div>
+              <div style="margin-top: 15px; display: flex; gap: 8px;">
+                <a href="vinay-graphics-website-concept.html" target="_blank" class="action-btn">Open Preview →</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div>
+                <div class="card-header">
+                  <span class="card-title">2. WhatsApp Order Bot</span>
+                  <span class="card-badge badge-concept">Mockup</span>
+                </div>
+                <p class="card-body" style="margin-bottom:0;">
+                  A conversational funnel where customers select products, answer 2–3 specific questions, receive automatic quotes, and track their order states (Received → Design → Production → Ready) without downloading any app.
+                </p>
+              </div>
+              <div style="margin-top: 15px; display: flex; gap: 8px;">
+                <a href="vinay-graphics-whatsapp-bot-concept.html" target="_blank" class="action-btn">Open Preview →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="page-footer">
+        <span class="mono">TENCORE DIGITAL LABS · PROPOSAL FOR VINAY GRAPHICS</span>
+        <span class="page-num mono">PAGE 02</span>
+      </footer>
+    </div>
+
+    <!-- ================================= PAGE 3 ================================= -->
+    <div class="page">
+      <div class="reg-mark reg-top-left"><div class="reg-mark-circle"></div></div>
+      <div class="reg-mark reg-top-right"><div class="reg-mark-circle"></div></div>
+      <div class="reg-mark reg-bottom-left"><div class="reg-mark-circle"></div></div>
+      <div class="reg-mark reg-bottom-right"><div class="reg-mark-circle"></div></div>
+
+      <div>
+        <header class="masthead">
+          <div class="brand-line-1">
+            <div class="tencore-logo">
+              <img src="tencore_logo.svg" alt="TenCore Logo" style="height: 22px; width: auto; display: block;">
+              <span class="brand-name mono">TENCORE DIGITAL LABS</span>
+              <span class="brand-divider mono" style="opacity: 0.5;">|</span>
+              <a href="https://www.tencorelabs.com" target="_blank" style="text-decoration:none;"><span class="brand-link mono" style="font-size: 11px; color: var(--press-red); font-weight: 600;">www.tencorelabs.com</span></a>
+            </div>
+            <div class="cmyk-indicator">
+              <div class="cmyk-patch patch-c"></div>
+              <div class="cmyk-patch patch-m"></div>
+              <div class="cmyk-patch patch-y"></div>
+              <div class="cmyk-patch patch-k"></div>
+            </div>
+          </div>
+        </header>
+
+        <section class="section-header">
+          <span class="section-num mono">02 /</span>
+          <h2 class="section-title slab">Implementation Plans &amp; Next Steps</h2>
+        </section>
+
+        <!-- Recommended Packages Table -->
+        <div class="content-block">
+          <h3 class="block-title slab">Recommended Digital Packages</h3>
+          
+          <table class="plans-table">
+            <thead>
+              <tr>
+                <th>Scope / Feature</th>
+                <th>1. Digital Foundation</th>
+                <th>2. Foundation + Growth</th>
+                <th>3. WhatsApp Order Bot</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-title">Ideal For</td>
+                <td>Establishing a solid local online presence.</td>
+                <td>Driving lead growth and local search visibility.</td>
+                <td>Automating customer service and orders.</td>
+              </tr>
+              <tr>
+                <td class="feature-title">Website Details</td>
+                <td>5-page site (Home, About, Products, Gallery, Contact)</td>
+                <td>Premium 5-page site + portfolio case studies</td>
+                <td>Integration with website or standalone bot path</td>
+              </tr>
+              <tr>
+                <td class="feature-title">WhatsApp Funnel</td>
+                <td>Simple Click-to-Chat trigger</td>
+                <td>WhatsApp Catalogue + Auto-Quote templates</td>
+                <td>Automated Ordering &amp; Tracking Bot (mocked)</td>
+              </tr>
+              <tr>
+                <td class="feature-title">SEO &amp; Visibility</td>
+                <td>Google Business Profile Setup</td>
+                <td>GBP Optimization + Review Generation System</td>
+                <td>N/A (Focused on automation backend)</td>
+              </tr>
+              <tr>
+                <td class="feature-title">Print-to-Digital</td>
+                <td>None</td>
+                <td>QR Bridge (Link printed products to online portfolios)</td>
+                <td>QR Bridge directly to WhatsApp Order start</td>
+              </tr>
+              <tr class="highlight-row">
+                <td class="feature-title">Investment Range</td>
+                <td class="plan-col">
+                  <span class="price-value">₹38,000 – ₹48,000</span>
+                  <span class="price-placeholder">(One-Time Investment)</span>
+                </td>
+                <td class="plan-col">
+                  <span class="price-value">₹68,000 – ₹89,000</span>
+                  <span class="price-placeholder">(One-Time Investment)</span>
+                </td>
+                <td class="plan-col">
+                  <span class="price-value">₹25,000 – ₹36,000</span>
+                  <span class="price-placeholder">setup + ₹1,499–₹2,499/mo platform fee</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Transparency & Terms -->
+        <div class="content-block">
+          <div class="transparency-grid">
+            <div>
+              <h3 class="block-title slab">Full Transparency</h3>
+              <ul class="bullet-list">
+                <li><strong>Direct Control:</strong> Domain names and hosting plans are set up in your name. You maintain full ownership and billing control.</li>
+                <li><strong>Post-Launch Support:</strong> Includes 30 days of complimentary support for bug fixes, code corrections, and minor adjustments.</li>
+                <li><strong>Annual Care Plan:</strong> ₹15,000 – ₹22,499/year (optional). Covers ongoing content updates, backups, and server maintenance. Entirely your call — we just want you to know what is included and what isn't.</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="block-title slab">Next Steps</h3>
+              <p class="block-desc" style="margin-bottom: 12px;">
+                I'd be glad to walk you through these mockups in person or over a brief screenshare call to clarify features, edit pricing to fit, and discuss timelines. Let's get Vinay Graphics online!
+              </p>
+              
+              <div class="sign-off">
+                <p class="sign-off-title">Devendra Vaja</p>
+                <p style="font-size: 12px; color: var(--ink-soft); margin-bottom: 8px;">Founder, TenCore Digital Labs</p>
+                
+                <div class="contact-links" style="display: flex; flex-direction: column; gap: 6px;">
+                  <a href="tel:+919082351295" class="contact-link mono">📞 +91 90823 51295</a>
+                  <a href="https://wa.me/919082351295?text=Hi%20Devendra,%20let's%20discuss%20the%20Vinay%20Graphics%20proposal" target="_blank" class="contact-link mono">💬 WhatsApp Chat</a>
+                  <a href="https://www.tencorelabs.com" target="_blank" class="contact-link mono">🌐 www.tencorelabs.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="page-footer">
+        <span class="mono">TENCORE DIGITAL LABS · PROPOSAL FOR VINAY GRAPHICS</span>
+        <span class="page-num mono">PAGE 03</span>
+      </footer>
+    </div>
+
+  </div>
+
+</body>
+</html>

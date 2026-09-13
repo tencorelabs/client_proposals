@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinay Graphics — Website Concept</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+  :root{
+    --paper:#ECE8DF;
+    --paper-dark:#DFDACD;
+    --ink:#18181A;
+    --ink-soft:#4A4A48;
+    --cyan:#0089C8;
+    --magenta:#D6006F;
+    --yellow:#F2C200;
+    --press-red:#B5341F;
+    --line: rgba(24,24,26,0.18);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em;}
+  .slab{font-family:'Roboto Slab',serif;}
+
+  .wrap{max-width:1100px; margin:0 auto; padding:0 28px;}
+
+  /* Preview ribbon */
+  .preview-ribbon{
+    background:var(--ink); color:var(--paper);
+    text-align:center; font-family:'IBM Plex Mono',monospace;
+    font-size:11px; letter-spacing:0.12em; padding:7px 10px;
+    text-transform:uppercase;
+  }
+
+  /* Registration mark icon (used as recurring structural motif) */
+  .regmark{ display:inline-block; width:16px; height:16px; position:relative; opacity:0.8; }
+  .regmark::before, .regmark::after{
+    content:""; position:absolute; background:currentColor;
+  }
+  .regmark::before{ width:100%; height:1px; top:50%; left:0; }
+  .regmark::after{ height:100%; width:1px; left:50%; top:0; }
+  .regmark-circle{
+    position:absolute; inset:2px; border:1px solid currentColor; border-radius:50%;
+  }
+
+  /* Nav */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--paper); border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+  }
+  .logo{display:flex; align-items:center; gap:10px;}
+  .logo .regmark{color:var(--press-red);}
+  .logo-text .name{font-family:'Roboto Slab',serif; font-weight:800; font-size:20px; letter-spacing:0.01em;}
+  .logo-text .tag{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; color:var(--ink-soft); text-transform:uppercase;}
+  .nav-links{display:flex; gap:28px; font-size:14px; font-weight:500;}
+  .nav-links a{color:var(--ink); text-decoration:none; opacity:0.75;}
+  .nav-links a:hover{opacity:1;}
+  .btn-wa{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--ink); color:var(--paper);
+    padding:10px 18px; border-radius:2px; font-size:13px; font-weight:600;
+    text-decoration:none; white-space:nowrap;
+  }
+  .btn-wa:hover{background:var(--press-red);}
+
+  /* Hero */
+  .hero{padding:80px 0 60px; position:relative; overflow:hidden;}
+  .hero-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:50px; align-items:center;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--press-red); margin-bottom:18px;
+    display:flex; align-items:center; gap:8px;
+  }
+  h1.hero-title{
+    font-family:'Roboto Slab',serif; font-weight:800;
+    font-size:clamp(38px,5vw,58px); line-height:1.04; letter-spacing:-0.01em;
+    margin-bottom:22px;
+  }
+  h1.hero-title span{color:var(--press-red);}
+  .hero-sub{font-size:17px; color:var(--ink-soft); max-width:480px; margin-bottom:32px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn-outline{
+    display:inline-flex; align-items:center; gap:8px;
+    border:1.5px solid var(--ink); color:var(--ink);
+    padding:10px 20px; border-radius:2px; font-size:14px; font-weight:600; text-decoration:none;
+  }
+  .btn-outline:hover{background:var(--ink); color:var(--paper);}
+  .btn-solid{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--press-red); color:var(--paper);
+    padding:11px 20px; border-radius:2px; font-size:14px; font-weight:600; text-decoration:none;
+  }
+  .btn-solid:hover{opacity:0.88;}
+
+  /* Hero registration graphic */
+  .hero-art{
+    position:relative; aspect-ratio:1/1; max-width:340px; margin:0 auto;
+  }
+  .plate{
+    position:absolute; width:150px; height:150px; border-radius:50%;
+    mix-blend-mode:multiply; opacity:0.85;
+  }
+  .plate.c{background:var(--cyan); top:20px; left:30px;}
+  .plate.m{background:var(--magenta); top:70px; left:110px;}
+  .plate.y{background:var(--yellow); top:110px; left:40px;}
+  .hero-art .regbig{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:60px; height:60px; color:var(--ink);
+  }
+  .hero-art .regbig::before, .hero-art .regbig::after{content:""; position:absolute; background:currentColor;}
+  .hero-art .regbig::before{width:100%; height:1.5px; top:50%; left:0;}
+  .hero-art .regbig::after{height:100%; width:1.5px; left:50%; top:0;}
+  .hero-art .regbig-circle{position:absolute; inset:6px; border:1.5px solid var(--ink); border-radius:50%;}
+  .hero-caption{
+    text-align:center; margin-top:14px; font-family:'IBM Plex Mono',monospace;
+    font-size:11px; letter-spacing:0.08em; color:var(--ink-soft); text-transform:uppercase;
+  }
+
+  /* Section label */
+  .section{padding:70px 0; border-top:1px solid var(--line);}
+  .section-label{
+    display:flex; align-items:center; gap:10px; margin-bottom:14px;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--press-red);
+  }
+  .section-label .regmark{width:12px; height:12px;}
+  h2.section-title{
+    font-family:'Roboto Slab',serif; font-weight:800; font-size:clamp(26px,3.4vw,36px);
+    margin-bottom:36px; max-width:640px;
+  }
+
+  /* About / job ticket */
+  .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:start;}
+  .about-copy p{color:var(--ink-soft); margin-bottom:16px; font-size:15.5px; max-width:480px;}
+  .ticket{
+    background:var(--paper-dark); border:1px solid var(--line); border-radius:3px; padding:26px 28px;
+    position:relative;
+  }
+  .ticket::before{
+    content:"JOB TICKET"; position:absolute; top:-11px; left:24px; background:var(--ink); color:var(--paper);
+    font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.14em; padding:4px 10px;
+  }
+  .ticket-row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed var(--line); font-size:14px;}
+  .ticket-row:last-child{border-bottom:none;}
+  .ticket-row .k{color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;}
+  .ticket-row .v{font-weight:600; text-align:right;}
+
+  /* Swatch strip / services */
+  .swatch-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .swatch{
+    background:var(--paper); border:1px solid var(--line); border-radius:3px; overflow:hidden;
+  }
+  .swatch-chip{height:70px;}
+  .swatch-body{padding:16px 18px;}
+  .swatch-code{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-soft); letter-spacing:0.06em; margin-bottom:6px; display:block;}
+  .swatch-name{font-weight:600; font-size:15px;}
+  .s1{background:linear-gradient(90deg,var(--magenta),var(--press-red));}
+  .s2{background:linear-gradient(90deg,var(--ink),#3a3a3a);}
+  .s3{background:linear-gradient(90deg,var(--cyan),#4bb8e6);}
+  .s4{background:linear-gradient(90deg,#8a6d3b,#b99a63);}
+  .s5{background:linear-gradient(90deg,var(--yellow),#f7de6b);}
+  .s6{background:linear-gradient(90deg,#5c6b6a,#8ba09e);}
+
+  /* Portfolio */
+  .plate-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  .sample-plate{
+    aspect-ratio:3/4; background:var(--paper-dark); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; position:relative; border-radius:2px;
+  }
+  .sample-plate span{
+    font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--ink-soft); text-align:center; padding:0 10px; letter-spacing:0.04em;
+  }
+  .sample-plate .corner{position:absolute; width:9px; height:9px; opacity:0.5;}
+  .sample-plate .corner::before,.sample-plate .corner::after{content:"";position:absolute;background:var(--ink);}
+  .sample-plate .corner::before{width:100%;height:1px;top:50%;}
+  .sample-plate .corner::after{height:100%;width:1px;left:50%;}
+  .corner.tl{top:8px; left:8px;} .corner.tr{top:8px; right:8px;}
+  .corner.bl{bottom:8px; left:8px;} .corner.br{bottom:8px; right:8px;}
+
+  /* Before / after */
+  .ba-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .ba-card{border:1px solid var(--line); border-radius:3px; padding:24px 26px; background:var(--paper);}
+  .ba-card.before{opacity:0.7;}
+  .ba-card.after{border-color:var(--press-red); background:var(--paper-dark);}
+  .ba-label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:14px; display:block;}
+  .ba-card.before .ba-label{color:var(--ink-soft);}
+  .ba-card.after .ba-label{color:var(--press-red);}
+  .ba-card ul{list-style:none;}
+  .ba-card li{font-size:14px; padding:6px 0; display:flex; gap:8px;}
+  .ba-card.before li::before{content:"—"; color:var(--ink-soft);}
+  .ba-card.after li::before{content:"✓"; color:var(--press-red); font-weight:700;}
+
+  /* Contact / footer */
+  .contact{background:var(--ink); color:var(--paper); padding:70px 0 40px;}
+  .contact .section-label{color:var(--yellow);}
+  .contact h2{color:var(--paper);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; margin-bottom:50px;}
+  .contact-sub{color:#c9c6bd; font-size:15.5px; margin-bottom:26px; max-width:420px;}
+  .contact-info{font-family:'IBM Plex Mono',monospace; font-size:13px; color:#c9c6bd; line-height:2;}
+  footer{border-top:1px solid rgba(236,232,223,0.15); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+  footer .fn{font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8a877e; letter-spacing:0.04em;}
+
+  @media (max-width:820px){
+    .hero-grid, .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .swatch-grid{grid-template-columns:repeat(2,1fr);}
+    .plate-grid{grid-template-columns:repeat(2,1fr);}
+    .ba-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .hero{padding-top:50px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="preview-ribbon">Concept preview — for discussion — not a live website</div>
+
+  <header>
+    <nav class="wrap">
+      <div class="logo">
+        <span class="regmark"><span class="regmark-circle"></span></span>
+        <div class="logo-text">
+          <div class="name">VINAY GRAPHICS</div>
+          <div class="tag">Total Printing Solutions</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn-wa" href="#contact">WhatsApp Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="regmark"><span class="regmark-circle"></span></span> Andheri East, Mumbai — Since the previous generation</div>
+        <h1 class="hero-title">Printing that's <span>been trusted</span> for decades. Now easy to find.</h1>
+        <p class="hero-sub">From wedding cards to corporate annual reports — Vinay Graphics has been Andheri East's dependable printing partner for over two decades. Design, print and finishing, all under one roof.</p>
+        <div class="hero-ctas">
+          <a class="btn-solid" href="#contact">Get a Quote on WhatsApp</a>
+          <a class="btn-outline" href="#work">See Our Work</a>
+        </div>
+      </div>
+      <div>
+        <div class="hero-art">
+          <div class="plate c"></div>
+          <div class="plate m"></div>
+          <div class="plate y"></div>
+          <span class="regbig"><span class="regbig-circle"></span></span>
+        </div>
+        <div class="hero-caption">Precision registered · Every job, every time</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="section-label"><span class="regmark"><span class="regmark-circle"></span></span> Our Story</div>
+        <h2 class="section-title">Built on craft. Run on trust.</h2>
+        <div class="about-copy">
+          <p>Vinay Graphics was founded by [Father's Name] with a simple promise: print work that's on time, on budget, and exactly as promised. That promise built a loyal base of repeat clients — corporates, event families, and businesses across Mumbai — over more than two decades.</p>
+          <p>Today, the same care goes into every job — from a single visiting card to a full annual report print run — backed by in-house design, offset and digital printing, and finishing, all managed under one roof at our Andheri East facility.</p>
+        </div>
+      </div>
+      <div class="ticket">
+        <div class="ticket-row"><span class="k">Business</span><span class="v">Vinay Graphics</span></div>
+        <div class="ticket-row"><span class="k">Est.</span><span class="v">20+ years in business</span></div>
+        <div class="ticket-row"><span class="k">Location</span><span class="v">Ravi Indl. Premises, Andheri East</span></div>
+        <div class="ticket-row"><span class="k">Specialties</span><span class="v">Offset · Digital · Design</span></div>
+        <div class="ticket-row"><span class="k">Turnaround</span><span class="v">As committed, every time</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-label"><span class="regmark"><span class="regmark-circle"></span></span> What We Print</div>
+      <h2 class="section-title">Six ways we help your brand look its best.</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-chip s1"></div><div class="swatch-body"><span class="swatch-code">JOB — 01</span><div class="swatch-name">Wedding &amp; Invitation Cards</div></div></div>
+        <div class="swatch"><div class="swatch-chip s2"></div><div class="swatch-body"><span class="swatch-code">JOB — 02</span><div class="swatch-name">Corporate Diaries &amp; Planners</div></div></div>
+        <div class="swatch"><div class="swatch-chip s3"></div><div class="swatch-body"><span class="swatch-code">JOB — 03</span><div class="swatch-name">Annual Reports &amp; Catalogues</div></div></div>
+        <div class="swatch"><div class="swatch-chip s4"></div><div class="swatch-body"><span class="swatch-code">JOB — 04</span><div class="swatch-name">Packaging &amp; Cartons</div></div></div>
+        <div class="swatch"><div class="swatch-chip s5"></div><div class="swatch-body"><span class="swatch-code">JOB — 05</span><div class="swatch-name">Brochures &amp; Stationery</div></div></div>
+        <div class="swatch"><div class="swatch-chip s6"></div><div class="swatch-body"><span class="swatch-code">JOB — 06</span><div class="swatch-name">Large Format &amp; Banners</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-label"><span class="regmark"><span class="regmark-circle"></span></span> Our Work</div>
+      <h2 class="section-title">A sample of what leaves our press.</h2>
+      <div class="plate-grid">
+        <div class="sample-plate"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span><span>Wedding Card Set</span></div>
+        <div class="sample-plate"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span><span>Corporate Diary</span></div>
+        <div class="sample-plate"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span><span>Annual Report</span></div>
+        <div class="sample-plate"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span><span>Product Packaging</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-label"><span class="regmark"><span class="regmark-circle"></span></span> Why This Matters</div>
+      <h2 class="section-title">This page is the difference between being found and being invisible.</h2>
+      <div class="ba-grid">
+        <div class="ba-card before">
+          <span class="ba-label">Today — vinaygraphics.in</span>
+          <ul>
+            <li>"Coming Soon" placeholder page</li>
+            <li>No way to see past work online</li>
+            <li>No WhatsApp or enquiry button</li>
+            <li>Doesn't show up on Google search or Maps</li>
+            <li>Enquiries depend on word-of-mouth alone</li>
+          </ul>
+        </div>
+        <div class="ba-card after">
+          <span class="ba-label">With this concept</span>
+          <ul>
+            <li>Live, mobile-friendly business page</li>
+            <li>Work showcased by category</li>
+            <li>One-tap WhatsApp enquiry, always on</li>
+            <li>Findable on Google Search and Maps</li>
+            <li>Every printed job can point back here (QR-Bridge)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="section-label"><span class="regmark"><span class="regmark-circle"></span></span> Get In Touch</div>
+          <h2 class="section-title">Let's put your next job into print.</h2>
+          <p class="contact-sub">Reach out for a quote, or drop by the press — we're happy to walk you through paper stock, finishes and timelines.</p>
+          <a class="btn-solid" href="#">Message Us on WhatsApp</a>
+        </div>
+        <div class="contact-info">
+          VINAY GRAPHICS — TOTAL PRINTING SOLUTIONS<br>
+          Ravi Indl. Premises, Andheri East, Mumbai<br>
+          Phone: +91 XXXXX XXXXX<br>
+          Email: info@vinaygraphics.in<br>
+          Hours: Mon–Sat, 10:00 AM – 7:00 PM
+        </div>
+      </div>
+      <footer>
+        <div class="fn">© Vinay Graphics — Total Printing Solutions</div>
+        <div class="fn">Concept prepared by <a href="https://www.tencorelabs.com" target="_blank" style="color:inherit; text-decoration:underline;">TenCore Labs</a> for discussion — not the final design</div>
+      </footer>
+    </div>
+  </section>
+
+</body>
+</html>

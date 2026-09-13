@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suprema+ Smart Steam System - Proposal & Deal Options | Multi Technicaa & TenCore Digital Labs</title>
+  <meta name="description" content="Executive Project Proposal and Commercial Deal Options for Suprema+ Smart Steam System prepared for Multi Technicaa (Mr. Kirit B. Parmar) by TenCore Digital Labs.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header / Control & Customization Toolbar -->
+  <header id="toolbar">
+    <div class="brand-section">
+      <img src="tencore_digital_labs_logo.png" alt="TenCore Digital Labs Logo" class="brand-logo-img" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
+      <div id="fallback-logo" class="logo-icon" style="display:none;">TC</div>
+      <div class="brand-title">
+        <h1>Suprema+ Smart Steam System</h1>
+        <span>TenCore Digital Labs • Executive Presentation Studio</span>
+      </div>
+    </div>
+    
+    <div class="toolbar-controls">
+      <!-- Present vs Edit Mode toggles -->
+      <div class="view-toggle">
+        <button id="btn-present-mode" class="toggle-btn active" aria-label="Switch to Presenter Mode">
+          👁️ Present
+        </button>
+        <button id="btn-edit-mode" class="toggle-btn" aria-label="Switch to Slide Editor Mode">
+          ✏️ Edit Slides
+        </button>
+      </div>
+
+      <!-- Action Panel Buttons -->
+      <button id="btn-reset" class="btn" title="Reset presentation to original templates">
+        🔄 Reset
+      </button>
+      <button id="btn-save" class="btn" title="Save changes locally in browser">
+        💾 Save
+      </button>
+      <button id="btn-export-pdf" class="btn btn-primary" title="Export slides to landscape PDF">
+        📄 Export to PDF
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Workspaces -->
+  <main>
+    
+    <!-- 1. PRESENTATION WORKSPACE -->
+    <section id="presentation-view" aria-label="Slideshow Viewer">
+      <!-- 16:9 Landscape Aspect Slide Deck Container -->
+      <div class="slide-deck-viewport">
+        <div id="slide-viewport">
+          <!-- Slide elements injected dynamically by app.js -->
+        </div>
+      </div>
+      
+      <!-- Slide navigation bar -->
+      <div class="slide-navigation-controls">
+        <div class="nav-arrows">
+          <button id="nav-first" class="nav-arrow-btn" title="Go to First Slide (Home)" aria-label="First slide">⏮️</button>
+          <button id="nav-prev" class="nav-arrow-btn" title="Go to Previous Slide (Left Arrow)" aria-label="Previous slide">◀</button>
+        </div>
+        
+        <div class="slide-progress-wrapper">
+          <span id="slide-counter-text" class="slide-number-indicator">1 / 20</span>
+          <div class="progress-bar-container" id="slide-progress">
+            <div id="slide-progress-fill" class="progress-bar-fill"></div>
+          </div>
+        </div>
+        
+        <div class="nav-arrows">
+          <button id="nav-next" class="nav-arrow-btn" title="Go to Next Slide (Right Arrow / Space)" aria-label="Next slide">▶</button>
+          <button id="nav-last" class="nav-arrow-btn" title="Go to Last Slide (End)" aria-label="Last slide">⏭️</button>
+          <button id="btn-fullscreen" class="nav-arrow-btn" title="Toggle Fullscreen Present Mode (F)" aria-label="Fullscreen" style="margin-left: 8px;">📺</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. EDITING WORKSPACE -->
+    <section id="editor-view" aria-label="Slides Scroll Editor" style="display: none;">
+      <!-- Slide editor wrappers injected dynamically by app.js -->
+    </section>
+
+    <!-- Editor controls overlay (visible only in Edit Mode) -->
+    <div class="editor-footer-controls" style="display: none;">
+      <button id="btn-add-slide" class="btn btn-success">
+        ➕ Add New Slide
+      </button>
+
+      <!-- Layout Selection Popup -->
+      <div id="layout-picker" class="layout-picker" aria-hidden="true">
+        <div class="layout-option" data-layout="title" title="Title and subtitle cover slide">
+          <div class="layout-icon">
+            <div style="width: 70%; height: 3px; background: var(--text-muted); margin-bottom: 2px;"></div>
+            <div style="width: 40%; height: 2px; background: var(--text-muted);"></div>
+          </div>
+          <span>Title Slide</span>
+        </div>
+        <div class="layout-option" data-layout="divider" title="Section divider with horizontal highlight">
+          <div class="layout-icon">
+            <div style="width: 20%; height: 2px; background: var(--primary); margin-bottom: 4px;"></div>
+            <div style="width: 60%; height: 3px; background: var(--text-muted);"></div>
+          </div>
+          <span>Divider Slide</span>
+        </div>
+        <div class="layout-option" data-layout="twocol" title="Compare two blocks side-by-side">
+          <div class="layout-icon" style="gap: 4px; padding: 4px;">
+            <div style="flex: 1; border: 1px dashed var(--text-muted); border-radius: 2px;"></div>
+            <div style="flex: 1; border: 1px dashed var(--text-muted); border-radius: 2px;"></div>
+          </div>
+          <span>2 Columns</span>
+        </div>
+        <div class="layout-option" data-layout="threecard" title="Display grid of three summary cards">
+          <div class="layout-icon" style="gap: 2px; padding: 4px;">
+            <div style="flex: 1; border: 1px dashed var(--text-muted); border-radius: 1px;"></div>
+            <div style="flex: 1; border: 1px dashed var(--text-muted); border-radius: 1px;"></div>
+            <div style="flex: 1; border: 1px dashed var(--text-muted); border-radius: 1px;"></div>
+          </div>
+          <span>3 Cards</span>
+        </div>
+        <div class="layout-option" data-layout="fourcard" title="Display grid of four cards">
+          <div class="layout-icon" style="gap: 2px; padding: 3px; flex-wrap: wrap;">
+            <div style="width: 45%; height: 45%; border: 1px dashed var(--text-muted); border-radius: 1px;"></div>
+            <div style="width: 45%; height: 45%; border: 1px dashed var(--text-muted); border-radius: 1px;"></div>
+            <div style="width: 45%; height: 45%; border: 1px dashed var(--text-muted); border-radius: 1px;"></div>
+            <div style="width: 45%; height: 45%; border: 1px dashed var(--text-muted); border-radius: 1px;"></div>
+          </div>
+          <span>4 Cards</span>
+        </div>
+        <div class="layout-option" data-layout="blueprint" title="Sequential multi-step roadmap / blueprint">
+          <div class="layout-icon" style="flex-direction: column; gap: 3px; padding: 4px;">
+            <div style="width: 100%; height: 4px; background: var(--primary); border-radius: 2px;"></div>
+            <div style="width: 100%; height: 4px; background: var(--secondary); border-radius: 2px;"></div>
+            <div style="width: 100%; height: 4px; background: var(--success); border-radius: 2px;"></div>
+          </div>
+          <span>Roadmap Steps</span>
+        </div>
+        <div class="layout-option" data-layout="table" title="Data or pricing table">
+          <div class="layout-icon" style="flex-direction: column; gap: 2px; padding: 3px;">
+            <div style="width: 100%; height: 3px; background: var(--primary);"></div>
+            <div style="width: 100%; height: 2px; background: var(--border-color);"></div>
+            <div style="width: 100%; height: 2px; background: var(--border-color);"></div>
+          </div>
+          <span>Data Table</span>
+        </div>
+        <div class="layout-option" data-layout="qa" title="Contact & Sign-off slide">
+          <div class="layout-icon" style="flex-direction: column; justify-content: center; align-items: center;">
+            <div style="width: 40%; height: 6px; background: var(--primary); border-radius: 2px; margin-bottom: 2px;"></div>
+            <div style="width: 60%; height: 2px; background: var(--text-muted);"></div>
+          </div>
+          <span>Contact Slide</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Presentation Logic script -->
+  <script src="app.js"></script>
+</body>
+</html>
