@@ -41,7 +41,7 @@ const BRAND_CONFIG = {
   // Contact / Q&A Information for Closing Slide
   contact: {
     title: "Let's Connect for a 1-to-1 Meeting",
-    subtitle: "Share 1 manual headache in your business, and let's explore how to automate it in a 20-minute discussion.",
+    subtitle: "Share 1 manual headache in your business, and let's explore how to automate it in a 30-minute discussion.",
     items: [
       { icon: "👨‍💼", label: "Principal Architect", val: "Devendra Vaja" },
       { icon: "🏢", label: "Technology Studio", val: "TenCore Digital Labs Private Limited" },
@@ -438,7 +438,7 @@ const DEFAULT_SLIDES = [
     subtitle: "I believe in Givers Gain — here is how I bring direct value and support to every member in our chapter.",
     cards: [
       {
-        title: "Free 20-Min Automation Audit",
+        title: "Free 30-Min Automation Audit",
         icon: "🔍",
         body: "1-to-1 operational diagnosis to identify your manual bottlenecks and provide a clear automation roadmap — 100% free with zero obligation.",
         metric: "Free 1-to-1 for Members"
