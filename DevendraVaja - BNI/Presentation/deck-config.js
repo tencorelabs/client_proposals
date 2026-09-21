@@ -316,9 +316,9 @@ const DEFAULT_SLIDES = [
         body: "Spending 2 hours every evening manually checking employee attendance, WhatsApp orders, or pending payments."
       },
       {
-        title: "3. Paperwork Stuck on Your Desk?",
-        icon: "📝",
-        body: "Important bills, customer files, or approval vouchers are stuck waiting for sign-off while you are traveling out of office."
+        title: "3. Missed Appointments & Client No-Shows?",
+        icon: "📅",
+        body: "High-value clients forget scheduled consultations, site visits, or meetings because staff forgot to send timely WhatsApp calendar reminders."
       },
       {
         title: "4. Want Your Own Mobile App?",
