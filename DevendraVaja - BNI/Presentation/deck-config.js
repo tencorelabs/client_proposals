@@ -125,7 +125,7 @@ const DEFAULT_SLIDES = [
       { name: "Intel", logo: "Pics/logos/intel.png" },
       { name: "Sony", logo: "Pics/logos/sony.png" },
       { name: "EMC", logo: "Pics/logos/emc.png" },
-      { name: "Rakuten (Japan)", logo: "Pics/logos/rakuten.png" },
+      { name: "Rakuten (Japan)", logo: "Pics/logos/rakuten.svg" },
       { name: "Konami Gaming (Tokyo)", logo: "Pics/logos/konami.png" },
       { name: "Chartboost", logo: "Pics/logos/chartboost.png" },
       { name: "Vungle", logo: "Pics/logos/vungle.png" },
