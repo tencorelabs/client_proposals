@@ -915,30 +915,30 @@ main {
 }
 
 .feature-card-metric-pill {
-  padding: 3px 8px;
+  padding: 4px 10px;
   background: #f0fdf4;
   border: 1px solid #bbf7d0;
   border-radius: var(--radius-full);
   font-family: var(--font-display);
-  font-size: 0.70rem;
-  font-weight: 700;
+  font-size: 0.76rem;
+  font-weight: 800;
   color: #15803d;
   box-shadow: 0 1px 2px rgba(0,0,0,0.02);
 }
 
 .feature-card h3 {
   font-family: var(--font-display);
-  font-size: 1.02rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
   margin-bottom: 6px;
-  color: var(--text-primary);
+  color: var(--primary-dark);
 }
 
 .feature-card p {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
-  line-height: 1.40;
+  line-height: 1.50;
 }
 
 .feature-card-illustration {
@@ -950,7 +950,7 @@ main {
 .card-illustration-img {
   width: 100%;
   height: auto;
-  max-height: 140px;
+  max-height: 130px;
   object-fit: contain;
   border-radius: var(--radius-sm);
   display: block;
@@ -962,18 +962,18 @@ main {
   gap: 7px;
   background: #0f2942;
   color: #ffffff;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   box-shadow: 0 2px 6px rgba(15, 41, 66, 0.18);
 }
 
 .product-badge-thumb {
-  width: 18px;
-  height: 18px;
-  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
   object-fit: cover;
 }
 
@@ -984,8 +984,8 @@ main {
   border: 1px solid #ccfbf1;
   border-radius: var(--radius-sm);
   font-family: var(--font-display);
-  font-size: 0.80rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 800;
   color: var(--primary-dark);
 }
 
@@ -994,46 +994,48 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 16px;
+  gap: 18px;
   height: 100%;
 }
 
 .four-card-item {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
   display: flex;
-  gap: 14px;
+  gap: 16px;
   align-items: flex-start;
   box-shadow: var(--card-shadow);
 }
 
 .four-card-icon {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   background: white;
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-sm);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border-color);
   flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .four-card-content h3 {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 4px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--primary-dark);
 }
 
 .four-card-content p {
   font-family: var(--font-body);
-  font-size: 0.84rem;
+  font-size: 0.94rem;
   color: var(--text-secondary);
-  line-height: 1.45;
+  line-height: 1.52;
 }
 
 /* 6. ROADMAP BLUEPRINT LAYOUT (4 PHASES) */
