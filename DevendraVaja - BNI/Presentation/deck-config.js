@@ -142,6 +142,11 @@ const DEFAULT_SLIDES = [
       name: "SafetySetu™ Live Threat Defense",
       icon: "Pics/feature_graphic_bg.png"
     },
+    videoLink: {
+      label: "Watch 60-Sec Demo Video",
+      url: "https://youtu.be/m6pxUcTJals",
+      qr: "Pics/safetysetu_video_qr.png"
+    },
     cards: [
       {
         title: "Screen-Share Hijack Blocker",

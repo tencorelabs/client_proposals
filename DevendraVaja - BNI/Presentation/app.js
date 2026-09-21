@@ -370,18 +370,28 @@ function generateSlideHTML(slide, index, extraClass = '') {
 
     case 'threecard':
       const productBadge = slide.productBadge;
+      const videoLink = slide.videoLink;
       innerContent = `
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
               <div class="slide-category-badge">Core Architecture & Capabilities</div>
-              ${productBadge ? `
-                <div class="slide-header-product-badge">
-                  <img src="${productBadge.icon}" alt="${productBadge.name}" class="product-badge-thumb">
-                  <span>${productBadge.name}</span>
-                </div>
-              ` : ''}
+              <div class="slide-header-right-tools">
+                ${productBadge ? `
+                  <div class="slide-header-product-badge">
+                    <img src="${productBadge.icon}" alt="${productBadge.name}" class="product-badge-thumb">
+                    <span>${productBadge.name}</span>
+                  </div>
+                ` : ''}
+                ${videoLink ? `
+                  <a href="${videoLink.url}" target="_blank" rel="noopener" class="slide-header-video-btn" title="Click to watch demo video on YouTube">
+                    <span class="video-play-icon">▶</span>
+                    <span>${videoLink.label || 'Watch Demo Video'}</span>
+                    ${videoLink.qr ? `<img src="${videoLink.qr}" alt="Scan QR" class="video-qr-thumb">` : ''}
+                  </a>
+                ` : ''}
+              </div>
             </div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>

@@ -956,6 +956,12 @@ main {
   display: block;
 }
 
+.slide-header-right-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .slide-header-product-badge {
   display: flex;
   align-items: center;
@@ -975,6 +981,50 @@ main {
   height: 20px;
   border-radius: 4px;
   object-fit: cover;
+}
+
+.slide-header-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #dc2626;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.28);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.slide-header-video-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.40);
+  color: #ffffff !important;
+}
+
+.video-play-icon {
+  font-size: 0.70rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+}
+
+.video-qr-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background: #ffffff;
+  padding: 1px;
+  object-fit: contain;
 }
 
 .feature-card-metric {
