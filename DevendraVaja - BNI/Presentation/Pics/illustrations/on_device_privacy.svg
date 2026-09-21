@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <defs>
+    <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded canvas -->
+  <rect width="280" height="120" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Left: Silicon Chip (On-Device Neural Engine) -->
+  <g transform="translate(20, 18)">
+    <!-- Chip Body -->
+    <rect x="12" y="12" width="60" height="60" rx="8" fill="url(#chipGrad)" stroke="#38BDF8" stroke-width="2"/>
+    <!-- Chip Pins -->
+    <rect x="22" y="4" width="6" height="8" fill="#F59E0B" rx="1"/>
+    <rect x="39" y="4" width="6" height="8" fill="#F59E0B" rx="1"/>
+    <rect x="56" y="4" width="6" height="8" fill="#F59E0B" rx="1"/>
+    <rect x="22" y="72" width="6" height="8" fill="#F59E0B" rx="1"/>
+    <rect x="39" y="72" width="6" height="8" fill="#F59E0B" rx="1"/>
+    <rect x="56" y="72" width="6" height="8" fill="#F59E0B" rx="1"/>
+    <rect x="4" y="22" width="8" height="6" fill="#F59E0B" rx="1"/>
+    <rect x="4" y="39" width="8" height="6" fill="#F59E0B" rx="1"/>
+    <rect x="4" y="56" width="8" height="6" fill="#F59E0B" rx="1"/>
+    <rect x="72" y="22" width="8" height="6" fill="#F59E0B" rx="1"/>
+    <rect x="72" y="39" width="8" height="6" fill="#F59E0B" rx="1"/>
+    <rect x="72" y="56" width="8" height="6" fill="#F59E0B" rx="1"/>
+
+    <!-- Golden Security Lock in Chip Center -->
+    <rect x="32" y="38" width="20" height="18" rx="3" fill="url(#goldGrad)"/>
+    <path d="M 36 38 L 36 30 C 36 26 48 26 48 30 L 48 38" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="42" cy="46" r="2" fill="#FFFFFF"/>
+    <rect x="41" y="46" width="2" height="5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Middle: Arrow with Barrier -->
+  <g transform="translate(110, 42)">
+    <path d="M 5 18 L 35 18" stroke="#94A3B8" stroke-width="2" stroke-dasharray="3 3"/>
+    <!-- Cloud Blocked Icon -->
+    <path d="M 45 25 C 40 25 36 21 38 16 C 39 12 43 9 47 10 C 50 6 56 6 59 10 C 63 9 68 13 67 18 C 70 20 68 25 64 25 Z" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+    <line x1="38" y1="8" x2="68" y2="28" stroke="#EF4444" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Right: Verification Labels -->
+  <g transform="translate(178, 22)">
+    <rect width="90" height="24" rx="6" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+    <text x="45" y="16" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#16A34A" text-anchor="middle">✓ 100% ON-DEVICE</text>
+
+    <rect y="30" width="90" height="24" rx="6" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
+    <text x="45" y="46" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#DC2626" text-anchor="middle">✗ ZERO CLOUD UPLOAD</text>
+
+    <rect y="60" width="90" height="18" rx="9" fill="#0F2942"/>
+    <text x="45" y="73" font-family="-apple-system, sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">PRIVATE &amp; SECURE</text>
+  </g>
+</svg>

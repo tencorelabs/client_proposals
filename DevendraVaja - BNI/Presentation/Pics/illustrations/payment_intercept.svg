@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <defs>
+    <linearGradient id="shieldGreenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="radarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded canvas -->
+  <rect width="280" height="120" rx="10" fill="#F0FDF4" stroke="#DCFCE7" stroke-width="1.5"/>
+
+  <!-- Left: UPI Scanner / Card Interface -->
+  <g transform="translate(20, 18)">
+    <rect width="115" height="84" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="10" y="10" width="95" height="22" rx="4" fill="#0F2942"/>
+    <text x="57" y="25" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">UPI PAYMENT: ₹5,000</text>
+    
+    <rect x="10" y="38" width="55" height="6" rx="2" fill="#E2E8F0"/>
+    <rect x="10" y="48" width="40" height="5" rx="1.5" fill="#E2E8F0"/>
+    
+    <!-- Safety Status Pill -->
+    <rect x="10" y="60" width="95" height="16" rx="4" fill="#DCFCE7"/>
+    <circle cx="20" cy="68" r="4" fill="#10B981"/>
+    <text x="57" y="72" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#047857" text-anchor="middle">Overlay Intercept: OK</text>
+  </g>
+
+  <!-- Right: Active Scanner Radar & Security Guard Lock -->
+  <g transform="translate(155, 12)">
+    <!-- Radar Rings -->
+    <circle cx="55" cy="48" r="40" fill="none" stroke="#BAE6FD" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <circle cx="55" cy="48" r="28" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+    <circle cx="55" cy="48" r="16" fill="#E0F2FE"/>
+
+    <!-- Radar Sweep Beam -->
+    <path d="M 55 48 L 90 25 A 40 40 0 0 0 55 8 Z" fill="url(#radarGrad)"/>
+
+    <!-- Green Security Shield Lock -->
+    <g transform="translate(38, 28)">
+      <path d="M 17 3 L 31 10 C 31 25 17 33 17 37 C 17 33 3 25 3 10 Z" fill="url(#shieldGreenGrad)" stroke="#FFFFFF" stroke-width="1.8"/>
+      <!-- Checkmark -->
+      <path d="M 10 18 L 15 23 L 24 14" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Threat Freeze Tag -->
+  <rect x="145" y="86" width="120" height="20" rx="10" fill="#0284C7"/>
+  <text x="205" y="100" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" fill="#FFFFFF" text-anchor="middle">🛡️ 0-TOUCH OVERLAY SCAN</text>
+</svg>

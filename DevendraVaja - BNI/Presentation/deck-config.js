@@ -138,24 +138,31 @@ const DEFAULT_SLIDES = [
     layout: "threecard",
     title: "SafetySetu: Stop UPI Scams Before Money Leaves Your Account",
     subtitle: "Fraudsters can clean out your bank balance in seconds — SafetySetu catches them instantly right on your phone.",
+    productBadge: {
+      name: "SafetySetu™ Live Threat Defense",
+      icon: "Pics/feature_graphic_bg.png"
+    },
     cards: [
       {
         title: "Screen-Share Hijack Blocker",
         icon: "🚨",
-        body: "Instant alert & screen freeze the moment someone tricks you or your elderly parents into sharing their screen during a UPI payment (Stops AnyDesk/TeamViewer scams).",
-        metric: "Sub-15ms Protection"
+        body: "Instant alert & screen freeze the moment someone tricks you into sharing your screen during a UPI payment (Stops AnyDesk/TeamViewer scams).",
+        metric: "Sub-15ms Protection",
+        illustration: "Pics/illustrations/screen_share_block.svg"
       },
       {
         title: "Real-Time Payment Interceptor",
         icon: "🛡️",
         body: "Monitors active payment interfaces and suspicious overlay windows locally on the smartphone before unauthorized transfers occur.",
-        metric: "Instant Threat Freeze"
+        metric: "Instant Threat Freeze",
+        illustration: "Pics/illustrations/payment_intercept.svg"
       },
       {
         title: "100% Privacy — Zero Cloud Leakage",
         icon: "🔒",
         body: "Runs completely on your smartphone device. Zero passwords, OTPs, or bank details are ever uploaded to any cloud server.",
-        metric: "100% On-Device Privacy"
+        metric: "100% On-Device Privacy",
+        illustration: "Pics/illustrations/on_device_privacy.svg"
       }
     ]
   },

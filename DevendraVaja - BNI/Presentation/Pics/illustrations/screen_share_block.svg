@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+    <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <filter id="cardGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#EF4444" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded canvas -->
+  <rect width="280" height="120" rx="10" fill="#FEF2F2" stroke="#FEE2E2" stroke-width="1.5"/>
+
+  <!-- Left: Phone Device -->
+  <rect x="25" y="15" width="55" height="90" rx="8" fill="url(#phoneGrad)"/>
+  <rect x="29" y="23" width="47" height="74" rx="4" fill="#FFFFFF"/>
+  <!-- Phone UI lines -->
+  <rect x="34" y="30" width="37" height="6" rx="2" fill="#E2E8F0"/>
+  <rect x="34" y="40" width="28" height="4" rx="1.5" fill="#CBD5E1"/>
+  <!-- UPI Payment simulator on phone -->
+  <rect x="34" y="52" width="37" height="18" rx="3" fill="#DCFCE7"/>
+  <circle cx="42" cy="61" r="4" fill="#16A34A"/>
+  <rect x="49" y="58" width="18" height="5" rx="1.5" fill="#16A34A"/>
+
+  <!-- Middle: Connection Beam with Red Warning Slash -->
+  <path d="M 85 60 L 140 60" stroke="#EF4444" stroke-width="3" stroke-dasharray="4 3"/>
+  
+  <!-- Right: Remote Rogue Device -->
+  <rect x="195" y="25" width="60" height="70" rx="6" fill="#475569"/>
+  <rect x="199" y="30" width="52" height="50" rx="3" fill="#0F172A"/>
+  <path d="M 215 95 L 235 95 M 225 80 L 225 95" stroke="#475569" stroke-width="3"/>
+  <text x="225" y="58" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" fill="#EF4444" text-anchor="middle">HIJACK</text>
+  <text x="225" y="70" font-family="-apple-system, sans-serif" font-size="7" font-weight="600" fill="#94A3B8" text-anchor="middle">BLOCKED</text>
+
+  <!-- Center Shield: SafetySetu Defense -->
+  <g transform="translate(115, 25)" filter="url(#cardGlow)">
+    <path d="M 25 5 L 45 15 C 45 35 25 45 25 50 C 25 45 5 35 5 15 Z" fill="url(#shieldGrad)" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- Shield Cross / Stop Icon -->
+    <path d="M 18 20 L 32 34 M 32 20 L 18 34" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Overlay Badge -->
+  <rect x="95" y="85" width="90" height="20" rx="10" fill="#EF4444"/>
+  <text x="140" y="99" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="800" fill="#FFFFFF" text-anchor="middle">⚡ STOPPED &lt;15ms</text>
+</svg>

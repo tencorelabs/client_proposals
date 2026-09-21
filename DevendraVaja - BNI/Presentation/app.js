@@ -350,22 +350,38 @@ function generateSlideHTML(slide, index, extraClass = '') {
       break;
 
     case 'threecard':
+      const productBadge = slide.productBadge;
       innerContent = `
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">Core Architecture & Capabilities</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+              <div class="slide-category-badge">Core Architecture & Capabilities</div>
+              ${productBadge ? `
+                <div class="slide-header-product-badge">
+                  <img src="${productBadge.icon}" alt="${productBadge.name}" class="product-badge-thumb">
+                  <span>${productBadge.name}</span>
+                </div>
+              ` : ''}
+            </div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
           <div class="slide-body">
             <div class="three-card-grid">
               ${(slide.cards || []).map(c => `
-                <div class="feature-card">
-                  <div class="feature-card-icon-wrap">${c.icon || '⚡'}</div>
+                <div class="feature-card ${c.illustration ? 'has-illustration' : ''}">
+                  <div class="feature-card-top-row">
+                    <div class="feature-card-icon-wrap">${c.icon || '⚡'}</div>
+                    ${c.metric ? `<div class="feature-card-metric-pill">${c.metric}</div>` : ''}
+                  </div>
                   <h3>${c.title}</h3>
                   <p>${c.body}</p>
-                  ${c.metric ? `<div class="feature-card-metric">${c.metric}</div>` : ''}
+                  ${c.illustration ? `
+                    <div class="feature-card-illustration">
+                      <img src="${c.illustration}" alt="${c.title}" class="card-illustration-img">
+                    </div>
+                  ` : (c.metric ? `<div class="feature-card-metric">${c.metric}</div>` : '')}
                 </div>
               `).join('')}
             </div>
