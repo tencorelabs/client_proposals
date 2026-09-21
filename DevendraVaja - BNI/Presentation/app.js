@@ -341,7 +341,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">Cross-Industry Business Automation</div>
+            <div class="slide-category-badge">${slide.categoryBadge || 'Cross-Industry Business Automation'}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -376,7 +376,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
-              <div class="slide-category-badge">Core Architecture & Capabilities</div>
+              <div class="slide-category-badge">${slide.categoryBadge || 'Core Architecture & Capabilities'}</div>
               <div class="slide-header-right-tools">
                 ${productBadge ? `
                   <div class="slide-header-product-badge">
@@ -425,7 +425,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">Strategic Value & Market Focus</div>
+            <div class="slide-category-badge">${slide.categoryBadge || 'Strategic Value & Market Focus'}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -452,7 +452,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">Competitive Advantage & System Stack</div>
+            <div class="slide-category-badge">${slide.categoryBadge || 'Competitive Advantage & System Stack'}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>

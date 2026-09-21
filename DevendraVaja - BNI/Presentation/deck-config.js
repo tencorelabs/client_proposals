@@ -358,9 +358,117 @@ const DEFAULT_SLIDES = [
     ]
   },
 
-  // Slide 9: Closing & 1-to-1 Call to Action
+  // Slide 9: My Specific Ask (Ideal Referrals & Trigger Conversations)
+  {
+    layout: "twocol",
+    categoryBadge: "BNI Specific Ask • Ideal Referrals",
+    title: "My Specific Ask: Who Can You Introduce Me To?",
+    subtitle: "Help me connect with business owners ready to eliminate manual bottlenecks with custom apps & automation.",
+    leftCol: {
+      title: "Top 4 Ideal Referral Profiles",
+      badge: "TARGET CLIENTS",
+      items: [
+        {
+          icon: "🏥",
+          title: "Clinics, Doctors & Hospitals",
+          desc: "Healthcare centers wanting automated WhatsApp appointment reminders, patient booking apps, and zero no-shows.",
+          bg: "#eff6ff",
+          border: "#bfdbfe"
+        },
+        {
+          icon: "🚚",
+          title: "Logistics, Fleet & Transport Owners",
+          desc: "Companies managing drivers, trips, dispatch, and delivery tracking manually over phone calls & WhatsApp.",
+          bg: "#f0fdf4",
+          border: "#bbf7d0"
+        },
+        {
+          icon: "🏭",
+          title: "Manufacturers & Wholesale Distributors",
+          desc: "B2B firms managing dealer orders, catalog pricing, inventory reconciliations, and field sales teams on paper.",
+          bg: "#fef3c7",
+          border: "#fde68a"
+        },
+        {
+          icon: "🏢",
+          title: "Service Firms (CA, Real Estate, Legal)",
+          desc: "Professionals handling heavy client document collection, manual payment follow-ups, and repetitive queries.",
+          bg: "#f5f3ff",
+          border: "#ddd6fe"
+        }
+      ]
+    },
+    rightCol: {
+      title: "Golden Trigger Phrases to Listen For",
+      badge: "CONVERSATION TRIGGERS",
+      items: [
+        {
+          icon: "🗣️",
+          title: '"My staff spends 3 hours a day on Excel..."',
+          desc: "When a business owner complains about evening data tallies, WhatsApp chaos, and manual reporting.",
+          bg: "#eff6ff",
+          border: "#bfdbfe"
+        },
+        {
+          icon: "🗣️",
+          title: '"We lost a deal because we forgot to follow up..."',
+          desc: "When sales quotes sit in inbox limbo without automated WhatsApp/email nudges.",
+          bg: "#fef2f2",
+          border: "#fecaca"
+        },
+        {
+          icon: "🗣️",
+          title: '"Standard software is too rigid for our business..."',
+          desc: "When generic ERP/CRM products don't fit their exact real-world workflow.",
+          bg: "#fffbeb",
+          border: "#fef3c7"
+        },
+        {
+          icon: "🗣️",
+          title: '"We need our own custom mobile app..."',
+          desc: "When they want a branded Android/iOS app for their customers, dealers, or field workforce.",
+          bg: "#f0fdfa",
+          border: "#ccfbf1"
+        }
+      ]
+    }
+  },
+
+  // Slide 10: My Give (How I Support Our Chapter - Givers Gain)
+  {
+    layout: "threecard",
+    categoryBadge: "Givers Gain • Chapter Contribution",
+    title: "My Give: How I Support Our Chapter Members",
+    subtitle: "I believe in Givers Gain — here is how I bring direct value, security, and growth to our chapter.",
+    cards: [
+      {
+        title: "Free 20-Min Automation Audit",
+        icon: "🔍",
+        body: "Book a 1-to-1 with me. I will analyze your manual daily operations and give you a free, clear automation blueprint with zero obligation.",
+        metric: "100% Free for Members",
+        illustration: "Pics/illustrations/smart_web_portals.svg"
+      },
+      {
+        title: "SafetySetu Cyber & Fraud Defense",
+        icon: "🛡️",
+        body: "Complimentary smartphone safety audit and fraud defense guidance for your family, employees, and high-value business bank accounts.",
+        metric: "Peace of Mind",
+        illustration: "Pics/illustrations/payment_intercept.svg"
+      },
+      {
+        title: "High-Quality Enterprise Connections",
+        icon: "🤝",
+        body: "Leveraging 24+ years of global systems pedigree across India, USA, and Japan to open doors and pass high-trust business referrals.",
+        metric: "Global Network",
+        illustration: "Pics/illustrations/doc_comm_automation.svg"
+      }
+    ]
+  },
+
+  // Slide 11: Closing & 1-to-1 Call to Action
   {
     layout: "qa",
+    categoryBadge: "Next Steps & 1-to-1 Meeting",
     title: "Let's Book a 1-to-1 Meeting & Free Automation Audit",
     subtitle: "Tell me 1 manual headache in your business during our 1-to-1, and I will show you how to automate it!",
     contactInfo: BRAND_CONFIG.contact.items,
