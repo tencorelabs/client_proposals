@@ -221,8 +221,8 @@ function generateSlideHTML(slide, index, extraClass = '') {
           <div class="slide-body">
             <div class="instructor-slide-grid">
               <div class="instructor-avatar-card">
-                <img src="Pics/tencore_digital_labs_logo.png" alt="TenCore Digital Labs" class="instructor-company-logo" onerror="this.style.display='none'">
-                <div class="instructor-avatar-fallback">${f.avatarInitials || 'DV'}</div>
+                <img src="Pics/devendra_vaja.jpeg" alt="${name}" class="instructor-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="instructor-avatar-fallback" style="display:none;">${f.avatarInitials || 'DV'}</div>
                 <h3>${name}</h3>
                 <p>${role}</p>
                 <div style="font-size: 0.76rem; color: var(--text-secondary); margin-top: 10px; line-height: 1.4;">
