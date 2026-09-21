@@ -138,14 +138,9 @@ const DEFAULT_SLIDES = [
     layout: "threecard",
     title: "SafetySetu: Stop UPI Scams Before Money Leaves Your Account",
     subtitle: "Fraudsters can clean out your bank balance in seconds — SafetySetu catches them instantly right on your phone.",
-    productBadge: {
-      name: "SafetySetu™ Live Threat Defense",
-      icon: "Pics/feature_graphic_bg.png"
-    },
     videoLink: {
-      label: "Watch 60-Sec Demo Video",
-      url: "https://youtu.be/m6pxUcTJals",
-      qr: "Pics/safetysetu_video_qr.png"
+      label: "Watch 30-Sec Demo Video",
+      url: "https://youtu.be/m6pxUcTJals"
     },
     cards: [
       {
