@@ -363,70 +363,70 @@ const DEFAULT_SLIDES = [
     layout: "twocol",
     categoryBadge: "BNI Specific Ask • Ideal Referrals",
     title: "My Specific Ask: Who Can You Introduce Me To?",
-    subtitle: "Help me connect with business owners ready to eliminate manual bottlenecks with custom apps & automation.",
+    subtitle: "Help me connect with business owners ready to eliminate manual bottlenecks with custom technology.",
     leftCol: {
-      title: "Top 4 Ideal Referral Profiles",
-      badge: "TARGET CLIENTS",
+      title: "Target Client Profiles",
+      badge: "WHO TO INTRODUCE",
       items: [
         {
           icon: "🏥",
           title: "Clinics, Doctors & Hospitals",
-          desc: "Healthcare centers wanting automated WhatsApp appointment reminders, patient booking apps, and zero no-shows.",
+          desc: "Appointment apps, zero no-shows & automated WhatsApp reminders",
           bg: "#eff6ff",
           border: "#bfdbfe"
         },
         {
           icon: "🚚",
-          title: "Logistics, Fleet & Transport Owners",
-          desc: "Companies managing drivers, trips, dispatch, and delivery tracking manually over phone calls & WhatsApp.",
+          title: "Logistics, Fleet & Transporters",
+          desc: "Driver tracking, trip dispatching & real-time delivery apps",
           bg: "#f0fdf4",
           border: "#bbf7d0"
         },
         {
           icon: "🏭",
-          title: "Manufacturers & Wholesale Distributors",
-          desc: "B2B firms managing dealer orders, catalog pricing, inventory reconciliations, and field sales teams on paper.",
+          title: "Manufacturers & Distributors",
+          desc: "Dealer order portals, dynamic catalog pricing & field sales apps",
           bg: "#fef3c7",
           border: "#fde68a"
         },
         {
           icon: "🏢",
           title: "Service Firms (CA, Real Estate, Legal)",
-          desc: "Professionals handling heavy client document collection, manual payment follow-ups, and repetitive queries.",
+          desc: "Client document intake, auto-invoicing & follow-up portals",
           bg: "#f5f3ff",
           border: "#ddd6fe"
         }
       ]
     },
     rightCol: {
-      title: "Golden Trigger Phrases to Listen For",
-      badge: "CONVERSATION TRIGGERS",
+      title: "Conversations to Listen For",
+      badge: "TRIGGER PHRASES",
       items: [
         {
           icon: "🗣️",
-          title: '"My staff spends 3 hours a day on Excel..."',
-          desc: "When a business owner complains about evening data tallies, WhatsApp chaos, and manual reporting.",
+          title: '"My staff spends hours on Excel every day..."',
+          desc: "Manual tallying, late-night reporting & WhatsApp chaos",
           bg: "#eff6ff",
           border: "#bfdbfe"
         },
         {
           icon: "🗣️",
           title: '"We lost a deal because we forgot to follow up..."',
-          desc: "When sales quotes sit in inbox limbo without automated WhatsApp/email nudges.",
+          desc: "Sales quotes stuck in inbox without automated customer nudges",
           bg: "#fef2f2",
           border: "#fecaca"
         },
         {
           icon: "🗣️",
-          title: '"Standard software is too rigid for our business..."',
-          desc: "When generic ERP/CRM products don't fit their exact real-world workflow.",
+          title: '"Standard generic software doesn’t fit our workflow..."',
+          desc: "Rigid off-the-shelf software vs. tailor-made operational fit",
           bg: "#fffbeb",
           border: "#fef3c7"
         },
         {
           icon: "🗣️",
-          title: '"We need our own custom mobile app..."',
-          desc: "When they want a branded Android/iOS app for their customers, dealers, or field workforce.",
+          title: '"We want our own branded mobile app..."',
+          desc: "Custom Android & iOS apps for customers, dealers & field staff",
           bg: "#f0fdfa",
           border: "#ccfbf1"
         }
