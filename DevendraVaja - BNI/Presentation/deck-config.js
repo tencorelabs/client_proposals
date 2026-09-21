@@ -21,7 +21,7 @@ const BRAND_CONFIG = {
     role: "Founder & Principal Systems Architect",
     company: "TenCore Digital Labs Private Limited",
     avatarInitials: "DV",
-    tagline: "24+ years of global systems engineering across India, USA, and Japan building high-reliability mobile apps, device drivers, and custom AI business automation.",
+    tagline: "",
     pillars: [
       {
         title: "24+ Years Global Systems Experience (India • Japan • USA)",

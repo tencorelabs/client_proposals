@@ -272,9 +272,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
                 <div class="instructor-avatar-fallback" style="display:none;">${f.avatarInitials || 'DV'}</div>
                 <h3>${name}</h3>
                 <p>${role}</p>
-                <div class="instructor-tagline-text">
-                  ${tagline}
-                </div>
+                ${tagline ? `<div class="instructor-tagline-text">${tagline}</div>` : ''}
                 <div class="instructor-global-flags">
                   <div class="global-flag-pill" title="India">
                     <img src="Pics/flags/india.svg" alt="India" class="flag-img">
