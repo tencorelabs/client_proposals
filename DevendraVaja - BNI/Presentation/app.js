@@ -209,6 +209,47 @@ function generateSlideHTML(slide, index, extraClass = '') {
       const role = slide.instructorRole || (f.role ? `${f.role} • ${f.company}` : 'Founder & Principal Systems Architect');
       const tagline = slide.instructorTagline || f.tagline || '';
       const pillars = slide.instructorPillars || f.pillars || [];
+      const highlights = slide.highlights || [];
+      const companies = slide.companies || [];
+      const companiesTitle = slide.companiesTitle || 'Global Enterprise Engineering Experience:';
+
+      let rightPaneContent = '';
+      if (highlights.length > 0) {
+        rightPaneContent = `
+          <div class="instructor-highlights-list">
+            ${highlights.map(h => `
+              <div class="instructor-highlight-item ${h.desc ? 'has-desc' : ''}">
+                <div class="instructor-highlight-icon">✓</div>
+                <div class="instructor-highlight-text">
+                  <h4>${h.title}</h4>
+                  ${h.desc ? `<p>${h.desc}</p>` : ''}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          ${companies.length > 0 ? `
+            <div class="company-pedigree-section">
+              <div class="company-pedigree-header">
+                <span>🏢</span> ${companiesTitle}
+              </div>
+              <div class="company-logo-grid">
+                ${companies.map(c => `
+                  <div class="company-badge-pill">${c}</div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+        `;
+      } else {
+        rightPaneContent = `
+          ${pillars.map(p => `
+            <div class="detail-box">
+              <h4>${p.title}</h4>
+              <p>${p.desc}</p>
+            </div>
+          `).join('')}
+        `;
+      }
 
       innerContent = `
         <div class="slide${cls}">
@@ -230,12 +271,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
                 </div>
               </div>
               <div class="instructor-details-card">
-                ${pillars.map(p => `
-                  <div class="detail-box">
-                    <h4>${p.title}</h4>
-                    <p>${p.desc}</p>
-                  </div>
-                `).join('')}
+                ${rightPaneContent}
               </div>
             </div>
           </div>

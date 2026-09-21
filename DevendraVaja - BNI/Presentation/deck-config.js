@@ -94,15 +94,43 @@ const DEFAULT_SLIDES = [
     ]
   },
 
-  // Slide 2: Founder / Leadership Profile
+  // Slide 2: Founder / Leadership Profile & Global Pedigree
   {
     layout: "instructor",
     title: "Meet Devendra Vaja — Systems Architect & Founder",
-    subtitle: "24+ Years of Deep-Tech Engineering Across India, USA, and Japan",
+    subtitle: "24+ Years of Deep-Tech Systems Engineering & Enterprise Digital Architecture",
     instructorName: BRAND_CONFIG.founder.name,
     instructorRole: BRAND_CONFIG.founder.role + " • " + BRAND_CONFIG.founder.company,
     instructorTagline: BRAND_CONFIG.founder.tagline,
-    instructorPillars: BRAND_CONFIG.founder.pillars
+    highlights: [
+      {
+        title: "24+ Years Global Systems Experience (India • Japan • USA)",
+        desc: ""
+      },
+      {
+        title: "Android OS & Mobile Platform Pioneer (Since 2007)",
+        desc: ""
+      },
+      {
+        title: "Custom Problem Solver for Every Business",
+        desc: "We don't force rigid, generic software. We study your exact daily workflow and build tailor-made mobile apps and AI automation fitted to your business."
+      }
+    ],
+    companiesTitle: "Trusted Engineering Pedigree Across Global Enterprises:",
+    companies: [
+      "Larsen & Toubro",
+      "Wipro",
+      "Capgemini",
+      "eInfochips",
+      "Intel",
+      "Sony",
+      "EMC",
+      "Rakuten (Japan)",
+      "Konami Gaming (Tokyo)",
+      "Chartboost",
+      "Vungle",
+      "Fundtech"
+    ]
   },
 
   // Slide 3: SafetySetu Product Highlight (Screen Share & UPI Protection)
