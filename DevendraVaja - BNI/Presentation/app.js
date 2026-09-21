@@ -233,9 +233,15 @@ function generateSlideHTML(slide, index, extraClass = '') {
                 <span>🏢</span> ${companiesTitle}
               </div>
               <div class="company-logo-grid">
-                ${companies.map(c => `
-                  <div class="company-badge-pill">${c}</div>
-                `).join('')}
+                ${companies.map(c => {
+                  const cName = typeof c === 'object' ? c.name : c;
+                  const cLogo = typeof c === 'object' ? c.logo : null;
+                  return `
+                    <div class="company-badge-pill" title="${cName}">
+                      ${cLogo ? `<img src="${cLogo}" alt="${cName}" class="company-pill-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"><span class="company-pill-text" style="display:none;">${cName}</span>` : `<span class="company-pill-text">${cName}</span>`}
+                    </div>
+                  `;
+                }).join('')}
               </div>
             </div>
           ` : ''}

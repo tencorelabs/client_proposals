@@ -118,18 +118,18 @@ const DEFAULT_SLIDES = [
     ],
     companiesTitle: "Trusted Engineering Pedigree Across Global Enterprises:",
     companies: [
-      "Larsen & Toubro",
-      "Wipro",
-      "Capgemini",
-      "eInfochips",
-      "Intel",
-      "Sony",
-      "EMC",
-      "Rakuten (Japan)",
-      "Konami Gaming (Tokyo)",
-      "Chartboost",
-      "Vungle",
-      "Fundtech"
+      { name: "Larsen & Toubro", logo: "Pics/logos/lt.svg" },
+      { name: "Wipro", logo: "Pics/logos/wipro.svg" },
+      { name: "Capgemini", logo: "Pics/logos/capgemini.svg" },
+      { name: "eInfochips", logo: "Pics/logos/einfochips.svg" },
+      { name: "Intel", logo: "Pics/logos/intel.svg" },
+      { name: "Sony", logo: "Pics/logos/sony.svg" },
+      { name: "EMC", logo: "Pics/logos/emc.svg" },
+      { name: "Rakuten (Japan)", logo: "Pics/logos/rakuten.svg" },
+      { name: "Konami Gaming (Tokyo)", logo: "Pics/logos/konami.svg" },
+      { name: "Chartboost", logo: "Pics/logos/chartboost.svg" },
+      { name: "Vungle", logo: "Pics/logos/vungle.svg" },
+      { name: "Fundtech", logo: "Pics/logos/fundtech.svg" }
     ]
   },
 

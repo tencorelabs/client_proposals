@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 45" width="160" height="45">
+  <rect width="100%" height="100%" fill="none"/>
+  <!-- Chartboost Icon (Game Controller/Boost) -->
+  <rect x="12" y="10" width="24" height="24" rx="6" fill="#F36C21"/>
+  <polygon points="20,18 20,26 28,22" fill="#FFFFFF"/>
+  <text x="42" y="28" font-family="'Segoe UI', 'Arial', sans-serif" font-size="16" font-weight="800" fill="#2F3542">Chartboost</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 45" width="160" height="45">
+  <rect width="100%" height="100%" fill="none"/>
+  <!-- Konami Ribbon / Crest Ribbon -->
+  <path d="M 12 12 C 18 10 24 16 28 22 C 24 28 18 34 12 32 Z" fill="#E2001A"/>
+  <path d="M 28 12 C 24 16 18 22 14 28 C 20 32 26 26 30 20 Z" fill="#FF8200"/>
+  <text x="36" y="26" font-family="'Arial Black', Impact, sans-serif" font-size="16" font-weight="900" fill="#E2001A" letter-spacing="1">KONAMI</text>
+  <text x="36" y="36" font-family="'Arial', sans-serif" font-size="8.5" font-weight="800" fill="#555555" letter-spacing="2">GAMING</text>
+</svg>
