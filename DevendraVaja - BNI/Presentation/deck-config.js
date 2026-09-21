@@ -201,22 +201,70 @@ const DEFAULT_SLIDES = [
     subtitle: "If you have manual customer follow-ups, documents, or status tracking — we can automate it for you!",
     leftCol: {
       title: "Trading, Travel, Manufacturing & Visas",
-      badge: "BUSINESS WORKFLOWS",
-      bullets: [
-        "<strong>🍬 Sugar Substitute / FMCG / Trading:</strong> Automated weekly dealer re-order reminders on WhatsApp, dispatch alerts & payment follow-ups.",
-        "<strong>✈️ Immigration & Visa Consultancy:</strong> Automated applicant document checklists, stage-by-stage visa tracking & WhatsApp status alerts.",
-        "<strong>🗺️ Travel & Tourism:</strong> 1-Click WhatsApp itinerary delivery, hotel voucher dispatch & real-time cab driver coordination.",
-        "<strong>🏭 Plastic & Product Manufacturing:</strong> B2B sample dispatch tracking, quote approvals, client feedback & shift logs on a simple mobile app."
+      badge: "COMMERCE & SERVICES",
+      items: [
+        {
+          icon: "🍬",
+          title: "Sugar Substitute, FMCG & Trading",
+          bg: "#fef3c7",
+          border: "#fde68a",
+          desc: "Automated weekly dealer re-orders on WhatsApp, dispatch alerts, and payment collection follow-ups."
+        },
+        {
+          icon: "✈️",
+          title: "Immigration & Visa Consultancy",
+          bg: "#e0f2fe",
+          border: "#bae6fd",
+          desc: "Automated applicant document checklists, stage-by-stage visa tracking, and WhatsApp status updates."
+        },
+        {
+          icon: "🗺️",
+          title: "Travel & Tourism Agency",
+          bg: "#ecfdf5",
+          border: "#a7f3d0",
+          desc: "1-Click WhatsApp itinerary delivery, hotel voucher dispatch, and real-time cab driver coordination."
+        },
+        {
+          icon: "🏭",
+          title: "Plastic & Product Manufacturing",
+          bg: "#f3e8ff",
+          border: "#e9d5ff",
+          desc: "B2B sample dispatch tracking, quote approvals, client feedback, and shift logs on a simple mobile app."
+        }
       ]
     },
     rightCol: {
       title: "Finance, Legal, Tax & Operations",
-      badge: "PROFESSIONAL SERVICES",
-      bullets: [
-        "<strong>💰 Finance & Loan Approval Cycle:</strong> Mobile intake for customer KYC documents, multi-stage approval checkmarks & sanction alerts.",
-        "<strong>⚖️ Lawyers & Legal Consultations:</strong> Automated court hearing date reminders to clients & case file digital indexing.",
-        "<strong>📊 Taxation, CAs & Corporate Gifting:</strong> Automated GST/ITR filing deadline alerts, client document upload vaults & festival gifting catalogues.",
-        "<strong>📍 Attendance & Field Staff Tracking:</strong> 1-Tap mobile/GPS attendance, field visit logs & real-time team task updates."
+      badge: "PROFESSIONAL PRACTICES",
+      items: [
+        {
+          icon: "💰",
+          title: "Finance & Loan Approval Cycle",
+          bg: "#dcfce7",
+          border: "#bbf7d0",
+          desc: "Mobile intake for customer KYC documents, multi-stage approval checkmarks, and sanction alerts."
+        },
+        {
+          icon: "⚖️",
+          title: "Lawyers & Legal Practices",
+          bg: "#ede9fe",
+          border: "#ddd6fe",
+          desc: "Automated court hearing date reminders to clients and instant digital case file lookup."
+        },
+        {
+          icon: "📊",
+          title: "Taxation, CAs & Corporate Gifting",
+          bg: "#fee2e2",
+          border: "#fecaca",
+          desc: "Automated GST/ITR filing deadline alerts, client document upload vaults, and festival gifting catalogues."
+        },
+        {
+          icon: "📍",
+          title: "Attendance & Field Staff Tracking",
+          bg: "#ffedd5",
+          border: "#fed7aa",
+          desc: "1-Tap mobile/GPS attendance, field visit logs, and real-time team task updates with zero hardware."
+        }
       ]
     }
   },

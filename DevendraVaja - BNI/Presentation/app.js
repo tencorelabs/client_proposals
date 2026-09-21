@@ -314,11 +314,36 @@ function generateSlideHTML(slide, index, extraClass = '') {
       break;
 
     case 'twocol':
+      const renderColContent = (col) => {
+        if (col.items && col.items.length > 0) {
+          return `
+            <div class="industry-tile-list">
+              ${col.items.map(it => `
+                <div class="industry-tile">
+                  <div class="industry-tile-icon-wrap" style="${it.bg ? `background:${it.bg}; border-color:${it.border || it.bg};` : ''}">
+                    <span>${it.icon || '💼'}</span>
+                  </div>
+                  <div class="industry-tile-content">
+                    <h4>${it.title}</h4>
+                    <p>${it.desc}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+        return `
+          <ul class="bullet-list">
+            ${(col.bullets || []).map(b => `<li>${b}</li>`).join('')}
+          </ul>
+        `;
+      };
+
       innerContent = `
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">Operational & Architectural Analysis</div>
+            <div class="slide-category-badge">Cross-Industry Business Automation</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -327,20 +352,16 @@ function generateSlideHTML(slide, index, extraClass = '') {
               <div class="col-card">
                 <div class="col-header">
                   <h3>${slide.leftCol.title}</h3>
-                  <span class="col-badge">${slide.leftCol.badge || 'CURRENT'}</span>
+                  <span class="col-badge">${slide.leftCol.badge || 'WORKFLOWS'}</span>
                 </div>
-                <ul class="bullet-list">
-                  ${(slide.leftCol.bullets || []).map(b => `<li>${b}</li>`).join('')}
-                </ul>
+                ${renderColContent(slide.leftCol)}
               </div>
               <div class="col-card highlight">
                 <div class="col-header">
                   <h3>${slide.rightCol.title}</h3>
-                  <span class="col-badge badge-primary">${slide.rightCol.badge || 'SOLUTION'}</span>
+                  <span class="col-badge badge-primary">${slide.rightCol.badge || 'SERVICES'}</span>
                 </div>
-                <ul class="bullet-list">
-                  ${(slide.rightCol.bullets || []).map(b => `<li>${b}</li>`).join('')}
-                </ul>
+                ${renderColContent(slide.rightCol)}
               </div>
             </div>
           </div>
