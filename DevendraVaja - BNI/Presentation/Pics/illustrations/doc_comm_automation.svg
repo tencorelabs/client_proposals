@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <defs>
+    <linearGradient id="scanBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="120" rx="10" fill="#F0FDF4" stroke="#DCFCE7" stroke-width="1.5"/>
+
+  <!-- Left: Document & Laser Scanner Beam -->
+  <g transform="translate(18, 14)">
+    <rect width="75" height="92" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <!-- Fold corner -->
+    <polygon points="55,0 75,20 55,20" fill="#E2E8F0"/>
+    <rect x="8" y="12" width="40" height="6" rx="2" fill="#0F2942"/>
+    <rect x="8" y="24" width="58" height="5" rx="1.5" fill="#E2E8F0"/>
+    <rect x="8" y="33" width="50" height="5" rx="1.5" fill="#E2E8F0"/>
+    <rect x="8" y="42" width="58" height="5" rx="1.5" fill="#E2E8F0"/>
+    
+    <!-- Laser Scan Bar -->
+    <rect x="4" y="52" width="67" height="16" fill="url(#scanBeam)"/>
+    <line x1="4" y1="60" x2="71" y2="60" stroke="#0284C7" stroke-width="2.5"/>
+    
+    <rect x="8" y="74" width="58" height="12" rx="3" fill="#DCFCE7"/>
+    <text x="37" y="83" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#15803D" text-anchor="middle">&lt; 3s OCR SCAN</text>
+  </g>
+
+  <!-- Middle Arrow -->
+  <g transform="translate(100, 48)">
+    <path d="M 0 12 L 20 12" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+    <polyline points="14,6 20,12 14,18" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- Right: Auto Trigger Icons (WhatsApp + Email) -->
+  <g transform="translate(130, 14)">
+    <rect width="134" height="42" rx="7" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1.2"/>
+    <circle cx="22" cy="21" r="12" fill="#25D366"/>
+    <text x="22" y="26" font-family="-apple-system, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">💬</text>
+    <text x="42" y="18" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" fill="#15803D">Auto WhatsApp</text>
+    <text x="42" y="30" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="600" fill="#166534">Reminders &amp; Receipts</text>
+
+    <rect y="48" width="134" height="44" rx="7" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.2"/>
+    <circle cx="22" cy="70" r="12" fill="#2563EB"/>
+    <text x="22" y="75" font-family="-apple-system, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">✉️</text>
+    <text x="42" y="67" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" fill="#1E40AF">Email &amp; SMS Dispatch</text>
+    <text x="42" y="79" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="600" fill="#1E3A8A">100% Zero Manual Effort</text>
+  </g>
+</svg>

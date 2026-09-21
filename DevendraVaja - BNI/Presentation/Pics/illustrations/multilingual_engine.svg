@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <defs>
+    <linearGradient id="engineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="120" rx="10" fill="#F0F9FF" stroke="#E0F2FE" stroke-width="1.5"/>
+
+  <!-- Left: Source English -->
+  <g transform="translate(14, 22)">
+    <rect width="70" height="76" rx="6" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5"/>
+    <rect x="6" y="8" width="58" height="18" rx="4" fill="#0F2942"/>
+    <text x="35" y="21" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="800" fill="#FFFFFF" text-anchor="middle">INPUT</text>
+    <text x="35" y="45" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#0369A1" text-anchor="middle">English</text>
+    <text x="35" y="60" font-family="-apple-system, sans-serif" font-size="7" font-weight="600" fill="#64748B" text-anchor="middle">Order / Notice</text>
+  </g>
+
+  <!-- Center Engine Gear / Converter -->
+  <g transform="translate(94, 34)">
+    <circle cx="26" cy="26" r="24" fill="url(#engineGrad)"/>
+    <path d="M 26 8 L 26 44 M 8 26 L 44 26" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 2"/>
+    <circle cx="26" cy="26" r="14" fill="#0F2942"/>
+    <text x="26" y="30" font-family="-apple-system, sans-serif" font-size="12" font-weight="800" fill="#38BDF8" text-anchor="middle">AI</text>
+    <!-- Pulse waves -->
+    <path d="M 54 26 L 68 26" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Right: Indian Language Output Chips -->
+  <g transform="translate(172, 12)">
+    <rect x="0" y="0" width="94" height="20" rx="5" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+    <text x="47" y="14" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#15803D" text-anchor="middle">ગુજરાતી • Hindi</text>
+
+    <rect x="0" y="25" width="94" height="20" rx="5" fill="#FEF3C7" stroke="#FDE68A" stroke-width="1"/>
+    <text x="47" y="39" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#B45309" text-anchor="middle">मराठी • বাংলা</text>
+
+    <rect x="0" y="50" width="94" height="20" rx="5" fill="#F3E8FF" stroke="#E9D5FF" stroke-width="1"/>
+    <text x="47" y="64" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#7E22CE" text-anchor="middle">தமிழ் • తెలుగు</text>
+
+    <rect x="0" y="75" width="94" height="18" rx="9" fill="#0F2942"/>
+    <text x="47" y="87" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#38BDF8" text-anchor="middle">🎙️ Voice + Text</text>
+  </g>
+</svg>

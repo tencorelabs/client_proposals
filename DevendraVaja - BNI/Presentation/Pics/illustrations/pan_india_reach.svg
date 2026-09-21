@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <defs>
+    <linearGradient id="growthGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="120" rx="10" fill="#F0FDF4" stroke="#DCFCE7" stroke-width="1.5"/>
+
+  <!-- Left: Pan-India Network Nodes -->
+  <g transform="translate(18, 14)">
+    <rect width="120" height="92" rx="8" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+    
+    <!-- Central Node (Mumbai / HQ) -->
+    <circle cx="35" cy="50" r="10" fill="#0F2942"/>
+    <text x="35" y="54" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#FFFFFF" text-anchor="middle">HQ</text>
+
+    <!-- Regional Nodes -->
+    <!-- North -->
+    <circle cx="55" cy="22" r="7" fill="#10B981"/>
+    <text x="55" y="25" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#FFFFFF" text-anchor="middle">DL</text>
+    <line x1="35" y1="50" x2="55" y2="22" stroke="#10B981" stroke-width="1.8"/>
+
+    <!-- East -->
+    <circle cx="95" cy="40" r="7" fill="#10B981"/>
+    <text x="95" y="43" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#FFFFFF" text-anchor="middle">WB</text>
+    <line x1="35" y1="50" x2="95" y2="40" stroke="#10B981" stroke-width="1.8"/>
+
+    <!-- South -->
+    <circle cx="65" cy="78" r="7" fill="#10B981"/>
+    <text x="65" y="81" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#FFFFFF" text-anchor="middle">TN</text>
+    <line x1="35" y1="50" x2="65" y2="78" stroke="#10B981" stroke-width="1.8"/>
+
+    <!-- West (GJ) -->
+    <circle cx="18" cy="38" r="7" fill="#10B981"/>
+    <text x="18" y="41" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#FFFFFF" text-anchor="middle">GJ</text>
+    <line x1="35" y1="50" x2="18" y2="38" stroke="#10B981" stroke-width="1.8"/>
+  </g>
+
+  <!-- Right: 100% Pan-India Metric -->
+  <g transform="translate(150, 16)">
+    <rect width="112" height="88" rx="8" fill="#FFFFFF" stroke="#86EFAC" stroke-width="1.5"/>
+    <text x="56" y="36" font-family="-apple-system, sans-serif" font-size="26" font-weight="900" fill="#047857" text-anchor="middle">100%</text>
+    <text x="56" y="52" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="700" fill="#065F46" text-anchor="middle">PAN-INDIA</text>
+    <rect x="8" y="62" width="96" height="18" rx="9" fill="url(#growthGrad)"/>
+    <text x="56" y="74" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#FFFFFF" text-anchor="middle">⚡ Zero Bounce Rate</text>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <defs>
+    <linearGradient id="portalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="120" rx="10" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Left: SaaS Dashboard Window -->
+  <g transform="translate(18, 12)">
+    <rect width="125" height="96" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <!-- Window Bar -->
+    <rect width="125" height="18" rx="8" fill="url(#portalGrad)"/>
+    <circle cx="8" cy="9" r="2.5" fill="#EF4444"/>
+    <circle cx="16" cy="9" r="2.5" fill="#F59E0B"/>
+    <circle cx="24" cy="9" r="2.5" fill="#10B981"/>
+    <text x="65" y="13" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#94A3B8">ADMIN PORTAL</text>
+
+    <!-- Analytics Chart Mockup -->
+    <rect x="8" y="24" width="34" height="20" rx="3" fill="#F0FDF4"/>
+    <text x="25" y="37" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" fill="#16A34A" text-anchor="middle">+48%</text>
+
+    <rect x="46" y="24" width="34" height="20" rx="3" fill="#EFF6FF"/>
+    <text x="63" y="37" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#2563EB" text-anchor="middle">LIVE</text>
+
+    <rect x="84" y="24" width="33" height="20" rx="3" fill="#FEF3C7"/>
+    <text x="100" y="37" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#D97706" text-anchor="middle">AUTO</text>
+
+    <!-- Table row bars -->
+    <rect x="8" y="50" width="109" height="8" rx="2" fill="#F1F5F9"/>
+    <rect x="8" y="62" width="109" height="8" rx="2" fill="#F1F5F9"/>
+    <rect x="8" y="74" width="109" height="14" rx="3" fill="#0284C7"/>
+    <text x="62" y="84" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">📄 AUTO PDF INVOICE</text>
+  </g>
+
+  <!-- Right: Control Badges -->
+  <g transform="translate(154, 18)">
+    <rect x="0" y="0" width="112" height="24" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="56" y="16" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#0F2942" text-anchor="middle">📊 Real-Time KPI</text>
+
+    <rect x="0" y="30" width="112" height="24" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="56" y="46" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#0F2942" text-anchor="middle">🔒 Bank-Grade Sec</text>
+
+    <rect x="0" y="60" width="112" height="24" rx="6" fill="#0F2942"/>
+    <text x="56" y="75" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="800" fill="#38BDF8" text-anchor="middle">📱 ANY DEVICE</text>
+  </g>
+</svg>

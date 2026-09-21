@@ -279,19 +279,22 @@ const DEFAULT_SLIDES = [
         title: "The Language Wall",
         icon: "🗣️",
         body: "When your app, portal, or message is English-only, over 65% of Bharat customers feel hesitant, misunderstood, or bounce to competitors.",
-        metric: "65% Customer Friction"
+        metric: "65% Customer Friction",
+        illustration: "Pics/illustrations/language_wall.svg"
       },
       {
         title: "TenCore Multi-Lingual Engine",
         icon: "🌐",
         body: "We build custom systems that communicate in the client's mother tongue — WhatsApp text and audio voice alerts in Gujarati, Hindi, Marathi, Telugu, Tamil, & more.",
-        metric: "10+ Indian Languages"
+        metric: "10+ Indian Languages",
+        illustration: "Pics/illustrations/multilingual_engine.svg"
       },
       {
         title: "Zero Customer Left Behind",
         icon: "🎯",
         body: "Give every customer across India the comfort of their regional language. Scale your business smoothly from Gujarat to Tamil Nadu.",
-        metric: "100% Pan-India Reach"
+        metric: "100% Pan-India Reach",
+        illustration: "Pics/illustrations/pan_india_reach.svg"
       }
     ]
   },
@@ -335,19 +338,22 @@ const DEFAULT_SLIDES = [
         title: "Custom Mobile Apps (Android & iOS)",
         icon: "📱",
         body: "Fast, simple mobile apps for your field staff, dealers, or customers that require zero technical training.",
-        metric: "Simple & Intuitive"
+        metric: "Simple & Intuitive",
+        illustration: "Pics/illustrations/custom_mobile_apps.svg"
       },
       {
         title: "Smart Web Portals & SaaS",
         icon: "💻",
         body: "Live dashboards, automated PDF invoicing, and real-time operational tracking accessible securely from any device.",
-        metric: "Real-Time Control"
+        metric: "Real-Time Control",
+        illustration: "Pics/illustrations/smart_web_portals.svg"
       },
       {
         title: "Document & Communication Automation",
         icon: "⚡",
         body: "Scan cards, documents, PDFs, and Excel in less than 3 seconds. Trigger WhatsApp and Email follow-ups automatically.",
-        metric: "10x Operational Speed"
+        metric: "10x Operational Speed",
+        illustration: "Pics/illustrations/doc_comm_automation.svg"
       }
     ]
   },
