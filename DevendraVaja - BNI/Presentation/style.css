@@ -1358,8 +1358,8 @@ main {
 /* 9. INSTRUCTOR / PRESENTER SLIDE */
 .instructor-slide-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 30px;
+  grid-template-columns: 310px 1fr;
+  gap: 24px;
   height: 100%;
   align-items: stretch;
 }
@@ -1368,7 +1368,7 @@ main {
   background: white;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 24px;
+  padding: 16px 14px;
   text-align: center;
   box-shadow: var(--card-shadow);
   display: flex;
@@ -1379,19 +1379,19 @@ main {
 }
 
 .instructor-avatar-img {
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top center;
   border: 4px solid var(--primary-light);
-  box-shadow: 0 6px 16px rgba(15, 41, 66, 0.18);
-  margin-bottom: 14px;
+  box-shadow: 0 8px 24px rgba(15, 41, 66, 0.22);
+  margin-bottom: 10px;
 }
 
 .instructor-avatar-fallback {
-  width: 130px;
-  height: 130px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
@@ -1399,9 +1399,9 @@ main {
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .instructor-avatar-card h3 {
