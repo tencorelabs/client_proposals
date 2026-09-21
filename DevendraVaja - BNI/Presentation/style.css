@@ -1527,8 +1527,8 @@ main {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: var(--radius-sm);
-  padding: 4px 6px;
-  height: 32px;
+  padding: 3px 6px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1545,11 +1545,10 @@ main {
 }
 
 .company-pill-logo {
-  max-height: 22px;
+  max-height: 26px;
   max-width: 92%;
   width: auto;
   object-fit: contain;
-  filter: contrast(1.05);
 }
 
 .company-pill-text {
