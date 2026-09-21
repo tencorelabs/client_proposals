@@ -80,7 +80,7 @@ const THEME_CONFIG = {
   textSecondary: "#475569"
 };
 
-// 4. SLIDES CATALOG (10 Engaging, Plain-Language BNI Slides)
+// 4. SLIDES CATALOG (9 Engaging, Plain-Language BNI Slides)
 const DEFAULT_SLIDES = [
   // Slide 1: Title Cover
   {
@@ -89,7 +89,7 @@ const DEFAULT_SLIDES = [
     subtitle: "Turning Your Daily Manual Headaches into Automated Business Growth & Peace of Mind",
     meta: [
       { label: "SPEAKER", value: "Devendra Vaja", sub: "Founder & Systems Architect" },
-      { label: "CORE FOCUS", value: "Mobile Apps • AI SaaS • WhatsApp Automation", sub: "Tailor-Made for Your Business" },
+      { label: "CORE FOCUS", value: "Mobile Apps • SaaS • Automation", sub: "Tailor-Made for Your Business" },
       { label: "PURPOSE", value: "BNI Feature Presentation", sub: "Grow Together Through Tech" }
     ]
   },
@@ -105,7 +105,7 @@ const DEFAULT_SLIDES = [
     instructorPillars: BRAND_CONFIG.founder.pillars
   },
 
-  // Slide 3: SafetySetu Product Highlight
+  // Slide 3: SafetySetu Product Highlight (Screen Share & UPI Protection)
   {
     layout: "threecard",
     title: "SafetySetu: Stop UPI Scams Before Money Leaves Your Account",
@@ -118,106 +118,75 @@ const DEFAULT_SLIDES = [
         metric: "Sub-15ms Protection"
       },
       {
-        title: "Fake APK & Phishing Interceptor",
+        title: "Real-Time Payment Interceptor",
         icon: "🛡️",
-        body: "Scans malicious sideloaded APKs, fake electricity bill notices, and dangerous phishing links locally before you accidentally tap them.",
-        metric: "Instant Threat Scan"
+        body: "Monitors active payment interfaces and suspicious overlay windows locally on the smartphone before unauthorized transfers occur.",
+        metric: "Instant Threat Freeze"
       },
       {
         title: "100% Privacy — Zero Cloud Leakage",
         icon: "🔒",
-        body: "Runs completely on your smartphone device. Zero passwords, OTPs, or contact logs are ever uploaded to any cloud server.",
+        body: "Runs completely on your smartphone device. Zero passwords, OTPs, or bank details are ever uploaded to any cloud server.",
         metric: "100% On-Device Privacy"
       }
     ]
   },
 
-  // Slide 4: Case Study: Preksha Insurance (InsuranceSetu)
+  // Slide 4: Case Study: Preksha Insurance Requirements & InsuranceSetu Concept
   {
     layout: "twocol",
-    title: "Real Case Study: How Preksha Insurance Automated in 1 Click",
-    subtitle: "How we turned a solo agency's manual Excel nightmare into a 60-second automated revenue machine.",
+    title: "Case Study: Preksha Insurance Requirements & Concept",
+    subtitle: "How we studied a solo agency's manual workflow and conceptualized the InsuranceSetu automation product.",
     leftCol: {
-      title: "Preksha Insurance (Manual Friction)",
-      badge: "BEFORE AUTOMATION",
+      title: "Preksha Insurance (Current Manual Reality)",
+      badge: "THE WORKFLOW CHALLENGE",
       bullets: [
-        "<strong>10+ Hours Lost in Excel:</strong> Manually typing hundreds of policy rows from messy LIC PDF due lists into spreadsheets every month.",
-        "<strong>Zero Contact Numbers:</strong> Insurer due lists gave policy numbers but no phone numbers — finding each contact was exhausting.",
-        "<strong>Missed Grace Periods:</strong> English-only SMS blasts had poor response; forgotten grace periods led to permanently lapsed commissions.",
-        "<strong>Solo Agent Bottleneck:</strong> The owner was trapped doing clerical data entry instead of meeting new clients and closing business."
+        "<strong>Manual PDF & Excel Review:</strong> Spends 1–2 hours monthly reviewing messy insurer PDF due lists and spreadsheets for follow-ups.",
+        "<strong>Painful Contact Maintenance:</strong> Insurer due lists provide policy numbers but zero phone numbers — manually searching and maintaining contact lists is a big headache.",
+        "<strong>Divided Founder Focus:</strong> Instead of solely focusing on business growth and meeting clients, the owner must divide focus on manual follow-ups and spreadsheet data management.",
+        "<strong>Single-Blast Limitations:</strong> Manual follow-up lacks automated 2nd/3rd grace period alerts, leaving renewals at risk."
       ]
     },
     rightCol: {
-      title: "With InsuranceSetu (Delivered Result)",
-      badge: "WHAT WE DELIVERED",
+      title: "The InsuranceSetu Product Concept",
+      badge: "HOW WE SOLVED IT",
       bullets: [
-        "<strong>1-Click PDF Ingestion:</strong> Drag & drop the PDF due list — all policy data and math verified in under 3 seconds.",
-        "<strong>Smart Indian Name Matcher:</strong> Instantly links policy numbers to phone contacts using fuzzy phonetic matching.",
-        "<strong>Multilingual WhatsApp Outreach:</strong> Sends personalized Gujarati, Hindi, Marathi, & English notices with branded PDF receipts.",
-        "<strong>Saved 3 Days Every Month:</strong> Zero extra staff hired, 30% higher renewal collection, and more time to close high-value sales!"
+        "<strong>1-Click PDF Ingestion:</strong> Ingests complex tabular due lists with sub-second extraction and verified mathematical audit.",
+        "<strong>Smart Phonetic Contact Matcher:</strong> Instantly connects policyholder names to phone contacts using fuzzy matching.",
+        "<strong>Multi-Touch Multilingual WhatsApp:</strong> Auto-schedules personalized Gujarati, Hindi, Marathi, & English notices with branded PDF receipts.",
+        "<strong>Saves 3 Days for 500+ Policy Books:</strong> Saves 3 full working days every month for agencies with 500+ policies, and eliminates manual contact hunting for solo advisors."
       ]
     }
   },
 
-  // Slide 5: Cross-Industry Applications (Part 1)
+  // Slide 5: Cross-Industry Applications (Combined Comprehensive Slide)
   {
-    layout: "fourcard",
-    title: "How Can Automation Help YOUR Business? (Part 1)",
+    layout: "twocol",
+    title: "How Can This Automation Help YOUR Specific Business?",
     subtitle: "If you have manual customer follow-ups, documents, or status tracking — we can automate it for you!",
-    cards: [
-      {
-        title: "Sugar Substitute / FMCG / Trading",
-        icon: "🍬",
-        body: "Automate weekly dealer re-order reminders on WhatsApp, track dispatch statuses, and send payment outstanding alerts automatically."
-      },
-      {
-        title: "Immigration & Visa Consultancy",
-        icon: "✈️",
-        body: "Automate client document checklist reminders, track multi-stage visa application progress, and notify students & families on WhatsApp."
-      },
-      {
-        title: "Jewellery & Luxury Retail",
-        icon: "💎",
-        body: "Broadcast daily gold rate updates on WhatsApp, track custom jewellery manufacturing milestones, and send automated anniversary wishes."
-      },
-      {
-        title: "Travel & Tourism",
-        icon: "🗺️",
-        body: "1-Click WhatsApp delivery of day-wise itineraries, instant hotel voucher sharing, and real-time cab driver pickup coordination."
-      }
-    ]
+    leftCol: {
+      title: "Trading, Travel, Manufacturing & Visas",
+      badge: "BUSINESS WORKFLOWS",
+      bullets: [
+        "<strong>🍬 Sugar Substitute / FMCG / Trading:</strong> Automated weekly dealer re-order reminders on WhatsApp, dispatch alerts & payment follow-ups.",
+        "<strong>✈️ Immigration & Visa Consultancy:</strong> Automated applicant document checklists, stage-by-stage visa tracking & WhatsApp status alerts.",
+        "<strong>🗺️ Travel & Tourism:</strong> 1-Click WhatsApp itinerary delivery, hotel voucher dispatch & real-time cab driver coordination.",
+        "<strong>🏭 Plastic & Product Manufacturing:</strong> B2B sample dispatch tracking, quote approvals, client feedback & shift logs on a simple mobile app."
+      ]
+    },
+    rightCol: {
+      title: "Finance, Legal, Tax & Operations",
+      badge: "PROFESSIONAL SERVICES",
+      bullets: [
+        "<strong>💰 Finance & Loan Approval Cycle:</strong> Mobile intake for customer KYC documents, multi-stage approval checkmarks & sanction alerts.",
+        "<strong>⚖️ Lawyers & Legal Consultations:</strong> Automated court hearing date reminders to clients & case file digital indexing.",
+        "<strong>📊 Taxation, CAs & Corporate Gifting:</strong> Automated GST/ITR filing deadline alerts, client document upload vaults & festival gifting catalogues.",
+        "<strong>📍 Attendance & Field Staff Tracking:</strong> 1-Tap mobile/GPS attendance, field visit logs & real-time team task updates."
+      ]
+    }
   },
 
-  // Slide 6: Cross-Industry Applications (Part 2)
-  {
-    layout: "fourcard",
-    title: "How Can Automation Help YOUR Business? (Part 2)",
-    subtitle: "Eliminate repetitive paperwork, speed up team approvals, and never let a customer inquiry go cold.",
-    cards: [
-      {
-        title: "Plastic & Industrial Manufacturing",
-        icon: "🏭",
-        body: "Track B2B product sample dispatch, quote approvals, client feedback, and factory machine shift logs on a simple mobile app."
-      },
-      {
-        title: "Finance & Loan Approval Cycle",
-        icon: "💰",
-        body: "Mobile intake for customer KYC documents, multi-stage approval checkmarks, and automated loan sanction notifications."
-      },
-      {
-        title: "Lawyers & Legal Consultations",
-        icon: "⚖️",
-        body: "Automated court hearing date reminders to clients, case file digital indexing, and WhatsApp fee collection notices."
-      },
-      {
-        title: "Taxation, CAs & Corporate Gifting",
-        icon: "📊",
-        body: "Automated GST/ITR filing deadline alerts, client document upload vaults, and interactive festival corporate gifting catalogues."
-      }
-    ]
-  },
-
-  // Slide 7: The PAN-India Language Barrier Solved
+  // Slide 6: The PAN-India Language Barrier Solved
   {
     layout: "threecard",
     title: "Doing Business Across India? Break the Language Barrier!",
@@ -230,7 +199,7 @@ const DEFAULT_SLIDES = [
         metric: "65% Customer Friction"
       },
       {
-        title: "TenCore Multi-Lingual AI",
+        title: "TenCore Multi-Lingual Engine",
         icon: "🌐",
         body: "We build custom systems that communicate in the client's mother tongue — WhatsApp text and audio voice alerts in Gujarati, Hindi, Marathi, Telugu, Tamil, & more.",
         metric: "10+ Indian Languages"
@@ -244,7 +213,7 @@ const DEFAULT_SLIDES = [
     ]
   },
 
-  // Slide 8: Interactive Reflection: What If You Are Stuck?
+  // Slide 7: Interactive Reflection: What If You Are Stuck?
   {
     layout: "fourcard",
     title: "Let's Ask: Are You Stuck in Any of These Situations?",
@@ -273,11 +242,11 @@ const DEFAULT_SLIDES = [
     ]
   },
 
-  // Slide 9: TenCore Digital Labs as the Tailor-Made Problem Solver
+  // Slide 8: TenCore Digital Labs as the Tailor-Made Problem Solver
   {
     layout: "threecard",
     title: "TenCore Digital Labs: Tailor-Made Solutions for You",
-    subtitle: "We don't force you into rigid software. We build software and AI tools fitted exactly around YOUR business workflow.",
+    subtitle: "We don't force you into rigid software. We build software and custom automation fitted exactly around YOUR business workflow.",
     cards: [
       {
         title: "Custom Mobile Apps (Android & iOS)",
@@ -292,15 +261,15 @@ const DEFAULT_SLIDES = [
         metric: "Real-Time Control"
       },
       {
-        title: "AI & WhatsApp Automation",
+        title: "Document & Communication Automation",
         icon: "⚡",
-        body: "Scan visiting cards in 3s, extract PDF tables, and trigger multi-lingual WhatsApp workflows automatically.",
+        body: "Scan cards, documents, PDFs, and Excel in less than 3 seconds. Trigger WhatsApp and Email follow-ups automatically.",
         metric: "10x Operational Speed"
       }
     ]
   },
 
-  // Slide 10: Closing & 1-to-1 Call to Action
+  // Slide 9: Closing & 1-to-1 Call to Action
   {
     layout: "qa",
     title: "Let's Book a 1-to-1 Meeting & Free Automation Audit",
