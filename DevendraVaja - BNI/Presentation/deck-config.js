@@ -170,26 +170,26 @@ const DEFAULT_SLIDES = [
   // Slide 4: Case Study: Preksha Insurance Requirements & InsuranceSetu Concept
   {
     layout: "twocol",
-    title: "Case Study: Preksha Insurance Requirements & Concept",
-    subtitle: "How we studied a solo agency's manual workflow and conceptualized the InsuranceSetu automation product.",
+    title: "Case Study: How We Solved Real Agency Problems",
+    subtitle: "How we turned a solo insurance agency's painful manual routine into the InsuranceSetu automation product.",
     leftCol: {
-      title: "Preksha Insurance (Current Manual Reality)",
-      badge: "THE WORKFLOW CHALLENGE",
+      title: "Preksha Insurance (Manual Daily Pain)",
+      badge: "THE CHALLENGE",
       bullets: [
-        "<strong>Manual PDF & Excel Review:</strong> Spends 1–2 hours monthly reviewing messy insurer PDF due lists and spreadsheets for follow-ups.",
-        "<strong>Painful Contact Maintenance:</strong> Insurer due lists provide policy numbers but zero phone numbers — manually searching and maintaining contact lists is a big headache.",
-        "<strong>Divided Founder Focus:</strong> Instead of solely focusing on business growth and meeting clients, the owner must divide focus on manual follow-ups and spreadsheet data management.",
-        "<strong>Single-Blast Limitations:</strong> Manual follow-up lacks automated 2nd/3rd grace period alerts, leaving renewals at risk."
+        "<strong>Messy PDF Statements:</strong> Insurer statements come in cluttered PDF tables with policy numbers but <strong>zero customer phone numbers</strong>.",
+        "<strong>Manual Contact Hunting:</strong> Must manually dig through old spreadsheets and phone contacts just to find who to follow up with.",
+        "<strong>Lost Business Growth Time:</strong> Agency owner wastes hours every month doing repetitive clerical lookup instead of meeting new clients.",
+        "<strong>Missed Renewals:</strong> Without systematic automated reminders, clients miss grace periods and policies lapse."
       ]
     },
     rightCol: {
-      title: "The InsuranceSetu Product Concept",
-      badge: "HOW WE SOLVED IT",
+      title: "The InsuranceSetu Solution",
+      badge: "THE AUTOMATED OUTCOME",
       bullets: [
-        "<strong>1-Click PDF Ingestion:</strong> Ingests complex tabular due lists with sub-second extraction and verified mathematical audit.",
-        "<strong>Smart Phonetic Contact Matcher:</strong> Instantly connects policyholder names to phone contacts using fuzzy matching.",
-        "<strong>Multi-Touch Multilingual WhatsApp:</strong> Auto-schedules personalized Gujarati, Hindi, Marathi, & English notices with branded PDF receipts.",
-        "<strong>Saves 3 Days for 500+ Policy Books:</strong> Saves 3 full working days every month for agencies with 500+ policies, and eliminates manual contact hunting for solo advisors."
+        "<strong>1-Click PDF Extraction:</strong> Drop any insurer PDF statement — all policy data is extracted and organized in 2 seconds.",
+        "<strong>Smart Auto Contact Match:</strong> Automatically links each policyholder to their phone contact with zero manual searching.",
+        "<strong>1-Tap Multilingual WhatsApp:</strong> Auto-sends personalized payment reminders in Gujarati, Hindi, & English with PDF receipts.",
+        "<strong>Saves 3 Days Every Month:</strong> Frees up 3 full working days every month for agencies with 500+ policies."
       ]
     }
   },

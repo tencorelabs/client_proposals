@@ -673,7 +673,7 @@ main {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 22px;
+  padding: 24px 26px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -685,6 +685,42 @@ main {
 .col-card.highlight {
   border-color: #99f6e4;
   background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.08);
+}
+
+.col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.col-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.col-badge {
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.col-badge.badge-primary {
+  background: #0f2942;
+  color: #ffffff;
+  border-color: #0f2942;
 }
 
 .slide-image-box {
@@ -737,25 +773,37 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 .bullet-list li {
   position: relative;
-  padding-left: 20px;
+  padding-left: 24px;
   font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
+  font-size: 0.94rem;
+  color: #334155;
+  line-height: 1.55;
+}
+
+.bullet-list li strong {
+  color: var(--primary-dark);
+  font-weight: 700;
 }
 
 .bullet-list li::before {
-  content: "•";
+  content: "▸";
   position: absolute;
-  left: 4px;
-  color: var(--primary);
-  font-size: 1.15rem;
-  line-height: 1;
+  left: 2px;
+  top: 1px;
+  color: var(--secondary);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.col-card.highlight .bullet-list li::before {
+  color: #0d9488;
 }
 
 /* 4. THREE CARD GRID LAYOUT */
