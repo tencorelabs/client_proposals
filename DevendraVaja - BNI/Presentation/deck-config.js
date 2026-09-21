@@ -405,28 +405,24 @@ const DEFAULT_SLIDES = [
         {
           icon: "🗣️",
           title: '"My staff spends hours on Excel every day..."',
-          desc: "Manual tallying, late-night reporting & WhatsApp chaos",
           bg: "#eff6ff",
           border: "#bfdbfe"
         },
         {
           icon: "🗣️",
           title: '"We lost a deal because we forgot to follow up..."',
-          desc: "Sales quotes stuck in inbox without automated customer nudges",
           bg: "#fef2f2",
           border: "#fecaca"
         },
         {
           icon: "🗣️",
           title: '"Standard generic software doesn’t fit our workflow..."',
-          desc: "Rigid off-the-shelf software vs. tailor-made operational fit",
           bg: "#fffbeb",
           border: "#fef3c7"
         },
         {
           icon: "🗣️",
           title: '"We want our own branded mobile app..."',
-          desc: "Custom Android & iOS apps for customers, dealers & field staff",
           bg: "#f0fdfa",
           border: "#ccfbf1"
         }
@@ -439,28 +435,25 @@ const DEFAULT_SLIDES = [
     layout: "threecard",
     categoryBadge: "Givers Gain • Chapter Contribution",
     title: "My Give: How I Support Our Chapter Members",
-    subtitle: "I believe in Givers Gain — here is how I bring direct value, security, and growth to our chapter.",
+    subtitle: "I believe in Givers Gain — here is how I bring direct value and support to every member in our chapter.",
     cards: [
       {
         title: "Free 20-Min Automation Audit",
         icon: "🔍",
-        body: "Book a 1-to-1 with me. I will analyze your manual daily operations and give you a free, clear automation blueprint with zero obligation.",
-        metric: "100% Free for Members",
-        illustration: "Pics/illustrations/smart_web_portals.svg"
+        body: "1-to-1 operational diagnosis to identify your manual bottlenecks and provide a clear automation roadmap — 100% free with zero obligation.",
+        metric: "Free 1-to-1 for Members"
       },
       {
-        title: "SafetySetu Cyber & Fraud Defense",
+        title: "SafetySetu Fraud Defense",
         icon: "🛡️",
-        body: "Complimentary smartphone safety audit and fraud defense guidance for your family, employees, and high-value business bank accounts.",
-        metric: "Peace of Mind",
-        illustration: "Pics/illustrations/payment_intercept.svg"
+        body: "Complimentary smartphone safety audit and UPI payment fraud protection for your family, key employees, and business bank accounts.",
+        metric: "Digital Peace of Mind"
       },
       {
-        title: "High-Quality Enterprise Connections",
+        title: "High-Value Warm Connections",
         icon: "🤝",
-        body: "Leveraging 24+ years of global systems pedigree across India, USA, and Japan to open doors and pass high-trust business referrals.",
-        metric: "Global Network",
-        illustration: "Pics/illustrations/doc_comm_automation.svg"
+        body: "Leveraging 24+ years of systems engineering pedigree across India, USA, and Japan to pass high-trust business referrals.",
+        metric: "Active Networker"
       }
     ]
   },

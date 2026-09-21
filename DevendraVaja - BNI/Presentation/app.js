@@ -323,7 +323,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
                   </div>
                   <div class="industry-tile-content">
                     <h4>${it.title}</h4>
-                    <p>${it.desc}</p>
+                    ${it.desc ? `<p>${it.desc}</p>` : ''}
                   </div>
                 </div>
               `).join('')}
