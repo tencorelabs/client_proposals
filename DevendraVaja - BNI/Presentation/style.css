@@ -1500,53 +1500,53 @@ main {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 8px 12px;
+  padding: 10px 14px;
   margin-top: 4px;
 }
 
 .company-pedigree-header {
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .company-logo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  gap: 8px;
 }
 
 .company-badge-pill {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: var(--radius-sm);
-  padding: 3px 6px;
-  height: 36px;
+  padding: 4px 10px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   overflow: hidden;
 }
 
 .company-badge-pill:hover {
   border-color: var(--secondary);
   background: #f0f9ff;
-  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.15);
-  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.18);
+  transform: translateY(-2px);
 }
 
 .company-pill-logo {
-  max-height: 26px;
-  max-width: 92%;
+  max-height: 36px;
+  max-width: 94%;
   width: auto;
   object-fit: contain;
 }
