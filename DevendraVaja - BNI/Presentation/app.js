@@ -272,8 +272,22 @@ function generateSlideHTML(slide, index, extraClass = '') {
                 <div class="instructor-avatar-fallback" style="display:none;">${f.avatarInitials || 'DV'}</div>
                 <h3>${name}</h3>
                 <p>${role}</p>
-                <div style="font-size: 0.76rem; color: var(--text-secondary); margin-top: 10px; line-height: 1.4;">
+                <div style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.35;">
                   ${tagline}
+                </div>
+                <div class="instructor-global-flags">
+                  <div class="global-flag-pill" title="India">
+                    <img src="Pics/flags/india.svg" alt="India" class="flag-img">
+                    <span>India</span>
+                  </div>
+                  <div class="global-flag-pill" title="Japan">
+                    <img src="Pics/flags/japan.svg" alt="Japan" class="flag-img">
+                    <span>Japan</span>
+                  </div>
+                  <div class="global-flag-pill" title="USA">
+                    <img src="Pics/flags/usa.svg" alt="USA" class="flag-img">
+                    <span>USA</span>
+                  </div>
                 </div>
               </div>
               <div class="instructor-details-card">
