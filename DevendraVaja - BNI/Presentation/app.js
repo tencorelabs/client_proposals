@@ -272,7 +272,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
                 <div class="instructor-avatar-fallback" style="display:none;">${f.avatarInitials || 'DV'}</div>
                 <h3>${name}</h3>
                 <p>${role}</p>
-                <div style="font-size: 0.74rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.35;">
+                <div class="instructor-tagline-text">
                   ${tagline}
                 </div>
                 <div class="instructor-global-flags">
