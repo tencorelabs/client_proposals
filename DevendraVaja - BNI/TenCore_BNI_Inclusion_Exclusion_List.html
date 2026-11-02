@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TenCore Digital Labs - BNI Scope of Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 14mm 14mm 14mm 14mm;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #0f172a;
+      background-color: #ffffff;
+      line-height: 1.45;
+      font-size: 12.5px;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      min-height: 260mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2.5px solid #0d9488;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .company-title h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+
+    .company-title p {
+      font-size: 11px;
+      color: #0d9488;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .header-badge {
+      text-align: right;
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      padding: 8px 14px;
+      border-radius: 8px;
+    }
+
+    .header-badge .badge-title {
+      font-size: 10px;
+      font-weight: 700;
+      color: #0f766e;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-badge .badge-category {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    /* Section Styles */
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid #e2e8f0;
+    }
+
+    .section-title.inclusion {
+      color: #0d9488;
+      border-bottom-color: #99f6e4;
+    }
+
+    .section-title.exclusion {
+      color: #e11d48;
+      border-bottom-color: #fecdd3;
+    }
+
+    .section-title.synergy {
+      color: #0284c7;
+      border-bottom-color: #bae6fd;
+    }
+
+    .icon-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .icon-box.inc {
+      background: #ccfbf1;
+      color: #0f766e;
+    }
+
+    .icon-box.exc {
+      background: #ffe4e6;
+      color: #be123c;
+    }
+
+    .icon-box.syn {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    /* Grid Layout for Inclusions */
+    .inclusions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      position: relative;
+    }
+
+    .card.highlight {
+      background: #f0fdfa;
+      border-color: #99f6e4;
+      margin-top: 4px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .card-tag {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      color: #475569;
+    }
+
+    .card-tag.primary {
+      background: #0d9488;
+      color: #ffffff;
+    }
+
+    .card-tag.accent {
+      background: #4f46e5;
+      color: #ffffff;
+    }
+
+    .card-tag.special {
+      background: #0284c7;
+      color: #ffffff;
+    }
+
+    .card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .card ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .card li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 5px;
+      font-size: 11.5px;
+      color: #334155;
+      line-height: 1.35;
+    }
+
+    .card li:last-child {
+      margin-bottom: 0;
+    }
+
+    .card li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #0d9488;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .card.highlight li::before {
+      color: #0284c7;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .highlight-pill {
+      background: #ffffff;
+      border: 1px solid #ccfbf1;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    .highlight-pill strong {
+      font-size: 11.5px;
+      color: #0f766e;
+      display: block;
+      margin-bottom: 3px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .highlight-pill span {
+      font-size: 10.5px;
+      color: #475569;
+      line-height: 1.3;
+      display: block;
+    }
+
+    /* Exclusions Table */
+    .exclusions-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4px;
+      background: #ffffff;
+      border: 1px solid #fecdd3;
+      border-radius: 8px;
+      overflow: hidden;
+      font-size: 11.5px;
+      margin-bottom: 16px;
+    }
+
+    .exclusions-table th {
+      background: #fff1f2;
+      color: #9f1239;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      text-align: left;
+      padding: 9px 12px;
+      border-bottom: 1px solid #fecdd3;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .exclusions-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+      color: #334155;
+      line-height: 1.35;
+    }
+
+    .exclusions-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .exclusions-table tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    .seat-badge {
+      display: inline-block;
+      font-weight: 700;
+      color: #be123c;
+      background: #ffe4e6;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10.5px;
+    }
+
+    /* Synergy Cards */
+    .synergy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .synergy-card {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .synergy-card h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .synergy-card p {
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.35;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1.5px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: #64748b;
+    }
+
+    .footer-left strong {
+      color: #0f172a;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-tag {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: INCLUSIONS & CORE VALUE PROPOSITION -->
+  <div class="page">
+    <div>
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-area">
+          <img src="tencore_small_logo.png" alt="TenCore Digital Labs Logo" class="logo-img">
+          <div class="company-title">
+            <h1>TenCore Digital Labs</h1>
+            <p>Product Engineering & Intelligent Software</p>
+          </div>
+        </div>
+        <div class="header-badge">
+          <div class="badge-title">BNI Classification Scope</div>
+          <div class="badge-category">Mobile App & SaaS Product Development</div>
+        </div>
+      </header>
+
+      <!-- SECTION 1: INCLUSIONS -->
+      <section>
+        <div class="section-title inclusion">
+          <span class="icon-box inc">✓</span>
+          <span>1. INCLUSION LIST (What TenCore Digital Labs Covers & Claims)</span>
+        </div>
+
+        <div class="inclusions-grid">
+          
+          <!-- Pillar A: Mobile App Development -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag primary">Core Seat</span>
+              <h3>A. Mobile Application Development</h3>
+            </div>
+            <ul>
+              <li><strong>Native & Cross-Platform Apps:</strong> Swift, SwiftUI, Kotlin, Flutter, and React Native for iOS & Android devices.</li>
+              <li><strong>Mobile UI/UX Design:</strong> Wireframes, interactive Figma prototypes, and Apple HIG / Material Design systems.</li>
+              <li><strong>App Store Deployment & ASO:</strong> Full Apple App Store and Google Play compliance, certificates, and release management.</li>
+              <li><strong>Maintenance & OS Modernization:</strong> Legacy code refactoring, OS version updates, crash tracking, and SLA support.</li>
+            </ul>
+          </div>
+
+          <!-- Pillar B: SaaS Product Engineering -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag accent">Product Engineering</span>
+              <h3>B. SaaS Platform Development</h3>
+            </div>
+            <ul>
+              <li><strong>Multi-Tenant SaaS Architecture:</strong> Full-stack engineering for B2B/B2C cloud platforms with subscription billing & role management.</li>
+              <li><strong>Mobile-First & Companion Apps:</strong> Native iOS/Android companion applications for web SaaS platforms.</li>
+              <li><strong>Rapid MVP Prototyping:</strong> Accelerated design and engineering sprints for founders launching commercial products.</li>
+              <li><strong>Scalable Cloud Backends:</strong> Node.js, Python, PostgreSQL, serverless backends, and GraphQL/REST APIs.</li>
+            </ul>
+          </div>
+
+          <!-- Pillar C: Agentic AI -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag special">AI Implementation</span>
+              <h3>C. Agentic AI & Intelligent App Engineering</h3>
+            </div>
+            <ul>
+              <li><strong>Autonomous Agent Systems:</strong> Engineering autonomous task bots, multi-agent orchestrations, and intelligent co-pilots.</li>
+              <li><strong>AI-Powered Product Features:</strong> Embedding LLMs, computer vision, voice agents, and predictive workflows into apps.</li>
+              <li><strong>Process Automation Agents:</strong> Custom software agents designed to automate complex, multi-step digital operations.</li>
+            </ul>
+          </div>
+
+          <!-- Pillar D: Gateway Feasibility Audit -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag primary">Referral Gateway</span>
+              <h3>D. Technical Feasibility Assessments</h3>
+            </div>
+            <ul>
+              <li><strong>Concept & Architecture Validation:</strong> Assessing commercial & technical feasibility before coding begins.</li>
+              <li><strong>AI Reliability Check:</strong> Identifying practical automations vs. high-risk LLM failure points for businesses.</li>
+              <li><strong>Tech Stack & Cost Roadmaps:</strong> Providing founders with clear MVP timelines and architectural blueprints.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Highlight Banner: Free 30-Min Audit -->
+        <div class="card highlight">
+          <div class="card-header">
+            <span class="card-tag special">Door-Opener Referral Hook</span>
+            <h3>Signature Chapter Hook: Complimentary 30-Minute AI & App Feasibility Audit</h3>
+          </div>
+          <div class="highlight-grid">
+            <div class="highlight-pill">
+              <strong>1. Technical Feasibility</strong>
+              <span>Validates whether the app or AI workflow is viable, performant, and scalable.</span>
+            </div>
+            <div class="highlight-pill">
+              <strong>2. Architecture & Stack</strong>
+              <span>Recommends optimal framework (Native vs. Flutter, Cloud & AI models).</span>
+            </div>
+            <div class="highlight-pill">
+              <strong>3. MVP Timeline & Budget</strong>
+              <span>Delivers realistic build milestones and cost estimates for decision-makers.</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- Footer Page 1 -->
+    <footer class="footer">
+      <div class="footer-left">
+        <strong>TenCore Digital Labs</strong> • BNI Classification Scope • Page 1 of 2
+      </div>
+      <div class="footer-right">
+        <span class="footer-tag">tencorelabs@gmail.com</span>
+        <span class="footer-tag">www.tencorelabs.com</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- PAGE 2: EXCLUSIONS & CHAPTER COLLABORATION -->
+  <div class="page">
+    <div>
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-area">
+          <img src="tencore_small_logo.png" alt="TenCore Digital Labs Logo" class="logo-img">
+          <div class="company-title">
+            <h1>TenCore Digital Labs</h1>
+            <p>Product Engineering & Intelligent Software</p>
+          </div>
+        </div>
+        <div class="header-badge">
+          <div class="badge-title">Chapter Alignment</div>
+          <div class="badge-category">Exclusions & Power Team Synergy</div>
+        </div>
+      </header>
+
+      <!-- SECTION 2: EXCLUSIONS -->
+      <section>
+        <div class="section-title exclusion">
+          <span class="icon-box exc">✕</span>
+          <span>2. EXCLUSION LIST (Respecting Co-Members' Specialized Categories)</span>
+        </div>
+
+        <table class="exclusions-table">
+          <thead>
+            <tr>
+              <th style="width: 26%;">Service Area</th>
+              <th style="width: 26%;">Respected Category Seat</th>
+              <th style="width: 48%;">Explicit Exclusion (Passed to Co-Member)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Enterprise Internal IT & Legacy Systems</strong></td>
+              <td><span class="seat-badge">Custom Software</span></td>
+              <td>On-premise enterprise ERPs, SAP/Oracle extensions, custom internal desktop warehouse tools, and legacy desktop database migrations.</td>
+            </tr>
+            <tr>
+              <td><strong>Corporate AI Advisory & Training</strong></td>
+              <td><span class="seat-badge">AI Consultant</span></td>
+              <td>High-level corporate AI roadmaps, company-wide AI readiness audits, executive AI policy consulting, and employee AI training workshops.</td>
+            </tr>
+            <tr>
+              <td><strong>Standard Marketing Websites</strong></td>
+              <td><span class="seat-badge">Web Designer / Agency</span></td>
+              <td>WordPress, Wix, Squarespace, Webflow marketing brochure websites, basic CMS blogs, and informational static websites.</td>
+            </tr>
+            <tr>
+              <td><strong>Digital Marketing & Ads</strong></td>
+              <td><span class="seat-badge">Digital Marketer / SEO</span></td>
+              <td>Social media marketing management, Google/Meta paid ad campaigns, organic search SEO optimization, and email marketing.</td>
+            </tr>
+            <tr>
+              <td><strong>IT Support & Office Hardware</strong></td>
+              <td><span class="seat-badge">IT Managed Services (MSP)</span></td>
+              <td>Office networking, server room provisioning, local workstation maintenance, hardware repairs, and corporate IT helpdesks.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- SECTION 3: POWER TEAM COLLABORATION -->
+      <section>
+        <div class="section-title synergy">
+          <span class="icon-box syn">⇄</span>
+          <span>3. CROSS-REFERRAL BLUEPRINT (How We Win Together)</span>
+        </div>
+
+        <div class="synergy-grid">
+          <div class="synergy-card">
+            <h4>⇄ Collaboration with AI Consultant</h4>
+            <p><strong>We refer:</strong> Clients needing corporate AI readiness audits, model governance, and executive workshops.<br>
+            <strong>They refer:</strong> Clients needing production mobile apps, SaaS UI, or autonomous AI agents engineered and coded.</p>
+          </div>
+          <div class="synergy-card">
+            <h4>⇄ Collaboration with Custom Software</h4>
+            <p><strong>We refer:</strong> Inquiries for heavy desktop-based ERPs, internal factory logistics, and legacy database retrofits.<br>
+            <strong>They refer:</strong> Clients requiring native iOS/Android mobile clients or commercial consumer/B2B SaaS products.</p>
+          </div>
+        </div>
+
+        <div class="card" style="background: #f8fafc; border-color: #cbd5e1; margin-top: 6px;">
+          <div class="card-header">
+            <span class="card-tag primary">Chapter Value</span>
+            <h3>How to Spot a Referral for TenCore</h3>
+          </div>
+          <p style="font-size: 11.5px; color: #334155; line-height: 1.4;">
+            Listen for founders, executives, or business owners saying: <em>"We want an app for our business," "Our team needs to automate multi-step digital workflows,"</em> or <em>"We have a software product idea and need a technical build partner."</em>
+            Connect them to TenCore for a <strong>Free 30-Minute AI & App Feasibility Audit</strong>.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer Page 2 -->
+    <footer class="footer">
+      <div class="footer-left">
+        <strong>TenCore Digital Labs</strong> • BNI Classification Scope • Page 2 of 2
+      </div>
+      <div class="footer-right">
+        <span class="footer-tag">tencorelabs@gmail.com</span>
+        <span class="footer-tag">BNI Collaboration</span>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

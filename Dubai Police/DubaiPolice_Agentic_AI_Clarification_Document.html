@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dubai Police — Agentic AI Media Operations Platform | Alignment & Queries</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --navy-dark: #0A1929;
+    --navy-primary: #0F2942;
+    --navy-surface: #132F4C;
+    --blue-accent: #0284C7;
+    --blue-light: #E0F2FE;
+    --blue-border: #BAE6FD;
+    --emerald: #059669;
+    --emerald-light: #D1FAE5;
+    --amber: #D97706;
+    --amber-light: #FEF3C7;
+    --red: #DC2626;
+    --red-light: #FEE2E2;
+    --slate-50: #F8FAFC;
+    --slate-100: #F1F5F9;
+    --slate-200: #E2E8F0;
+    --slate-300: #CBD5E1;
+    --slate-400: #94A3B8;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-900: #0F172A;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #CBD5E1;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--slate-900);
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Page Wrapper for Screen & Print */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    margin: 15px auto;
+    background: #FFFFFF;
+    padding: 11mm 16mm 10mm 16mm;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    body {
+      background: none;
+      margin: 0;
+      padding: 0;
+    }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      page-break-after: always;
+      break-after: page;
+    }
+  }
+
+  /* Top Security Bar */
+  .security-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--navy-primary);
+    color: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .security-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #FCA5A5;
+  }
+
+  .security-tag::before {
+    content: "●";
+    color: var(--red);
+    font-size: 9pt;
+  }
+
+  .security-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8pt;
+    color: var(--slate-300);
+    letter-spacing: 0.04em;
+  }
+
+  /* Header Section */
+  .doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid var(--navy-primary);
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+
+  .header-left {
+    flex: 1;
+  }
+
+  .header-pretitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--blue-accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 3px;
+  }
+
+  .header-title {
+    font-size: 16pt;
+    font-weight: 800;
+    color: var(--navy-dark);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .header-subtitle {
+    font-size: 9.5pt;
+    color: var(--slate-600);
+    margin-top: 3px;
+    font-weight: 500;
+  }
+
+  .header-badge-box {
+    text-align: right;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--slate-600);
+    background: var(--slate-50);
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--slate-200);
+    line-height: 1.4;
+  }
+
+  .header-badge-box strong {
+    color: var(--navy-primary);
+    font-size: 8pt;
+  }
+
+  /* Body Content Container */
+  .page-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Callout Banner */
+  .callout-box {
+    background: linear-gradient(135deg, var(--navy-surface) 0%, var(--navy-primary) 100%);
+    color: #FFFFFF;
+    border-radius: 6px;
+    padding: 9px 14px;
+    border-left: 4px solid var(--blue-accent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .callout-title {
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #38BDF8;
+  }
+
+  .callout-desc {
+    font-size: 8pt;
+    color: #E2E8F0;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+
+  /* Section Title */
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  .section-num {
+    background: var(--navy-primary);
+    color: #FFFFFF;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8pt;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  .section-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--navy-dark);
+    letter-spacing: -0.01em;
+  }
+
+  /* Agent Grid (Page 1) */
+  .agent-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 2px;
+  }
+
+  .agent-card {
+    background: var(--slate-50);
+    border: 1px solid var(--slate-200);
+    border-radius: 5px;
+    padding: 8px 10px;
+    border-top: 3px solid var(--blue-accent);
+  }
+
+  .agent-card.emerald { border-top-color: var(--emerald); }
+  .agent-card.amber { border-top-color: var(--amber); }
+  .agent-card.navy { border-top-color: var(--navy-primary); }
+
+  .agent-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  .agent-name {
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--navy-dark);
+  }
+
+  .agent-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: var(--slate-200);
+    color: var(--slate-700);
+  }
+
+  .agent-list {
+    list-style: none;
+    font-size: 7.8pt;
+    color: var(--slate-700);
+    line-height: 1.35;
+  }
+
+  .agent-list li {
+    position: relative;
+    padding-left: 11px;
+    margin-bottom: 2px;
+  }
+
+  .agent-list li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--blue-accent);
+    font-weight: bold;
+  }
+
+  /* Query Category Block */
+  .category-block {
+    background: #FFFFFF;
+    border: 1px solid var(--slate-200);
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 2px;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--slate-200);
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+
+  .category-title {
+    font-size: 9.2pt;
+    font-weight: 700;
+    color: var(--navy-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .category-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7pt;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--blue-light);
+    color: var(--blue-accent);
+    border: 1px solid var(--blue-border);
+  }
+
+  .query-item {
+    margin-bottom: 6px;
+  }
+
+  .query-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .query-label {
+    font-size: 8.2pt;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-bottom: 1px;
+  }
+
+  .query-context {
+    font-size: 7.5pt;
+    color: var(--slate-600);
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+
+  .query-text {
+    font-size: 7.8pt;
+    color: var(--navy-surface);
+    background: var(--slate-50);
+    padding: 4px 8px;
+    border-left: 2.5px solid var(--blue-accent);
+    border-radius: 0 3px 3px 0;
+    line-height: 1.35;
+  }
+
+  .query-text strong {
+    color: var(--navy-dark);
+  }
+
+  /* Table Styling */
+  .agenda-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.8pt;
+    margin-top: 4px;
+  }
+
+  .agenda-table th {
+    background: var(--navy-primary);
+    color: #FFFFFF;
+    font-weight: 600;
+    text-align: left;
+    padding: 5px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7.2pt;
+    letter-spacing: 0.04em;
+  }
+
+  .agenda-table td {
+    padding: 5px 8px;
+    border-bottom: 1px solid var(--slate-200);
+    color: var(--slate-700);
+    vertical-align: middle;
+  }
+
+  .agenda-table tr:nth-child(even) td {
+    background: var(--slate-50);
+  }
+
+  .agenda-table td strong {
+    color: var(--navy-dark);
+  }
+
+  /* Footer Section */
+  .doc-footer {
+    border-top: 1px solid var(--slate-200);
+    padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 6.8pt;
+    color: var(--slate-400);
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .footer-dot {
+    color: var(--red);
+  }
+
+  .footer-right {
+    font-weight: 600;
+    color: var(--slate-600);
+  }
+</style>
+</head>
+<body>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 1: SOLUTION UNDERSTANDING & CORE AGENTS -->
+  <!-- ========================================================================= -->
+  <div class="page">
+    <div>
+      <!-- Security Bar -->
+      <div class="security-banner">
+        <div class="security-tag">STRICTLY CONFIDENTIAL</div>
+        <div class="security-meta">FOR AUTHORIZED DUBAI POLICE STAKEHOLDERS ONLY</div>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <div class="header-left">
+          <div class="header-pretitle">Enterprise AI Advisory & Systems Architecture</div>
+          <h1 class="header-title">Dubai Police Agentic AI Media Operations</h1>
+          <div class="header-subtitle">Requirements Understanding & Strategic Alignment Queries for Q&amp;A Session</div>
+        </div>
+        <div class="header-badge-box">
+          <div><strong>REF NO:</strong> DP-AI-MEDIA-QA-2026</div>
+          <div><strong>DATE:</strong> October 2026</div>
+          <div><strong>STATUS:</strong> Client Review Draft</div>
+        </div>
+      </div>
+
+      <!-- Body Content -->
+      <div class="page-body">
+        
+        <!-- Operating Principle Callout -->
+        <div class="callout-box">
+          <div>
+            <div class="callout-title">Core Operating Principle: Guaranteed Zero Auto-Publish</div>
+            <div class="callout-desc">
+              Every AI-generated artifact remains in a staged draft state until explicitly verified, linguistically validated, and authorized through defined multi-tier Dubai Police human approval hierarchies.
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section-heading">
+          <span class="section-num">01</span>
+          <h2 class="section-title">Solution Scope & Functional Agent Architecture</h2>
+        </div>
+
+        <p style="font-size: 8.2pt; color: var(--slate-600); line-height: 1.4;">
+          The proposed solution establishes a human-governed multi-agent operational platform to accelerate official communications, standardize public campaign distribution, adapt outdoor screen formats, and safeguard public trust against emerging misinformation.
+        </p>
+
+        <!-- 4 Agents Grid -->
+        <div class="agent-grid">
+          
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <span class="agent-name">Agent 1: Media Release Agent</span>
+              <span class="agent-pill">NLP &amp; Translation</span>
+            </div>
+            <ul class="agent-list">
+              <li>Ingests raw operational facts, police logs, and incident briefs.</li>
+              <li>Generates high-precision Arabic drafts adhering to official UAE government protocol and penal terminology.</li>
+              <li>Produces idiomatic, context-accurate English adaptations.</li>
+              <li>Auto-generates verified social captions, excerpts, and official campaign hashtags.</li>
+            </ul>
+          </div>
+
+          <div class="agent-card emerald">
+            <div class="agent-card-header">
+              <span class="agent-name">Agent 2: Campaign Creative Agent</span>
+              <span class="agent-pill">Ideation &amp; Strategy</span>
+            </div>
+            <ul class="agent-list">
+              <li>Generates structured creative concepts for public awareness (e.g., cyber safety, traffic rules, narcotics prevention).</li>
+              <li>Develops memorable slogans, key messages, and teaser sequences.</li>
+              <li>Structures comprehensive visual creative briefs for media production.</li>
+              <li>Aligns campaign messaging with seasonal events and Dubai Police goals.</li>
+            </ul>
+          </div>
+
+          <div class="agent-card amber">
+            <div class="agent-card-header">
+              <span class="agent-name">Agent 3: Screen Adaptation Agent</span>
+              <span class="agent-pill">Visual Automation</span>
+            </div>
+            <ul class="agent-list">
+              <li>Ingests approved master visual artwork across campaigns.</li>
+              <li>Maps assets against Dubai digital screens (DOOH, LED highway banners, station kiosks, portrait totems).</li>
+              <li>Enforces visual safe zones, legibility distances, and aspect ratios.</li>
+              <li>Produces multi-screen verification preview sheets for final sign-off.</li>
+            </ul>
+          </div>
+
+          <div class="agent-card navy">
+            <div class="agent-card-header">
+              <span class="agent-name">Agent 4: Monitoring Intelligence Agent</span>
+              <span class="agent-pill">Sentiment &amp; Defense</span>
+            </div>
+            <ul class="agent-list">
+              <li>Continuously monitors authorized digital news streams and social feeds.</li>
+              <li>Performs sentiment classification and public safety topic tracking.</li>
+              <li>Detects velocity spikes in emerging rumors, fake news, or misinformation.</li>
+              <li>Generates structured situational alert dossiers and escalation summaries.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Section 2: Validation Pipeline -->
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 5px; padding: 7px 10px; margin-top: 6px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 7.2pt; font-weight: 700; color: var(--navy-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 5px;">
+            02 • Multi-Tier Human-Governed Validation Pipeline
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-size: 7.1pt; color: var(--slate-700); line-height: 1.25;">
+            <div style="background: #FFF; padding: 5px 6px; border-radius: 3px; border: 1px solid var(--slate-200);"><strong>1. Prompt Vault:</strong> Approved templates &amp; RAG context</div>
+            <div style="background: #FFF; padding: 5px 6px; border-radius: 3px; border: 1px solid var(--slate-200);"><strong>2. Safety Gateway:</strong> Azure AI Content Safety screening</div>
+            <div style="background: #FFF; padding: 5px 6px; border-radius: 3px; border: 1px solid var(--slate-200);"><strong>3. Reviewer Check:</strong> Editorial &amp; legal fact verification</div>
+            <div style="background: #FFF; padding: 5px 6px; border-radius: 3px; border: 1px solid var(--slate-200);"><strong>4. Approver Gate:</strong> Authorized final sign-off &amp; release</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <div class="footer-left">
+        <span class="footer-dot">●</span>
+        <span>CONFIDENTIAL • FOR TECHNICAL ALIGNMENT &amp; Q&amp;A ONLY</span>
+      </div>
+      <div>DUBAI POLICE AGENTIC AI MEDIA OPERATIONS</div>
+      <div class="footer-right">PAGE 1 OF 3</div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 2: CLARIFICATION QUERIES (CATEGORIES A, B, C) -->
+  <!-- ========================================================================= -->
+  <div class="page">
+    <div>
+      <!-- Security Bar -->
+      <div class="security-banner">
+        <div class="security-tag">STRICTLY CONFIDENTIAL</div>
+        <div class="security-meta">REF: DP-AI-MEDIA-QA-2026 • SECTION 03: QUERIES</div>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <div class="header-left">
+          <div class="header-pretitle">Technical Q&amp;A Session Agenda</div>
+          <h1 class="header-title">Technical Queries &amp; Scope Clarifications (Part 1)</h1>
+          <div class="header-subtitle">Key discussion points on AI capabilities, digital screen workflows, and external data dependencies.</div>
+        </div>
+        <div class="header-badge-box">
+          <div><strong>TARGET:</strong> Dubai Police Communications &amp; IT</div>
+          <div><strong>FOCUS:</strong> Accuracy, Media Assets &amp; Feeds</div>
+        </div>
+      </div>
+
+      <!-- Body Content -->
+      <div class="page-body">
+        
+        <!-- Category A -->
+        <div class="category-block">
+          <div class="category-header">
+            <span class="category-title">
+              <span>Category A: AI Generation, Linguistic Standards &amp; Accuracy</span>
+            </span>
+            <span class="category-badge">CRITICAL PATH</span>
+          </div>
+
+          <div class="query-item">
+            <div class="query-label">A.1 Arabic Dialect, Governmental Tone &amp; Protocol Calibration</div>
+            <div class="query-context">Dubai Police communications follow strict protocols regarding UAE government administrative phrasing, official rank honorifics, and exact penal code legal citations. Out-of-the-box LLMs typically default to generic Arabic.</div>
+            <div class="query-text">
+              <strong>Query:</strong> Will Dubai Police provide an official editorial style guide, terminology glossaries (prohibited vs. mandatory phrasing), and an archive of 500+ approved historical releases to calibrate the model's retrieval-augmented context (RAG)? Who within the communications team will act as the linguistic sign-off authority?
+            </div>
+          </div>
+
+          <div class="query-item">
+            <div class="query-label">A.2 Definition and Measurement of the "97%+ Target Accuracy" Metric</div>
+            <div class="query-context">Section 3.1 commits to a 97%+ accuracy rate. In generative natural language and creative copy, subjective editorial tweaks can blur the boundary of factual error versus stylistic preference.</div>
+            <div class="query-text">
+              <strong>Query:</strong> Is the 97% accuracy metric measured strictly on <em>deterministic correctness</em> (dates, locations, law article numbers, casualty figures, absence of hallucination) or on <em>first-pass acceptance without wording revisions</em>? What specific benchmark dataset will govern UAT sign-off?
+            </div>
+          </div>
+
+          <div class="query-item">
+            <div class="query-label">A.3 Scope of Visual Output for Agent 2 (Campaign Creative)</div>
+            <div class="query-context">The document specifies visual concept generation and teaser bundles, but Azure OpenAI (GPT-4o) natively produces structured text, not production-ready graphic compositions.</div>
+            <div class="query-text">
+              <strong>Query:</strong> Is Agent 2 expected to provide <em>structured text briefs, storyboards, and prompts for human graphic designers</em>, or should the platform directly render and export raster/vector image files using generative image models (e.g., DALL-E, FLUX, Stable Diffusion)?
+            </div>
+          </div>
+        </div>
+
+        <!-- Category B -->
+        <div class="category-block">
+          <div class="category-header">
+            <span class="category-title">
+              <span>Category B: Agent 3 (Screen Adaptation) Technical Scope</span>
+            </span>
+            <span class="category-badge">MEDIA PIPELINE</span>
+          </div>
+
+          <div class="query-item">
+            <div class="query-label">B.1 Source Artwork Formats &amp; Automated Rendering vs. Spec Guides</div>
+            <div class="query-context">Digital out-of-home (DOOH) screens across Dubai vary widely across highway billboards, vertical portrait totems, and interactive kiosk resolutions.</div>
+            <div class="query-text">
+              <strong>Query:</strong> What are the primary input formats provided by your designers (e.g., layered PSD, Figma, AI, TIFF, or MP4/HTML5 video)? Is Agent 3 required to <em>programmatically render and composite the final multi-resolution output files</em>, or export <em>dimensioned transformation preview sheets</em> for designer execution?
+            </div>
+          </div>
+
+          <div class="query-item">
+            <div class="query-label">B.2 Digital Signage CMS Integration</div>
+            <div class="query-context">Distributing adapted screen assets to physical billboards typically relies on specialized signage software.</div>
+            <div class="query-text">
+              <strong>Query:</strong> Does Dubai Police utilize an existing central Digital Signage CMS (e.g., Scala, Broadsign, Samsung MagicINFO), and is direct API publishing to this network required, or will the platform package zip files for manual handoff?
+            </div>
+          </div>
+        </div>
+
+        <!-- Category C -->
+        <div class="category-block">
+          <div class="category-header">
+            <span class="category-title">
+              <span>Category C: Agent 4 (Monitoring Intelligence) &amp; Data Licensing</span>
+            </span>
+            <span class="category-badge">EXTERNAL DEPENDENCIES</span>
+          </div>
+
+          <div class="query-item">
+            <div class="query-label">C.1 Access to Commercial Social Listening Firehoses &amp; APIs</div>
+            <div class="query-context">Sections 4.3 and 7.4 categorize third-party social listening platforms (Brandwatch, Sprinklr, Meltwater, X/Twitter Enterprise API) as customer-provided and excluded from vendor scope.</div>
+            <div class="query-text">
+              <strong>Query:</strong> Does Dubai Police currently hold enterprise subscriptions and active API keys for external listening feeds? If commercial APIs are unavailable, what specific authorized data sources (e.g., public RSS, official portal comment feeds) should Agent 4 ingest?
+            </div>
+          </div>
+
+          <div class="query-item">
+            <div class="query-label">C.2 Misinformation &amp; Rumor Detection Thresholds</div>
+            <div class="query-context">Identifying false narratives requires baseline facts to compare against public posts.</div>
+            <div class="query-text">
+              <strong>Query:</strong> Will Dubai Police maintain an internal repository of verified facts for the agent to reference, or should alerts be driven strictly by statistical velocity anomalies and negative sentiment spikes across tracked keywords?
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <div class="footer-left">
+        <span class="footer-dot">●</span>
+        <span>CONFIDENTIAL • FOR TECHNICAL ALIGNMENT &amp; Q&amp;A ONLY</span>
+      </div>
+      <div>DUBAI POLICE AGENTIC AI MEDIA OPERATIONS</div>
+      <div class="footer-right">PAGE 2 OF 3</div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 3: CLARIFICATION QUERIES (PART 2) & Q&A AGENDA -->
+  <!-- ========================================================================= -->
+  <div class="page">
+    <div>
+      <!-- Security Bar -->
+      <div class="security-banner">
+        <div class="security-tag">STRICTLY CONFIDENTIAL</div>
+        <div class="security-meta">REF: DP-AI-MEDIA-QA-2026 • SECTION 04: GOVERNANCE &amp; AGENDA</div>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <div class="header-left">
+          <div class="header-pretitle">Technical Q&amp;A Session Agenda</div>
+          <h1 class="header-title">Technical Queries (Part 2) &amp; Discussion Agenda</h1>
+          <div class="header-subtitle">Infrastructure portability, enterprise identity, workflow controls, and structured meeting agenda.</div>
+        </div>
+        <div class="header-badge-box">
+          <div><strong>SESSION LENGTH:</strong> 60 Minutes</div>
+          <div><strong>OBJECTIVE:</strong> Scope Sign-Off &amp; Action Plan</div>
+        </div>
+      </div>
+
+      <!-- Body Content -->
+      <div class="page-body">
+        
+        <!-- Category D & E -->
+        <div class="category-block">
+          <div class="category-header">
+            <span class="category-title">
+              <span>Category D &amp; E: Integrations, Hosting &amp; On-Premises Migration</span>
+            </span>
+            <span class="category-badge">INFRASTRUCTURE</span>
+          </div>
+
+          <div class="query-item">
+            <div class="query-label">D.1 Identity, Access Control &amp; DAM Archives</div>
+            <div class="query-context">The platform requires integration with enterprise identity and digital asset repositories.</div>
+            <div class="query-text">
+              <strong>Query:</strong> For Microsoft Entra ID (Azure AD), does Dubai Police support SSO with MFA via OIDC or SAML 2.0? Does Dubai Police operate an existing Digital Asset Management (DAM) system that requires bidirectional sync for approved photography and video b-roll?
+            </div>
+          </div>
+
+          <div class="query-item">
+            <div class="query-label">E.1 Azure UAE North Compliance &amp; Future On-Premises GPU Readiness</div>
+            <div class="query-context">Section 2.3 emphasizes future migration readiness to Dubai Police-owned private infrastructure. However, the solution relies on cloud-managed Azure AI APIs (Azure OpenAI, Azure AI Vision, Content Safety).</div>
+            <div class="query-text">
+              <strong>Query:</strong> Is initial hosting in Azure UAE North fully cleared under Dubai Police data classification policies? In the event of a transition to an air-gapped on-premise datacenter, will Dubai Police supply dedicated local GPU infrastructure (e.g., NVIDIA H100 clusters) to host open-source Arabic foundation models (e.g., Jais, Falcon)?
+            </div>
+          </div>
+        </div>
+
+        <!-- Category F -->
+        <div class="category-block">
+          <div class="category-header">
+            <span class="category-title">
+              <span>Category F: Governance Workflows &amp; Audit Retention</span>
+            </span>
+            <span class="category-badge">COMPLIANCE</span>
+          </div>
+
+          <div class="query-item">
+            <div class="query-label">F.1 Dynamic Routing vs. Fixed Linear Approvals</div>
+            <div class="query-context">Standard media releases may require fewer checkpoints than high-visibility public safety crisis announcements.</div>
+            <div class="query-text">
+              <strong>Query:</strong> Does Dubai Police require a fixed linear approval chain (Creator &rarr; Reviewer &rarr; Approver), or dynamic conditional routing where crisis topics automatically escalate to higher command leadership? What are the mandatory retention periods for audit trails and prompt change histories?
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Recommended Meeting Agenda -->
+        <div class="section-heading" style="margin-top: 4px;">
+          <span class="section-num">03</span>
+          <h2 class="section-title">Recommended Agenda for 60-Minute Alignment Call</h2>
+        </div>
+
+        <table class="agenda-table">
+          <thead>
+            <tr>
+              <th style="width: 15%;">Time</th>
+              <th style="width: 35%;">Discussion Module</th>
+              <th style="width: 50%;">Key Deliverables &amp; Outcomes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>00:00 – 00:10</strong></td>
+              <td><strong>Introductions &amp; Scope Alignment</strong></td>
+              <td>Confirm overall objectives, key business priorities, and project governance structure.</td>
+            </tr>
+            <tr>
+              <td><strong>00:10 – 00:25</strong></td>
+              <td><strong>AI Capabilities &amp; Linguistic Standards</strong></td>
+              <td>Review Arabic dialect guidelines, RAG reference samples, and 97% accuracy benchmark definition.</td>
+            </tr>
+            <tr>
+              <td><strong>00:25 – 00:40</strong></td>
+              <td><strong>Media Pipeline &amp; Data Dependencies</strong></td>
+              <td>Clarify Agent 3 screen rendering formats and confirm access/licensing for Agent 4 social listening feeds.</td>
+            </tr>
+            <tr>
+              <td><strong>00:40 – 00:50</strong></td>
+              <td><strong>Security, Identity &amp; Infrastructure</strong></td>
+              <td>Validate Entra ID integration, Azure UAE North compliance, and long-term on-prem GPU roadmap.</td>
+            </tr>
+            <tr>
+              <td><strong>00:50 – 01:00</strong></td>
+              <td><strong>Governance, Next Steps &amp; Action Items</strong></td>
+              <td>Agree on approval hierarchy matrices, assign stakeholder owners, and set delivery milestones.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Sign-off block -->
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 4px; padding: 6px 10px; margin-top: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; color: var(--slate-600);">
+          <div>
+            <strong>Document Notice:</strong> Prepared strictly for client consultation and scope calibration. All technical details subject to joint review.
+          </div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; color: var(--navy-primary);">
+            CLASSIFICATION: RESTRICTED
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <div class="footer-left">
+        <span class="footer-dot">●</span>
+        <span>CONFIDENTIAL • FOR TECHNICAL ALIGNMENT &amp; Q&amp;A ONLY</span>
+      </div>
+      <div>DUBAI POLICE AGENTIC AI MEDIA OPERATIONS</div>
+      <div class="footer-right">PAGE 3 OF 3</div>
+    </div>
+  </div>
+
+</body>
+</html>
