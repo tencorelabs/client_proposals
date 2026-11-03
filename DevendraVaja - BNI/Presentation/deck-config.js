@@ -1,10 +1,10 @@
 /**
  * ============================================================================
- * TENCORE DIGITAL LABS • 7-MINUTE MASTER FEATURE PRESENTATION
+ * TENCORE DIGITAL LABS • MASTER FEATURE PRESENTATION
  * ============================================================================
  * Solution: InsuranceSetu (BusinessSetu Suite by TenCore Digital Labs)
  * Speaker: Devendra Vaja (Founder & Principal Systems Architect)
- * Target Delivery Time: Exactly 7 Minutes (420 Seconds)
+ * Format: Feature Presentation
  * Audiences: BNI Chapter Feature Presentation & VBN (Vaishnav Business Network)
  * Core Theme: Cutting Policy Management from 5–6 Days to Under 30 Minutes
  */
@@ -56,16 +56,15 @@ const BRAND_CONFIG = {
   }
 };
 
-// 2. PRESENTATION METADATA (7-Minute Paced Deck)
+// 2. PRESENTATION METADATA
 const DECK_META = {
   title: "InsuranceSetu",
   subtitle: "Cutting Policy Management from 5–6 Days to Under 30 Minutes for Modern Agents & Agencies",
   pillTag: "🤝 Feature Presentation",
-  version: "7-Minute Master Edition • Version 2.0",
+  version: "Master Edition • Version 2.0",
   date: "November 2026",
   category: "Feature Presentation",
-  storageKey: "tencore_insurancesetu_7min_presentation_v3",
-  targetDurationSeconds: 420 // 7 Minutes
+  storageKey: "tencore_insurancesetu_presentation_v4"
 };
 
 // 3. COLOR THEME CONFIGURATION (TenCore Slate Navy & Tech Blue)
@@ -122,7 +121,7 @@ const DEFAULT_SLIDES = [
     meta: [
       { label: "SPEAKER", value: "Devendra Vaja", sub: "Founder & Systems Architect" },
       { label: "CORE SOLUTION", value: "InsuranceSetu AI", sub: "Zero-Data-Entry Automation" },
-      { label: "DELIVERY FORMAT", value: "7-Minute Presentation", sub: "Paced for Maximum Impact" }
+      { label: "FORMAT", value: "Feature Presentation", sub: "Business Network Edition" }
     ]
   },
 

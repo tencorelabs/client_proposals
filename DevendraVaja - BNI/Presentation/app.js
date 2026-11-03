@@ -227,12 +227,12 @@ function updateScriptDrawer() {
 
   const cleanTitle = slide.title ? slide.title.replace(/<[^>]*>/g, '') : '';
   if (slideTag) slideTag.textContent = `Slide ${currentSlideIndex + 1} of ${slides.length}: ${cleanTitle}`;
-  if (timeTag) timeTag.textContent = slide.timeTarget ? `⏱️ Target: ${slide.timeTarget}` : '⏱️ Paced for 7 Mins';
+  if (timeTag) timeTag.textContent = slide.timeTarget ? `⏱️ Target: ${slide.timeTarget}` : '⏱️ Paced Timing';
   
   if (content) {
     content.innerHTML = `
-      <p style="margin-bottom: 8px;"><strong>Timed Talking Script:</strong> ${slide.script || 'Present key slide points clearly and concisely.'}</p>
-      ${slide.timeTarget ? `<p style="font-size: 0.85rem; color: #94a3b8;">💡 <em>Pacing cue: Keep to ${slide.timeTarget} to finish comfortably within the 7-minute mark.</em></p>` : ''}
+      <p style="margin-bottom: 8px;"><strong>Talking Script:</strong> ${slide.script || 'Present key slide points clearly and concisely.'}</p>
+      ${slide.timeTarget ? `<p style="font-size: 0.85rem; color: #94a3b8;">💡 <em>Pacing cue: Keep to ${slide.timeTarget} for smooth delivery.</em></p>` : ''}
     `;
   }
 }
@@ -354,7 +354,7 @@ function renderFooter(index) {
   const confidential = (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.confidentialLabel) ? BRAND_CONFIG.confidentialLabel : 'FEATURE PRESENTATION';
   return `
     <div class="slide-footer-tag">
-      <span>${company} • 7-Minute Feature Presentation</span>
+      <span>${company} • Feature Presentation</span>
       <span class="confidential-tag">${confidential}</span>
       <span>Slide ${index + 1} of ${slides.length}</span>
     </div>
@@ -395,7 +395,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
             `).join('')}
           </div>
           <div class="slide-footer-tag">
-            <span>${company} • 7-Minute Feature Presentation</span>
+            <span>${company} • Feature Presentation</span>
             <span class="confidential-tag">${confidential}</span>
             <span>${copyright}</span>
           </div>
@@ -1118,7 +1118,7 @@ function renderEditor() {
           </div>
         </div>
         <div class="form-group">
-          <label>7-Minute Presenter Talking Script & Cues</label>
+          <label>Presenter Talking Script & Cues</label>
           <textarea class="form-textarea input-script" rows="3">${escapeHtml(slide.script || '')}</textarea>
         </div>
       </div>

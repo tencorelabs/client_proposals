@@ -1,7 +1,6 @@
-# TenCore Digital Labs • 7-Minute Feature Presentation Studio
+# TenCore Digital Labs • Feature Presentation Studio
 ## Solution: InsuranceSetu (BusinessSetu Suite)
 **Speaker**: Devendra Vaja (Founder & Principal Systems Architect)  
-**Target Duration**: Exactly 7 Minutes (420 Seconds)  
 **Audiences**: 
 - **BNI Chapter Feature Presentation** (Tomorrow)
 - **VBN (Vaishnav Business Network) Feature Presentation** (Day after tomorrow)
@@ -18,13 +17,13 @@
    - `Right Arrow` / `Space` / `PageDown`: Next Slide
    - `Left Arrow` / `PageUp`: Previous Slide
    - `F`: Toggle Fullscreen Mode
-   - `T`: Start / Pause 7-Minute Presenter Timer (`Shift+T` to reset)
-   - `S`: Toggle Slide-out 7-Minute Speaker Script & Pacing Cues
+   - `T`: Start / Pause Presenter Timer (`Shift+T` to reset)
+   - `S`: Toggle Slide-out Speaker Script & Pacing Cues
    - `Home` / `End`: Jump to First / Last Slide
 
 ---
 
-## ⏱️ 7-Minute Master Slide Pacing & Timing Breakdown
+## ⏱️ Master Slide Breakdown
 
 | # | Slide Title | Layout | Target Time | Cumulative | Visuals / Images | Core Takeaway |
 | :-: | :--- | :--- | :-: | :-: | :--- | :--- |
