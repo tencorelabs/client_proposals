@@ -64,7 +64,7 @@ const DECK_META = {
   version: "Master Edition • Version 2.0",
   date: "November 2026",
   category: "Feature Presentation",
-  storageKey: "tencore_insurancesetu_presentation_v5"
+  storageKey: "tencore_insurancesetu_presentation_v6"
 };
 
 // 3. COLOR THEME CONFIGURATION (TenCore Slate Navy & Tech Blue)

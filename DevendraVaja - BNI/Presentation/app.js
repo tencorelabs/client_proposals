@@ -822,8 +822,8 @@ function generateSlideHTML(slide, index, extraClass = '') {
                 <h2>${slide.title}</h2>
                 <p>${slide.subtitle || ''}</p>
                 <div class="contact-info-list">
-                  ${cInfo.map(c => `
-                    <div class="contact-item">
+                  ${cInfo.map((c, cIdx) => `
+                    <div class="contact-item ${cIdx === cInfo.length - 1 && cInfo.length % 2 !== 0 ? 'span-two' : ''}">
                       <span class="contact-icon">${c.icon}</span>
                       <div class="contact-text-wrap">
                         <span class="label">${c.label}</span>
@@ -848,6 +848,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
                 </div>
                 <div class="qr-label">${qrL}</div>
                 <div class="qr-sub">${qrS}</div>
+                <div class="qa-cta-badge">⚡ Live 60-Sec PDF Demo at our 1-to-1</div>
               </div>
             </div>
           </div>
