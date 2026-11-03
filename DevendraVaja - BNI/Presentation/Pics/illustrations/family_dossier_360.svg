@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <rect width="280" height="120" rx="10" fill="#FAF5FF" stroke="#E9D5FF" stroke-width="1.5"/>
+
+  <!-- Left: Family Head Avatar Card -->
+  <g transform="translate(14, 14)">
+    <rect width="82" height="92" rx="6" fill="#FFFFFF" stroke="#D8B4FE" stroke-width="1.2"/>
+    <circle cx="41" cy="24" r="14" fill="#F3E8FF"/>
+    <text x="41" y="29" font-family="-apple-system, sans-serif" font-size="14" text-anchor="middle">👨‍👩‍👧‍👦</text>
+    <text x="41" y="48" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#6B21A8" text-anchor="middle">Shah Family</text>
+    <text x="41" y="58" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="600" fill="#64748B" text-anchor="middle">4 Members • 5 Policies</text>
+    <rect x="8" y="68" width="66" height="16" rx="3" fill="#ECFDF5"/>
+    <text x="41" y="79" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="800" fill="#047857" text-anchor="middle">₹1.5 Cr Cover</text>
+  </g>
+
+  <!-- Right: 3 Policy Badges Linked -->
+  <g transform="translate(106, 14)">
+    <!-- Policy 1: Life -->
+    <rect width="160" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <circle cx="14" cy="13" r="8" fill="#EFF6FF"/>
+    <text x="14" y="17" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle">🛡️</text>
+    <text x="28" y="12" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#1E40AF">LIC Jeevan Labh (Father)</text>
+    <text x="28" y="21" font-family="-apple-system, sans-serif" font-size="6.5" fill="#64748B">Due: 15 Nov • ₹42,500</text>
+    <rect x="118" y="6" width="36" height="14" rx="2" fill="#DCFCE7"/>
+    <text x="136" y="16" font-family="-apple-system, sans-serif" font-size="6" font-weight="800" fill="#15803D" text-anchor="middle">ACTIVE</text>
+
+    <!-- Policy 2: Health -->
+    <g transform="translate(0, 32)">
+      <rect width="160" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <circle cx="14" cy="13" r="8" fill="#ECFDF5"/>
+      <text x="14" y="17" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle">🏥</text>
+      <text x="28" y="12" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#065F46">Star Family Health Optima</text>
+      <text x="28" y="21" font-family="-apple-system, sans-serif" font-size="6.5" fill="#64748B">Due: 28 Dec • ₹24,000</text>
+      <rect x="118" y="6" width="36" height="14" rx="2" fill="#E0F2FE"/>
+      <text x="136" y="16" font-family="-apple-system, sans-serif" font-size="6" font-weight="800" fill="#0284C7" text-anchor="middle">FLOATER</text>
+    </g>
+
+    <!-- Policy 3: Motor -->
+    <g transform="translate(0, 64)">
+      <rect width="160" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <circle cx="14" cy="13" r="8" fill="#FEF3C7"/>
+      <text x="14" y="17" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle">🚗</text>
+      <text x="28" y="12" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#92400E">HDFC Ergo Car Package</text>
+      <text x="28" y="21" font-family="-apple-system, sans-serif" font-size="6.5" fill="#64748B">Due: 10 Jan • ₹14,200</text>
+      <rect x="118" y="6" width="36" height="14" rx="2" fill="#FEF3C7"/>
+      <text x="136" y="16" font-family="-apple-system, sans-serif" font-size="6" font-weight="800" fill="#B45309" text-anchor="middle">RENEW</text>
+    </g>
+  </g>
+</svg>

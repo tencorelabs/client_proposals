@@ -21,6 +21,25 @@
     </div>
     
     <div class="toolbar-controls">
+      <!-- Network Switcher (BNI vs VBN) -->
+      <div class="network-toggle" id="network-toggle" title="Switch between BNI and VBN Feature Presentation mode">
+        <button id="btn-net-bni" class="net-btn active" aria-label="BNI Presentation Mode">BNI</button>
+        <button id="btn-net-vbn" class="net-btn" aria-label="VBN Presentation Mode">VBN</button>
+      </div>
+
+      <!-- 7-Minute Presenter Timer -->
+      <div class="timer-widget" id="presenter-timer-widget" title="7-Minute Presentation Timer (Click Play to Start)">
+        <span class="timer-icon">⏱️</span>
+        <span class="timer-display" id="timer-display">00:00 / 07:00</span>
+        <button id="btn-timer-toggle" class="timer-action-btn" title="Start/Pause Timer (T)">▶</button>
+        <button id="btn-timer-reset" class="timer-action-btn" title="Reset Timer (Shift+T)">↺</button>
+      </div>
+
+      <!-- Script Drawer Toggle -->
+      <button id="btn-toggle-script" class="btn" title="Toggle 7-Minute Presenter Script (Press 'S')">
+        🎙️ Script
+      </button>
+
       <!-- Present vs Edit Mode toggles -->
       <div class="view-toggle">
         <button id="btn-present-mode" class="toggle-btn active" aria-label="Switch to Presenter Mode">
@@ -77,6 +96,24 @@
         </div>
       </div>
     </section>
+
+    <!-- Presenter Script / Notes Drawer (Press 'S' or click Script button) -->
+    <div id="presenter-script-drawer" class="script-drawer" style="display: none;">
+      <div class="script-drawer-header">
+        <div class="script-drawer-title">
+          <span class="script-mic-icon">🎙️</span>
+          <strong>7-Minute Speaker Script &amp; Cues</strong>
+          <span id="script-slide-tag" class="script-slide-tag">Slide 1 of 8</span>
+          <span id="script-time-tag" class="script-time-tag">⏱️ Target: 35s</span>
+        </div>
+        <button id="btn-close-script" class="script-close-btn" title="Close Script (Press 'S')">✕</button>
+      </div>
+      <div class="script-drawer-body">
+        <div id="script-content-text" class="script-content-text">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
 
     <!-- 2. EDITING WORKSPACE -->
     <section id="editor-view" aria-label="Slides Scroll Editor" style="display: none;">

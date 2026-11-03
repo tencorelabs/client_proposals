@@ -1,17 +1,19 @@
 /**
  * ============================================================================
- * TENCORE DIGITAL LABS • BNI CHAPTER FEATURE PRESENTATION
+ * TENCORE DIGITAL LABS • 7-MINUTE MASTER FEATURE PRESENTATION
  * ============================================================================
+ * Solution: InsuranceSetu (BusinessSetu Suite by TenCore Digital Labs)
  * Speaker: Devendra Vaja (Founder & Principal Systems Architect)
- * Target: Non-Technical Business Owners & Entrepreneurs
- * Theme: Everyday Plain Language • Outcome-Focused • Custom AI & Automation
+ * Target Delivery Time: Exactly 7 Minutes (420 Seconds)
+ * Audiences: BNI Chapter Feature Presentation & VBN (Vaishnav Business Network)
+ * Core Theme: Cutting Policy Management from 5–6 Days to Under 30 Minutes
  */
 
 // 1. GLOBAL BRANDING & FOUNDER PROFILE
 const BRAND_CONFIG = {
   companyName: "TenCore Digital Labs Private Limited",
-  division: "Custom Mobile Apps, SaaS & AI Automation Studio",
-  confidentialLabel: "BNI CHAPTER PRESENTATION",
+  division: "Vertical SaaS & Enterprise Document AI Studio",
+  confidentialLabel: "FEATURE PRESENTATION",
   copyright: "TenCore Digital Labs Private Limited © 2026",
   logoText: "TC",
   
@@ -21,51 +23,52 @@ const BRAND_CONFIG = {
     role: "Founder & Principal Systems Architect",
     company: "TenCore Digital Labs Private Limited",
     avatarInitials: "DV",
-    tagline: "",
+    tagline: "24+ years of deep-tech systems engineering across Tokyo, Silicon Valley, and India building high-reliability native mobile, cloud, and enterprise AI automation platforms.",
     pillars: [
       {
-        title: "24+ Years Global Systems Experience (India • Japan • USA)",
-        desc: "Deep-rooted engineering track record building high-security gaming machine device drivers in Tokyo, enterprise architectures in the US, and scalable software in India."
+        title: "24+ Years Global Systems Architecture (India • Japan • USA)",
+        desc: "Deep-rooted engineering track record building high-security device drivers in Tokyo (Konami Gaming), enterprise software in the US, and scalable digital architectures in India."
       },
       {
         title: "Android OS & Mobile Platform Pioneer (Since 2007)",
-        desc: "Building native mobile apps and Android platform software since the OS began in 2007 — turning complex technology into simple, 1-tap mobile experiences."
+        desc: "Engineering native mobile platforms since Android began in 2007 — turning complex enterprise technology into simple, 1-tap mobile experiences with zero learning curve."
       },
       {
-        title: "Custom Problem Solver for Every Business",
-        desc: "We don't force rigid, generic software. We study your exact daily workflow and build tailor-made mobile apps and AI automation fitted to your business."
+        title: "Bank-Grade Precision & Cyber Defense Foundation",
+        desc: "Creator of SafetySetu (on-device UPI scam blocker & screen-hijack shield), bringing the exact same bank-grade security, zero-cloud data leakage, and mathematical precision to enterprise business automation."
       }
     ]
   },
 
   // Contact / Q&A Information for Closing Slide
   contact: {
-    title: "Let's Connect for a 1-to-1 Meeting",
-    subtitle: "Share 1 manual headache in your business, and let's explore how to automate it in a 30-minute discussion.",
+    title: "Book a 1-to-1 & Free 30-Min Agency Automation Audit",
+    subtitle: "Bring 1 raw insurer PDF or due list to our 1-to-1, and I will demonstrate extracting and organizing it live in 60 seconds with zero obligation.",
     items: [
       { icon: "👨‍💼", label: "Principal Architect", val: "Devendra Vaja" },
       { icon: "🏢", label: "Technology Studio", val: "TenCore Digital Labs Private Limited" },
       { icon: "✉️", label: "Email", val: "tencorelabs@gmail.com" },
       { icon: "📱", label: "Phone / WhatsApp", val: "+91 9082351295" },
-      { icon: "📍", label: "Location", val: "Mumbai, India" }
+      { icon: "🌐", label: "Platform Suite", val: "BusinessSetu • InsuranceSetu (businesssetu.tencorelabs.com)" }
     ],
-    qrLabel: "Book 1-to-1 Meeting",
+    qrLabel: "Book 1-to-1 on WhatsApp",
     qrSub: "Scan to connect directly on WhatsApp"
   }
 };
 
-// 2. PRESENTATION METADATA
+// 2. PRESENTATION METADATA (7-Minute Paced Deck)
 const DECK_META = {
-  title: "TenCore Digital Labs",
-  subtitle: "Custom Mobile Apps, SaaS & AI Automation for Business Growth",
-  pillTag: "🤝 BNI Member Feature Presentation",
-  version: "Version 1.0",
-  date: "September 2026",
-  category: "BNI Feature Presentation",
-  storageKey: "devendravaja_bni_presentation_v1"
+  title: "InsuranceSetu",
+  subtitle: "Cutting Policy Management from 5–6 Days to Under 30 Minutes for Modern Agents & Agencies",
+  pillTag: "🤝 Feature Presentation",
+  version: "7-Minute Master Edition • Version 2.0",
+  date: "November 2026",
+  category: "Feature Presentation",
+  storageKey: "tencore_insurancesetu_7min_presentation_v2",
+  targetDurationSeconds: 420 // 7 Minutes
 };
 
-// 3. COLOR THEME CONFIGURATION
+// 3. COLOR THEME CONFIGURATION (TenCore Slate Navy & Tech Blue)
 const THEME_CONFIG = {
   primary: "#0F2942",       // Deep Slate Navy
   primaryDark: "#0A1929",
@@ -74,46 +77,80 @@ const THEME_CONFIG = {
   accent: "#2563EB",
   emerald: "#059669",
   amber: "#D97706",
+  rose: "#E11D48",
   bgBody: "#f8fafc",
   bgCard: "#ffffff",
   textPrimary: "#0f172a",
   textSecondary: "#475569"
 };
 
-// 4. SLIDES CATALOG (9 Engaging, Plain-Language BNI Slides)
+// 4. NETWORK MODE CONFIGURATION (BNI vs VBN)
+const NETWORK_CONFIG = {
+  BNI: {
+    code: "BNI",
+    name: "BNI Chapter",
+    headerTitle: "TenCore Digital Labs • BNI Feature Presentation",
+    pillTag: "🤝 BNI Member Feature Presentation",
+    askBadge: "BNI Specific Ask • Ideal Referrals",
+    giveBadge: "Givers Gain • Chapter Contribution",
+    metaSub: "BNI Chapter Presentation",
+    giveTitle: "My Give to Chapter Members (Givers Gain):"
+  },
+  VBN: {
+    code: "VBN",
+    name: "Vaishnav Business Network",
+    headerTitle: "TenCore Digital Labs • VBN Feature Presentation",
+    pillTag: "🤝 VBN (Vaishnav Business Network) Feature Presentation",
+    askBadge: "VBN Specific Ask • Ideal Referrals",
+    giveBadge: "VBN Member Support & Value",
+    metaSub: "VBN Network Presentation",
+    giveTitle: "My Give to VBN Network Members:"
+  }
+};
+
+// 5. SLIDES CATALOG (8 Master Slides Strictly Paced for 7 Minutes)
 const DEFAULT_SLIDES = [
-  // Slide 1: Title Cover
+  // ==========================================================================
+  // SLIDE 1: TITLE & CORE PROMISE [0:00 – 0:35] (Target: 35s)
+  // ==========================================================================
   {
     layout: "title",
-    title: "TenCore Digital Labs <span>Custom AI & Mobile Solutions</span>",
-    subtitle: "Turning Your Daily Manual Headaches into Automated Business Growth & Peace of Mind",
+    title: "InsuranceSetu <span>Document AI & Policy CRM</span>",
+    subtitle: "Cutting Policy Management from 5–6 Days to Under 30 Minutes for Modern Agents & Agencies",
+    timeTarget: "0:00 - 0:35 (35s)",
+    script: "Good morning fellow members and esteemed guests. Today, I am going to show you how a painful clerical routine drains 5 to 6 full days every single month from insurance agents—and how our platform, InsuranceSetu, uses spatial Document AI to reduce that entire cycle to under 30 minutes, while permanently stopping policy lapses.",
     meta: [
       { label: "SPEAKER", value: "Devendra Vaja", sub: "Founder & Systems Architect" },
-      { label: "CORE FOCUS", value: "Mobile Apps • SaaS • Automation", sub: "Tailor-Made for Your Business" },
-      { label: "PURPOSE", value: "BNI Feature Presentation", sub: "Grow Together Through Tech" }
+      { label: "CORE SOLUTION", value: "InsuranceSetu AI", sub: "Zero-Data-Entry Automation" },
+      { label: "DELIVERY FORMAT", value: "7-Minute Presentation", sub: "Paced for Maximum Impact" }
     ]
   },
 
-  // Slide 2: Founder / Leadership Profile & Global Pedigree
+  // ==========================================================================
+  // SLIDE 2: FOUNDER PROFILE & HIGH-SECURITY PEDIGREE [0:35 – 1:20] (Target: 45s)
+  // ==========================================================================
   {
     layout: "instructor",
+    categoryBadge: "Leadership & Engineering Track Record",
+    timeTarget: "0:35 - 1:20 (45s)",
     title: "Meet Devendra Vaja — Systems Architect & Founder",
-    subtitle: "24+ Years of Deep-Tech Systems Engineering & Enterprise Digital Architecture",
+    subtitle: "24+ Years of Deep-Tech Systems Engineering • Tokyo Gaming, US Enterprise & Indian Vertical SaaS",
     instructorName: BRAND_CONFIG.founder.name,
     instructorRole: BRAND_CONFIG.founder.role + " • " + BRAND_CONFIG.founder.company,
     instructorTagline: BRAND_CONFIG.founder.tagline,
+    script: "For 24 years, I have architected mission-critical systems across Tokyo, Silicon Valley, and India. When we built SafetySetu, our on-device smartphone cybersecurity app, we engineered bank-grade UPI threat interception with zero data leakage. Today, we bring that exact same high-precision, mathematical engineering to TenCore's vertical SaaS suite—starting with InsuranceSetu.",
     highlights: [
       {
         title: "24+ Years Global Systems Experience (India • Japan • USA)",
-        desc: ""
+        desc: "Built high-security gaming machine device drivers in Tokyo (Konami Gaming), enterprise software in the US, and scalable software in India."
       },
       {
         title: "Android OS & Mobile Platform Pioneer (Since 2007)",
-        desc: ""
+        desc: "Engineering native mobile applications and Android OS platform systems since 2007 — turning complex technology into intuitive, 1-tap mobile workflows."
       },
       {
-        title: "Custom Problem Solver for Every Business",
-        desc: "We don't force rigid, generic software. We study your exact daily workflow and build tailor-made mobile apps and AI automation fitted to your business."
+        title: "Bank-Grade Precision & Cyber Defense Foundation",
+        desc: "Creator of SafetySetu (on-device UPI scam blocker & screen-hijack shield), bringing the exact same bank-grade security, zero-cloud data leakage, and mathematical precision to InsuranceSetu."
       }
     ],
     companiesTitle: "Trusted Engineering Pedigree Across Global Enterprises:",
@@ -133,266 +170,196 @@ const DEFAULT_SLIDES = [
     ]
   },
 
-  // Slide 3: SafetySetu Product Highlight (Screen Share & UPI Protection)
-  {
-    layout: "threecard",
-    title: "SafetySetu: Stop UPI Scams Before Money Leaves Your Account",
-    subtitle: "Fraudsters can clean out your bank balance in seconds — SafetySetu catches them instantly right on your phone.",
-    videoLink: {
-      label: "Watch 30-Sec Demo Video",
-      url: "https://youtu.be/m6pxUcTJals"
-    },
-    cards: [
-      {
-        title: "Screen-Share Hijack Blocker",
-        icon: "🚨",
-        body: "Instant alert & screen freeze the moment someone tricks you into sharing your screen during a UPI payment (Stops AnyDesk/TeamViewer scams).",
-        metric: "Sub-15ms Protection",
-        illustration: "Pics/illustrations/screen_share_block.svg"
-      },
-      {
-        title: "Real-Time Payment Interceptor",
-        icon: "🛡️",
-        body: "Monitors active payment interfaces and suspicious overlay windows locally on the smartphone before unauthorized transfers occur.",
-        metric: "Instant Threat Freeze",
-        illustration: "Pics/illustrations/payment_intercept.svg"
-      },
-      {
-        title: "100% Privacy — Zero Cloud Leakage",
-        icon: "🔒",
-        body: "Runs completely on your smartphone device. Zero passwords, OTPs, or bank details are ever uploaded to any cloud server.",
-        metric: "100% On-Device Privacy",
-        illustration: "Pics/illustrations/on_device_privacy.svg"
-      }
-    ]
-  },
-
-  // Slide 4: Case Study: Preksha Insurance Requirements & InsuranceSetu Concept
+  // ==========================================================================
+  // SLIDE 3: THE ONGOING PAIN & 5-DAY CLERICAL NIGHTMARE [1:20 – 2:15] (Target: 55s)
+  // ==========================================================================
   {
     layout: "twocol",
-    title: "Case Study: How We Solved Real Agency Problems",
-    subtitle: "How we turned a solo insurance agency's painful manual routine into the InsuranceSetu automation product.",
+    categoryBadge: "Industry Bottlenecks • The Ongoing Pain",
+    timeTarget: "1:20 - 2:15 (55s)",
+    title: "The Silent 5-Day Crisis in Every Insurance Agency",
+    subtitle: "Whether managing 300 or 3,000 policies, agents waste 20+ hours monthly on clerical typing while losing 20–35% in renewal commissions.",
+    script: "Here is the dirty secret of the insurance industry: Every month, insurers send statements with policy numbers and premium amounts, but ZERO customer phone numbers. An advisor managing 1,000 clients must spend 5 to 6 agonizing days cross-referencing old diaries, typing into Excel, and manually messaging clients. 20 to 35% of renewal reminders slip through the cracks, policies lapse, and agents lose their hard-earned renewal commissions.",
     leftCol: {
-      title: "Preksha Insurance (Manual Daily Pain)",
-      badge: "THE CHALLENGE",
+      title: "The 5-Day Clerical Nightmare",
+      badge: "OPERATIONAL BOTTLENECK",
       bullets: [
-        "<strong>Messy PDF Statements:</strong> Insurer statements come in cluttered PDF tables with policy numbers but <strong>zero customer phone numbers</strong>.",
-        "<strong>Manual Contact Hunting:</strong> Must manually dig through old spreadsheets and phone contacts just to find who to follow up with.",
-        "<strong>Lost Business Growth Time:</strong> Agency owner wastes hours every month doing repetitive clerical lookup instead of meeting new clients.",
-        "<strong>Missed Renewals:</strong> Without systematic automated reminders, clients miss grace periods and policies lapse."
+        "<strong>Messy Unstructured PDF Statements:</strong> Insurers (LIC, Star Health, HDFC Ergo, ICICI Lombard) send multi-page PDF tables with hundreds of policy rows in varying column formats.",
+        "<strong>The 'Zero-Contact' Trap:</strong> Statements list policy numbers, installment dues, and dates, but <strong>ZERO customer phone numbers or emails</strong>!",
+        "<strong>The 25+ Hour Typing Trap:</strong> Staff waste 5–6 days retyping PDFs into Excel spreadsheets, frantically searching old paper diaries to find who to follow up with.",
+        "<strong>Silent Revenue Bleed:</strong> 20% to 35% of renewal reminders are missed or sent too late; policies lapse during grace periods, and lifetime trail commissions vanish permanently."
       ]
     },
     rightCol: {
-      title: "The InsuranceSetu Solution",
-      badge: "THE AUTOMATED OUTCOME",
+      title: "The Financial & Operational Toll",
+      badge: "ANNUAL REVENUE DRAIN",
       bullets: [
-        "<strong>1-Click PDF Extraction:</strong> Drop any insurer PDF statement — all policy data is extracted and organized in 2 seconds.",
-        "<strong>Smart Auto Contact Match:</strong> Automatically links each policyholder to their phone contact with zero manual searching.",
-        "<strong>1-Tap Multilingual WhatsApp:</strong> Auto-sends personalized payment reminders in Gujarati, Hindi, & English with PDF receipts.",
-        "<strong>Saves 3 Days Every Month:</strong> Frees up 3 full working days every month for agencies with 500+ policies."
+        "<strong>₹1,20,000+ Annual Clerical Drain:</strong> Paying ₹8,000–₹12,000/month for a dedicated typist or assistant just to copy-paste numbers from PDFs into Excel.",
+        "<strong>70% Time Spent on Paperwork, Not Sales:</strong> High-performing advisors spend their prime selling hours doing clerical data entry instead of meeting HNI prospects.",
+        "<strong>Fragmented Client Records:</strong> If a family has 2 LIC policies, 1 Star Health cover, and 2 car policies, the agent has zero unified view of the household.",
+        "<strong>Frustrated Policyholders:</strong> Clients miss grace period deadlines because they never received timely WhatsApp notifications in their native mother tongue."
       ]
     }
   },
 
-  // Slide 5: Cross-Industry Applications (Combined Comprehensive Slide)
+  // ==========================================================================
+  // SLIDE 4: THE BREAKTHROUGH: 5–6 DAYS TO UNDER 30 MINUTES [2:15 – 3:15] (Target: 60s)
+  // ==========================================================================
   {
-    layout: "twocol",
-    title: "How Can This Automation Help YOUR Specific Business?",
-    subtitle: "If you have manual customer follow-ups, documents, or status tracking — we can automate it for you!",
-    leftCol: {
-      title: "Trading, Travel, Manufacturing & Visas",
-      badge: "COMMERCE & SERVICES",
-      items: [
-        {
-          icon: "🍬",
-          title: "Sugar Substitute, FMCG & Trading",
-          bg: "#fef3c7",
-          border: "#fde68a",
-          desc: "Automated weekly dealer re-orders on WhatsApp, dispatch alerts, and payment collection follow-ups."
-        },
-        {
-          icon: "✈️",
-          title: "Immigration & Visa Consultancy",
-          bg: "#e0f2fe",
-          border: "#bae6fd",
-          desc: "Automated applicant document checklists, stage-by-stage visa tracking, and WhatsApp status updates."
-        },
-        {
-          icon: "🗺️",
-          title: "Travel & Tourism Agency",
-          bg: "#ecfdf5",
-          border: "#a7f3d0",
-          desc: "1-Click WhatsApp itinerary delivery, hotel voucher dispatch, and real-time cab driver coordination."
-        },
-        {
-          icon: "🏭",
-          title: "Plastic & Product Manufacturing",
-          bg: "#f3e8ff",
-          border: "#e9d5ff",
-          desc: "B2B sample dispatch tracking, quote approvals, client feedback, and shift logs on a simple mobile app."
-        }
-      ]
-    },
-    rightCol: {
-      title: "Finance, Legal, Tax & Operations",
-      badge: "PROFESSIONAL PRACTICES",
-      items: [
-        {
-          icon: "💰",
-          title: "Finance & Loan Approval Cycle",
-          bg: "#dcfce7",
-          border: "#bbf7d0",
-          desc: "Mobile intake for customer KYC documents, multi-stage approval checkmarks, and sanction alerts."
-        },
-        {
-          icon: "⚖️",
-          title: "Lawyers & Legal Practices",
-          bg: "#ede9fe",
-          border: "#ddd6fe",
-          desc: "Automated court hearing date reminders to clients and instant digital case file lookup."
-        },
-        {
-          icon: "📊",
-          title: "Taxation, CAs & Corporate Gifting",
-          bg: "#fee2e2",
-          border: "#fecaca",
-          desc: "Automated GST/ITR filing deadline alerts, client document upload vaults, and festival gifting catalogues."
-        },
-        {
-          icon: "📍",
-          title: "Attendance & Field Staff Tracking",
-          bg: "#ffedd5",
-          border: "#fed7aa",
-          desc: "1-Tap mobile/GPS attendance, field visit logs, and real-time team task updates with zero hardware."
-        }
-      ]
-    }
-  },
-
-  // Slide 6: The PAN-India Language Barrier Solved
-  {
-    layout: "threecard",
-    title: "Doing Business Across India? Break the Language Barrier!",
-    subtitle: "What if a Gujarati or Mumbai business needs to sell to customers in Tamil Nadu, Andhra (Telugu), or the North?",
-    cards: [
+    layout: "blueprint",
+    categoryBadge: "Deterministic Transformation • 10x Speed",
+    timeTarget: "2:15 - 3:15 (60s)",
+    title: "How InsuranceSetu Cuts 5–6 Days Down to Under 30 Minutes",
+    subtitle: "A zero-data-entry, 4-step AI pipeline engineered specifically for Indian agency operations and regional languages.",
+    script: "How do we collapse 5–6 days of clerical agony into under 30 minutes? In step 1, the agent drops any insurer PDF into InsuranceSetu. Our spatial AI extracts 500 policies in 30 seconds, mathematically verifying every rupee. In step 2, our phonetic matcher links names to phone contacts even with spelling differences. In step 3, with 1 click, personalized renewal notices are sent on WhatsApp in Gujarati, Hindi, or English with direct UPI payment links. And in step 4, the agency gets a live dashboard tracking every rupee. 5 days of work done before your morning tea is finished!",
+    phases: [
       {
-        title: "The Language Wall",
-        icon: "🗣️",
-        body: "When your app, portal, or message is English-only, over 65% of Bharat customers feel hesitant, misunderstood, or bounce to competitors.",
-        metric: "65% Customer Friction",
-        illustration: "Pics/illustrations/language_wall.svg"
+        phase: "STEP 1 • MIN 00–05",
+        title: "1-Click PDF Extraction & Math Audit",
+        duration: "5 Mins",
+        budget: "Zero Typing",
+        deliverables: [
+          "Drag & drop raw insurer due lists (PDF, Excel, CSV) from LIC, Star Health, HDFC, or portal aggregators.",
+          "Spatial PDF engine extracts 500+ policy records in 30 seconds with 100% precision.",
+          "Deterministic Mathematical Validation: (Installment × Dues) + GST == Total Due verified before database commit."
+        ],
+        payment: "⚡ 5-Day Typing ➡️ 30 Secs"
       },
       {
-        title: "TenCore Multi-Lingual Engine",
-        icon: "🌐",
-        body: "We build custom systems that communicate in the client's mother tongue — WhatsApp text and audio voice alerts in Gujarati, Hindi, Marathi, Telugu, Tamil, & more.",
-        metric: "10+ Indian Languages",
-        illustration: "Pics/illustrations/multilingual_engine.svg"
+        phase: "STEP 2 • MIN 05–15",
+        title: "2-Tier Indian Phonetic Contact Bridge",
+        duration: "10 Mins",
+        budget: "98%+ Auto-Match",
+        deliverables: [
+          "Upload phonebook (VCF file or Google Contacts CSV export).",
+          "Proprietary 2-tier phonetic matcher connects policyholder names to mobile numbers.",
+          "Handles Indian spelling variances seamlessly ('Smitaben' vs 'Smita Patel', 'Virendra' vs 'Viren')."
+        ],
+        payment: "📇 Zero Diary Searching"
       },
       {
-        title: "Zero Customer Left Behind",
-        icon: "🎯",
-        body: "Give every customer across India the comfort of their regional language. Scale your business smoothly from Gujarat to Tamil Nadu.",
-        metric: "100% Pan-India Reach",
-        illustration: "Pics/illustrations/pan_india_reach.svg"
+        phase: "STEP 3 • MIN 15–25",
+        title: "1-Tap Multilingual WhatsApp Outreach",
+        duration: "10 Mins",
+        budget: "3x Higher Response",
+        deliverables: [
+          "Dispatches personalized, pre-formatted renewal notices directly to WhatsApp Web.",
+          "Native mother-tongue templates in Gujarati, Hindi, Marathi, and English.",
+          "Includes exact policy numbers, premium dues, due dates, and 1-tap direct UPI payment link."
+        ],
+        payment: "💬 1-Tap Auto-Dispatch"
+      },
+      {
+        phase: "STEP 4 • MIN 25–30",
+        title: "Real-Time Audit & Family Customer 360",
+        duration: "5 Mins",
+        budget: "Zero Policy Lapses",
+        deliverables: [
+          "Live dashboard tracks paid vs due, auto-scheduling 30-day, 7-day, and 24-hr grace alerts.",
+          "Compiles 1-page executive consolidated portfolio PDFs with agency logo & IRDAI license.",
+          "Cross-sell radar highlights families with motor insurance but zero health or term cover."
+        ],
+        payment: "🚀 Done in Under 30 Mins!"
       }
     ]
   },
 
-  // Slide 7: Interactive Reflection: What If You Are Stuck?
-  {
-    layout: "fourcard",
-    title: "Let's Ask: Are You Stuck in Any of These Situations?",
-    subtitle: "Take a moment to reflect on your daily business operations — where is manual friction slowing you down?",
-    cards: [
-      {
-        title: "1. Staff Forgets Follow-ups?",
-        icon: "⏳",
-        body: "You sent a ₹5 Lakh quote, but your sales staff forgot to follow up after 3 days and the client went to a competitor."
-      },
-      {
-        title: "2. Tired of Evening Excel Tally?",
-        icon: "📊",
-        body: "Spending 2 hours every evening manually checking employee attendance, WhatsApp orders, or pending payments."
-      },
-      {
-        title: "3. Missed Appointments & Client No-Shows?",
-        icon: "📅",
-        body: "High-value clients forget scheduled consultations, site visits, or meetings because staff forgot to send timely WhatsApp calendar reminders."
-      },
-      {
-        title: "4. Want Your Own Mobile App?",
-        icon: "📱",
-        body: "Your competitors are offering client apps and portals, while you are still managing high-value clients through messy WhatsApp chats."
-      }
-    ]
-  },
-
-  // Slide 8: TenCore Digital Labs as the Tailor-Made Problem Solver
+  // ==========================================================================
+  // SLIDE 5: CORE BENEFITS & AGENCY SUPERPOWERS [3:15 – 4:05] (Target: 50s)
+  // ==========================================================================
   {
     layout: "threecard",
-    title: "TenCore Digital Labs: Tailor-Made Solutions for You",
-    subtitle: "We don't force you into rigid software. We build software and custom automation fitted exactly around YOUR business workflow.",
+    categoryBadge: "Core Benefits • Agency Superpowers",
+    timeTarget: "3:15 - 4:05 (50s)",
+    title: "3 Transformative Superpowers for Every Insurance Agency",
+    subtitle: "Eliminate administrative overhead, protect lifetime renewal commissions, and unlock high-ticket cross-selling.",
+    script: "What does this mean for an agency's bottom line? First: 85% administrative time saved—saving ₹10,000/month on assistant salaries and giving agents 25 hours back. Second: a 35% boost in renewal persistence—no client forgets their grace period, protecting thousands in commissions. Third: instant Family Customer 360 dossiers—grouping life, health, and motor into a single branded report that builds immense trust with high-net-worth clients.",
     cards: [
       {
-        title: "Custom Mobile Apps (Android & iOS)",
-        icon: "📱",
-        body: "Fast, simple mobile apps for your field staff, dealers, or customers that require zero technical training.",
-        metric: "Simple & Intuitive",
-        illustration: "Pics/illustrations/custom_mobile_apps.svg"
-      },
-      {
-        title: "Smart Web Portals & SaaS",
-        icon: "💻",
-        body: "Live dashboards, automated PDF invoicing, and real-time operational tracking accessible securely from any device.",
-        metric: "Real-Time Control",
-        illustration: "Pics/illustrations/smart_web_portals.svg"
-      },
-      {
-        title: "Document & Communication Automation",
+        title: "85% Admin Time Saved & Zero Typists",
         icon: "⚡",
-        body: "Scan cards, documents, PDFs, and Excel in less than 3 seconds. Trigger WhatsApp and Email follow-ups automatically.",
-        metric: "10x Operational Speed",
-        illustration: "Pics/illustrations/doc_comm_automation.svg"
+        metric: "Save 25+ Hrs/Month",
+        body: "Eliminate repetitive manual data entry and assistant salaries. Ingest an entire 500-policy monthly statement in under 3 minutes with automated contact linking.",
+        illustration: "Pics/illustrations/policy_speed_comparison.svg"
+      },
+      {
+        title: "+35% Renewal Persistence & Zero Lapses",
+        icon: "📈",
+        metric: "Zero Lapsed Policies",
+        body: "Automated 3-touch alerts (30-day, 7-day, and 24-hr grace period) sent in Gujarati, Hindi, or English. Protect up to ₹50,000+ in annual trail commissions.",
+        illustration: "Pics/illustrations/persistence_roi.svg"
+      },
+      {
+        title: "Consolidated Family 360 & Cross-Sell Radar",
+        icon: "👥",
+        metric: "2.5x Client Lifetime Value",
+        body: "Group all family policies (life, health, motor) under one household head. Deliver professional IRDAI-branded portfolio dossiers and spot coverage gaps for instant sales.",
+        illustration: "Pics/illustrations/family_dossier_360.svg"
       }
     ]
   },
 
-  // Slide 9: My Specific Ask (Ideal Referrals & Trigger Conversations)
+  // ==========================================================================
+  // SLIDE 6: PROVEN ROI & VALUE STACK [4:05 – 4:55] (Target: 50s)
+  // ==========================================================================
+  {
+    layout: "table",
+    categoryBadge: "Commercial Value Stack • Unbeatable ROI",
+    timeTarget: "4:05 - 4:55 (50s)",
+    title: "₹20,500+ Monthly Value for Less Than ₹9/Day",
+    subtitle: "Replace expensive manual assistants, separate WhatsApp tools, and lost commissions with a single automated app.",
+    script: "Let's talk numbers. An agency spends ₹8,000 on an assistant to type due lists, ₹3,000 on WhatsApp tools, and loses ₹6,000 in lapsed commissions—over ₹20,500 in monthly cost. InsuranceSetu delivers all of this starting at just ₹249 per month—less than ₹9 a day, less than the price of a cutting chai! Here is our breakeven guarantee: if InsuranceSetu saves even ONE policy from lapsing in 6 months, it pays for your entire year's subscription!",
+    columns: ["Operational & Business Component", "Traditional Monthly Cost / Loss", "With InsuranceSetu Platform"],
+    rows: [
+      ["1. Monthly Due List Typing & Data Entry", "₹8,000 / mo (Assistant salary or 25+ hrs typing)", "<strong>₹0 (1-Click Spatial AI Ingestion)</strong>"],
+      ["2. WhatsApp Outreach & Vernacular Alerts", "₹3,000 / mo (Separate third-party SaaS tool)", "<strong>Included (1-Click Gujarati/Hindi/English Nudges)</strong>"],
+      ["3. Family Customer 360 & Dossiers", "₹3,500 / mo (Legacy desktop software)", "<strong>Included (Branded Household Portfolio PDFs)</strong>"],
+      ["4. Recovered Lapsed Commissions", "₹6,000+ / mo (Lost from missed 2nd/3rd grace alerts)", "<strong>₹0 Lost (Automated 3-Touch Reminders)</strong>"],
+      ["TOTAL MONTHLY VALUE DELIVERED", "₹20,500+ / month", "<strong>ONLY ₹249 – ₹999 / mo (Save 95%–98%)</strong>"],
+      ["THE BREAKEVEN GUARANTEE", "<em>\"If InsuranceSetu prevents even one single policy from lapsing every 6 months, it has paid for your entire year's subscription.\"</em>", "<strong>⚡ 100% Breakeven Guarantee</strong>"],
+      ["FIRST 14 DAYS PILOT BENCHMARK", "<em>\"Our pilot target is for your agency to recover at least ₹50,000 in overdue premiums within your first 14 days using automated WhatsApp reminders.\"</em>", "<strong>🎯 ₹50,000+ Dues Target</strong>"]
+    ]
+  },
+
+  // ==========================================================================
+  // SLIDE 7: MY SPECIFIC ASK & TRIGGER CONVERSATIONS [4:55 – 5:50] (Target: 55s)
+  // ==========================================================================
   {
     layout: "twocol",
-    categoryBadge: "BNI Specific Ask • Ideal Referrals",
+    categoryBadge: "Specific Ask • Ideal Referrals",
+    timeTarget: "4:55 - 5:50 (55s)",
     title: "My Specific Ask: Who Can You Introduce Me To?",
-    subtitle: "Help me connect with business owners ready to eliminate manual bottlenecks with custom technology.",
+    subtitle: "Help me connect with insurance professionals and agency principals who are tired of manual Excel routine.",
+    script: "Members, who is my ideal referral? First: LIC MDRT, COT, or TOT advisors managing 500+ policies. Second: General insurance broking firms handling health and motor across multiple companies. Third: Wealth advisors and CAs. Whenever you hear an advisor say, 'My staff spends a week typing policy lists into Excel,' or 'Clients keep forgetting their grace period,' that is your trigger to connect them with me!",
     leftCol: {
       title: "Target Client Profiles",
       badge: "WHO TO INTRODUCE",
       items: [
         {
-          icon: "🏥",
-          title: "Clinics, Doctors & Hospitals",
-          desc: "Appointment apps, zero no-shows & automated WhatsApp reminders",
+          icon: "🏆",
+          title: "High-Volume LIC Advisors & MDRT / COT Members",
+          desc: "Managing 500 to 2,500+ active policies, needing automated monthly renewal cycles with zero extra staff.",
           bg: "#eff6ff",
           border: "#bfdbfe"
         },
         {
-          icon: "🚚",
-          title: "Logistics, Fleet & Transporters",
-          desc: "Driver tracking, trip dispatching & real-time delivery apps",
+          icon: "🏥",
+          title: "General Insurance Broking Houses & Agencies",
+          desc: "Multi-line brokers handling Health (Star Health, Care), Motor, Marine, and Fire across multiple insurers.",
           bg: "#f0fdf4",
           border: "#bbf7d0"
         },
         {
-          icon: "🏭",
-          title: "Manufacturers & Distributors",
-          desc: "Dealer order portals, dynamic catalog pricing & field sales apps",
+          icon: "💼",
+          title: "Wealth Managers & Mutual Fund Distributors",
+          desc: "Financial planners who manage client portfolios and want consolidated family dossiers for HNIs.",
           bg: "#fef3c7",
           border: "#fde68a"
         },
         {
-          icon: "🏢",
-          title: "Service Firms (CA, Real Estate, Legal)",
-          desc: "Client document intake, auto-invoicing & follow-up portals",
+          icon: "📊",
+          title: "Chartered Accountants (CAs) & Tax Advisors",
+          desc: "CAs advising clients with large insurance books or agency firms needing organized financial dossiers.",
           bg: "#f5f3ff",
           border: "#ddd6fe"
         }
@@ -404,25 +371,25 @@ const DEFAULT_SLIDES = [
       items: [
         {
           icon: "🗣️",
-          title: '"My staff spends hours on Excel every day..."',
+          title: "\"My staff spends the first week of every month typing policy due lists into Excel...\"",
           bg: "#eff6ff",
           border: "#bfdbfe"
         },
         {
           icon: "🗣️",
-          title: '"We lost a deal because we forgot to follow up..."',
+          title: "\"Clients forgot their renewal date and their policy lapsed during grace period...\"",
           bg: "#fef2f2",
           border: "#fecaca"
         },
         {
           icon: "🗣️",
-          title: '"Standard generic software doesn’t fit our workflow..."',
+          title: "\"I have clients across LIC, Star, and HDFC Ergo, but no single software to see full family coverage...\"",
           bg: "#fffbeb",
           border: "#fef3c7"
         },
         {
           icon: "🗣️",
-          title: '"We want our own branded mobile app..."',
+          title: "\"I want to send WhatsApp reminders to my clients in Gujarati or Hindi without typing each message manually...\"",
           bg: "#f0fdfa",
           border: "#ccfbf1"
         }
@@ -430,42 +397,26 @@ const DEFAULT_SLIDES = [
     }
   },
 
-  // Slide 10: My Give (How I Support Our Chapter - Givers Gain)
-  {
-    layout: "threecard",
-    categoryBadge: "Givers Gain • Chapter Contribution",
-    title: "My Give: How I Support Our Chapter Members",
-    subtitle: "I believe in Givers Gain — here is how I bring direct value and support to every member in our chapter.",
-    cards: [
-      {
-        title: "Free 30-Min Automation Audit",
-        icon: "🔍",
-        body: "1-to-1 operational diagnosis to identify your manual bottlenecks and provide a clear automation roadmap — 100% free with zero obligation.",
-        metric: "Free 1-to-1 for Members"
-      },
-      {
-        title: "SafetySetu Fraud Defense",
-        icon: "🛡️",
-        body: "Complimentary smartphone safety audit and UPI payment fraud protection for your family, key employees, and business bank accounts.",
-        metric: "Digital Peace of Mind"
-      },
-      {
-        title: "High-Value Warm Connections",
-        icon: "🤝",
-        body: "Leveraging 24+ years of systems engineering pedigree across India, USA, and Japan to pass high-trust business referrals.",
-        metric: "Active Networker"
-      }
-    ]
-  },
-
-  // Slide 11: Closing & 1-to-1 Call to Action
+  // ==========================================================================
+  // SLIDE 8: MY GIVE & 1-TO-1 CALL TO ACTION [5:50 – 6:35] (Target: 45s + Buffer)
+  // ==========================================================================
   {
     layout: "qa",
-    categoryBadge: "Next Steps & 1-to-1 Meeting",
-    title: "Let's Book a 1-to-1 Meeting & Free Automation Audit",
-    subtitle: "Tell me 1 manual headache in your business during our 1-to-1, and I will show you how to automate it!",
+    categoryBadge: "Givers Gain • 1-to-1 Booking",
+    timeTarget: "5:50 - 6:35 (45s)",
+    title: "Book a 1-to-1 & Free 30-Min Agency Automation Audit",
+    subtitle: "Bring 1 raw insurer PDF or due list to our 1-to-1 meeting, and I will demonstrate extracting it live in 60 seconds!",
+    script: "In the spirit of Givers Gain, my give to every member is a Free 30-Minute Automation Audit. If you or someone you know runs an insurance business, have them bring just ONE raw PDF statement to our 1-to-1. I will extract and organize it live on screen in 60 seconds with zero obligation. Plus, I offer a complimentary SafetySetu digital security check to protect your smartphones and UPI accounts from cyber scams. Scan the QR code, let's book a 1-to-1, and let's turn 5 days of manual pain into 30 minutes of automated peace of mind. Thank you!",
     contactInfo: BRAND_CONFIG.contact.items,
     qrLabel: BRAND_CONFIG.contact.qrLabel,
-    qrSub: BRAND_CONFIG.contact.qrSub
+    qrSub: BRAND_CONFIG.contact.qrSub,
+    giveHighlight: {
+      title: "My Give to Chapter Members (Givers Gain):",
+      items: [
+        "🎁 <strong>Free 30-Min Agency Automation Audit:</strong> Live demonstration parsing your actual insurer PDF in 60 seconds with zero obligation.",
+        "🛡️ <strong>SafetySetu Digital Peace of Mind:</strong> Complimentary smartphone security audit & UPI fraud defense check for your family and business bank accounts.",
+        "🤝 <strong>Warm High-Trust Connections:</strong> Leveraging 24+ years of systems engineering network across India, USA, and Japan."
+      ]
+    }
   }
 ];

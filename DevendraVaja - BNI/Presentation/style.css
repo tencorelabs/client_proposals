@@ -3512,3 +3512,277 @@ body.hide-slide-numbers .slide-number-tag {
 }
 
 
+
+/* ============================================================================
+ * 7-MINUTE FEATURE PRESENTATION ENHANCEMENTS: NETWORK TOGGLE, TIMER & SCRIPT
+ * ============================================================================
+ */
+
+/* Network Mode Switcher (BNI vs VBN) */
+.network-toggle {
+  display: flex;
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  gap: 3px;
+}
+
+.net-btn {
+  border: none;
+  background: transparent;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.04em;
+}
+
+.net-btn:hover {
+  color: var(--text-primary);
+}
+
+.net-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(15, 41, 66, 0.2);
+}
+
+/* 7-Minute Presenter Timer Widget */
+.timer-widget {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: var(--radius-md);
+  padding: 4px 10px;
+  transition: all 0.25s ease;
+}
+
+.timer-widget.warning {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+.timer-widget.critical {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+  animation: timerPulse 1.2s infinite;
+}
+
+.timer-widget.overtime {
+  background: #450a0a;
+  border-color: #ef4444;
+  color: #fee2e2;
+  animation: timerOvertimeFlash 1s infinite alternate;
+}
+
+@keyframes timerPulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  50% { transform: scale(1.02); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+@keyframes timerOvertimeFlash {
+  from { opacity: 1; }
+  to { opacity: 0.6; }
+}
+
+.timer-icon {
+  font-size: 0.95rem;
+}
+
+.timer-display {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #166534;
+  letter-spacing: 0.02em;
+}
+
+.timer-widget.warning .timer-display {
+  color: #b45309;
+}
+
+.timer-widget.critical .timer-display {
+  color: #dc2626;
+}
+
+.timer-widget.overtime .timer-display {
+  color: #fca5a5;
+  font-weight: 900;
+}
+
+.timer-action-btn {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.timer-action-btn:hover {
+  background: var(--bg-card-alt);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Slide Header Time Target Badge */
+.slide-time-target-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0369a1;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  border-radius: 9999px;
+  padding: 3px 10px;
+  margin-left: 8px;
+}
+
+/* Presenter Script / Notes Drawer */
+.script-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0f172a;
+  color: #f8fafc;
+  border-top: 2px solid var(--secondary);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  padding: 16px 24px;
+  transition: transform 0.3s ease;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.script-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #334155;
+}
+
+.script-drawer-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.script-mic-icon {
+  font-size: 1.1rem;
+}
+
+.script-slide-tag {
+  background: #1e293b;
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #0284c7;
+}
+
+.script-time-tag {
+  background: #064e3b;
+  color: #6ee7b7;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.script-close-btn {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.script-close-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.script-content-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.script-content-text em {
+  color: #38bdf8;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* QA Layout Give Highlight Box */
+.qa-give-highlight-box {
+  margin-top: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--secondary);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+}
+
+.give-highlight-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.give-highlight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.give-highlight-list li {
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+.give-highlight-list li strong {
+  color: var(--text-primary);
+}

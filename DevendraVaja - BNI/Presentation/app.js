@@ -2,6 +2,14 @@
  * ============================================================================
  * MASTER PRESENTATION ENGINE (TenCore Digital Labs)
  * ============================================================================
+ * Features:
+ * - 7-Minute Paced Feature Presentation Engine
+ * - Dynamic Network Mode Switcher (BNI vs VBN)
+ * - Built-in 7-Minute Presenter Countdown / Stopwatch with Overtime Alerts
+ * - Presenter Script Drawer (Hotkey 'S') with Exact Timed Talking Points
+ * - 16:9 Landscape Auto-Scaling Presentation Canvas
+ * - Slide Editor & LocalStorage Persistence
+ * - Multi-Aspect PDF Print & Export Engine
  */
 
 // Application State
@@ -10,10 +18,19 @@ let currentSlideIndex = 0;
 let isEditMode = false;
 let selectedRatio = '16:9';
 let printWithSlideNumbers = true;
+let activeNetwork = localStorage.getItem('tencore_network_mode') || 'BNI';
+
+// Timer State
+let timerSeconds = 0;
+let isTimerRunning = false;
+let timerInterval = null;
+
+// Script Drawer State
+let isScriptOpen = false;
 
 const STORAGE_KEY = (typeof DECK_META !== 'undefined' && DECK_META.storageKey) 
   ? DECK_META.storageKey 
-  : 'tencore_presentation_state_v1';
+  : 'tencore_presentation_state_v2';
 
 // DOM Elements
 const viewport = document.getElementById('slide-viewport');
@@ -50,11 +67,174 @@ const ratioCards = document.querySelectorAll('.ratio-card');
 // Initialize Application
 function init() {
   applyThemeTokens();
+  initNetworkMode();
   applyDeckHeader();
   loadSlides();
   setupEventListeners();
+  initPresenterTimer();
+  initScriptDrawer();
   setupViewportScaling();
   renderSlide();
+}
+
+// ----------------------------------------------------------------------------
+// Network Mode Switcher (BNI vs VBN)
+// ----------------------------------------------------------------------------
+function initNetworkMode() {
+  const btnBni = document.getElementById('btn-net-bni');
+  const btnVbn = document.getElementById('btn-net-vbn');
+  
+  if (btnBni) btnBni.addEventListener('click', () => setNetworkMode('BNI'));
+  if (btnVbn) btnVbn.addEventListener('click', () => setNetworkMode('VBN'));
+  
+  applyNetworkModeUI();
+}
+
+function setNetworkMode(mode) {
+  activeNetwork = mode;
+  localStorage.setItem('tencore_network_mode', mode);
+  applyNetworkModeUI();
+  applyDeckHeader();
+  renderSlide();
+  updateScriptDrawer();
+}
+
+function applyNetworkModeUI() {
+  const btnBni = document.getElementById('btn-net-bni');
+  const btnVbn = document.getElementById('btn-net-vbn');
+  if (btnBni && btnVbn) {
+    if (activeNetwork === 'VBN') {
+      btnVbn.classList.add('active');
+      btnBni.classList.remove('active');
+    } else {
+      btnBni.classList.add('active');
+      btnVbn.classList.remove('active');
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// 7-Minute Presenter Timer Logic
+// ----------------------------------------------------------------------------
+function initPresenterTimer() {
+  const btnToggle = document.getElementById('btn-timer-toggle');
+  const btnResetTimer = document.getElementById('btn-timer-reset');
+  if (btnToggle) btnToggle.addEventListener('click', toggleTimer);
+  if (btnResetTimer) btnResetTimer.addEventListener('click', resetTimer);
+  updateTimerUI();
+}
+
+function toggleTimer() {
+  if (isTimerRunning) {
+    pauseTimer();
+  } else {
+    startTimer();
+  }
+}
+
+function startTimer() {
+  if (isTimerRunning) return;
+  isTimerRunning = true;
+  const btnToggle = document.getElementById('btn-timer-toggle');
+  if (btnToggle) btnToggle.textContent = '❚❚';
+  timerInterval = setInterval(() => {
+    timerSeconds++;
+    updateTimerUI();
+  }, 1000);
+}
+
+function pauseTimer() {
+  isTimerRunning = false;
+  const btnToggle = document.getElementById('btn-timer-toggle');
+  if (btnToggle) btnToggle.textContent = '▶';
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+}
+
+function resetTimer() {
+  pauseTimer();
+  timerSeconds = 0;
+  updateTimerUI();
+}
+
+function updateTimerUI() {
+  const widget = document.getElementById('presenter-timer-widget');
+  const display = document.getElementById('timer-display');
+  if (!display) return;
+
+  const targetSec = (typeof DECK_META !== 'undefined' && DECK_META.targetDurationSeconds) ? DECK_META.targetDurationSeconds : 420;
+  
+  if (timerSeconds <= targetSec) {
+    const mins = Math.floor(timerSeconds / 60);
+    const secs = timerSeconds % 60;
+    const timeStr = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    display.textContent = `${timeStr} / 07:00`;
+
+    if (widget) {
+      widget.classList.remove('warning', 'critical', 'overtime');
+      if (timerSeconds >= 390) { // > 6:30 mins
+        widget.classList.add('critical');
+      } else if (timerSeconds >= 300) { // > 5:00 mins
+        widget.classList.add('warning');
+      }
+    }
+  } else {
+    const overSec = timerSeconds - targetSec;
+    const overMins = Math.floor(overSec / 60);
+    const overSecs = overSec % 60;
+    display.textContent = `+${String(overMins).padStart(2, '0')}:${String(overSecs).padStart(2, '0')} OVERTIME`;
+    if (widget) {
+      widget.classList.remove('warning', 'critical');
+      widget.classList.add('overtime');
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Presenter Script Drawer (Hotkey 'S')
+// ----------------------------------------------------------------------------
+function initScriptDrawer() {
+  const btnToggle = document.getElementById('btn-toggle-script');
+  const btnClose = document.getElementById('btn-close-script');
+  if (btnToggle) btnToggle.addEventListener('click', toggleScriptDrawer);
+  if (btnClose) btnClose.addEventListener('click', () => {
+    isScriptOpen = false;
+    const drawer = document.getElementById('presenter-script-drawer');
+    if (drawer) drawer.style.display = 'none';
+  });
+}
+
+function toggleScriptDrawer() {
+  isScriptOpen = !isScriptOpen;
+  const drawer = document.getElementById('presenter-script-drawer');
+  if (drawer) {
+    drawer.style.display = isScriptOpen ? 'block' : 'none';
+  }
+  if (isScriptOpen) updateScriptDrawer();
+}
+
+function updateScriptDrawer() {
+  const drawer = document.getElementById('presenter-script-drawer');
+  if (!drawer || !slides || slides.length === 0) return;
+  const slide = slides[currentSlideIndex];
+  if (!slide) return;
+
+  const slideTag = document.getElementById('script-slide-tag');
+  const timeTag = document.getElementById('script-time-tag');
+  const content = document.getElementById('script-content-text');
+
+  const cleanTitle = slide.title ? slide.title.replace(/<[^>]*>/g, '') : '';
+  if (slideTag) slideTag.textContent = `Slide ${currentSlideIndex + 1} of ${slides.length}: ${cleanTitle}`;
+  if (timeTag) timeTag.textContent = slide.timeTarget ? `⏱️ Target: ${slide.timeTarget}` : '⏱️ Paced for 7 Mins';
+  
+  if (content) {
+    content.innerHTML = `
+      <p style="margin-bottom: 8px;"><strong>Timed Talking Script:</strong> ${slide.script || 'Present key slide points clearly and concisely.'}</p>
+      ${slide.timeTarget ? `<p style="font-size: 0.85rem; color: #94a3b8;">💡 <em>Pacing cue: Keep to ${slide.timeTarget} to finish comfortably within the 7-minute mark.</em></p>` : ''}
+    `;
+  }
 }
 
 // Apply Theme CSS Custom Properties
@@ -77,9 +257,19 @@ function applyDeckHeader() {
   if (typeof DECK_META === 'undefined') return;
   const titleEl = document.getElementById('header-deck-title');
   const subEl = document.getElementById('header-deck-subtitle');
-  if (titleEl && DECK_META.title) titleEl.textContent = `${DECK_META.title} • Pitch Deck`;
-  if (subEl && DECK_META.subtitle) subEl.textContent = `${BRAND_CONFIG.companyName} • ${DECK_META.subtitle}`;
-  if (DECK_META.title) document.title = `${DECK_META.title} | ${BRAND_CONFIG.companyName}`;
+  const netConf = (typeof NETWORK_CONFIG !== 'undefined' && NETWORK_CONFIG[activeNetwork]) 
+    ? NETWORK_CONFIG[activeNetwork] 
+    : null;
+
+  if (titleEl) {
+    titleEl.textContent = netConf ? netConf.headerTitle : `${DECK_META.title} • Feature Presentation`;
+  }
+  if (subEl && DECK_META.subtitle) {
+    subEl.textContent = `${BRAND_CONFIG.companyName} • ${DECK_META.subtitle}`;
+  }
+  if (DECK_META.title) {
+    document.title = `${DECK_META.title} | ${BRAND_CONFIG.companyName}`;
+  }
 }
 
 // Load Slides from LocalStorage or Defaults
@@ -151,15 +341,20 @@ function renderSlide() {
   navPrev.disabled = currentSlideIndex === 0;
   navNext.disabled = currentSlideIndex === slides.length - 1;
   navLast.disabled = currentSlideIndex === slides.length - 1;
+
+  // Update presenter script drawer if open
+  if (isScriptOpen) {
+    updateScriptDrawer();
+  }
 }
 
 // Helper: Common Footer HTML
 function renderFooter(index) {
   const company = (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.companyName) ? BRAND_CONFIG.companyName : 'TenCore Digital Labs';
-  const confidential = (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.confidentialLabel) ? BRAND_CONFIG.confidentialLabel : 'CONFIDENTIAL';
+  const confidential = (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.confidentialLabel) ? BRAND_CONFIG.confidentialLabel : 'FEATURE PRESENTATION';
   return `
     <div class="slide-footer-tag">
-      <span>${company}</span>
+      <span>${company} • 7-Minute Feature Presentation</span>
       <span class="confidential-tag">${confidential}</span>
       <span>Slide ${index + 1} of ${slides.length}</span>
     </div>
@@ -170,32 +365,39 @@ function renderFooter(index) {
 function generateSlideHTML(slide, index, extraClass = '') {
   let innerContent = '';
   const cls = extraClass ? ` ${extraClass}` : '';
-  const confidential = (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.confidentialLabel) ? BRAND_CONFIG.confidentialLabel : 'CONFIDENTIAL';
+  const confidential = (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.confidentialLabel) ? BRAND_CONFIG.confidentialLabel : 'FEATURE PRESENTATION';
   const company = (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.companyName) ? BRAND_CONFIG.companyName : 'TenCore Digital Labs';
   const copyright = (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.copyright) ? BRAND_CONFIG.copyright : 'TenCore Digital Labs © 2026';
 
+  const netConf = (typeof NETWORK_CONFIG !== 'undefined' && NETWORK_CONFIG[activeNetwork]) ? NETWORK_CONFIG[activeNetwork] : null;
+  const timeTargetBadge = slide.timeTarget ? `<span class="slide-time-target-badge" title="Pacing guide for 7-minute delivery">⏱️ ${slide.timeTarget}</span>` : '';
+
   switch (slide.layout) {
     case 'title':
+      const titlePill = netConf ? netConf.pillTag : (slide.pillTag || (typeof DECK_META !== 'undefined' ? DECK_META.pillTag : '🤝 Feature Presentation'));
+      const metaSubText = netConf ? netConf.metaSub : 'Business Network Feature';
+      
       innerContent = `
         <div class="slide${cls} slide-title-layout">
           <div class="slide-bg-glow"></div>
           <div class="title-top-brand-row">
             <img src="Pics/tencore_digital_labs_logo.png" alt="TenCore Digital Labs" class="title-slide-logo" onerror="this.style.display='none'">
-            <div class="title-pill-tag">${slide.pillTag || (typeof DECK_META !== 'undefined' ? DECK_META.pillTag : '🛡️ TenCore Digital Labs')}</div>
+            <div class="title-pill-tag">${titlePill}</div>
+            ${timeTargetBadge}
           </div>
           <h1>${slide.title}</h1>
           <div class="title-deck-subtitle">${slide.subtitle || ''}</div>
           <div class="title-meta-grid">
-            ${(slide.meta || []).map(m => `
+            ${(slide.meta || []).map((m, mIdx) => `
               <div class="title-meta-card">
                 <div class="meta-label">${m.label}</div>
                 <div class="meta-value">${m.value}</div>
-                <div class="meta-sub">${m.sub}</div>
+                <div class="meta-sub">${mIdx === 2 ? metaSubText : m.sub}</div>
               </div>
             `).join('')}
           </div>
           <div class="slide-footer-tag">
-            <span>${company} • Feature Presentation</span>
+            <span>${company} • 7-Minute Feature Presentation</span>
             <span class="confidential-tag">${confidential}</span>
             <span>${copyright}</span>
           </div>
@@ -261,34 +463,32 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">Leadership & Engineering Track Record</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+              <div class="slide-category-badge">${slide.categoryBadge || 'Leadership & Engineering Track Record'}</div>
+              ${timeTargetBadge}
+            </div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
           <div class="slide-body">
-            <div class="instructor-slide-grid">
-              <div class="instructor-avatar-card">
-                <img src="Pics/devendra_vaja.jpeg" alt="${name}" class="instructor-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="instructor-avatar-fallback" style="display:none;">${f.avatarInitials || 'DV'}</div>
-                <h3>${name}</h3>
-                <p>${role}</p>
-                ${tagline ? `<div class="instructor-tagline-text">${tagline}</div>` : ''}
-                <div class="instructor-global-flags">
-                  <div class="global-flag-pill" title="India">
-                    <img src="Pics/flags/india.svg" alt="India" class="flag-img">
-                    <span>India</span>
-                  </div>
-                  <div class="global-flag-pill" title="Japan">
-                    <img src="Pics/flags/japan.svg" alt="Japan" class="flag-img">
-                    <span>Japan</span>
-                  </div>
-                  <div class="global-flag-pill" title="USA">
-                    <img src="Pics/flags/usa.svg" alt="USA" class="flag-img">
-                    <span>USA</span>
+            <div class="instructor-grid">
+              <div class="instructor-card">
+                <div class="instructor-photo-container">
+                  <img src="Pics/devendra_vaja.jpeg" alt="Devendra Vaja" class="instructor-photo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="instructor-avatar-fallback" style="display: none;">${f.avatarInitials || 'DV'}</div>
+                  <div class="pedigree-flag-badges">
+                    <img src="Pics/flags/india.svg" alt="India" class="pedigree-flag-icon" title="India Systems & Architecture">
+                    <img src="Pics/flags/japan.svg" alt="Japan" class="pedigree-flag-icon" title="Tokyo Gaming & Device Drivers">
+                    <img src="Pics/flags/usa.svg" alt="USA" class="pedigree-flag-icon" title="US Enterprise Systems">
                   </div>
                 </div>
+                <div class="instructor-meta">
+                  <h3>${name}</h3>
+                  <div class="role-badge">${role}</div>
+                  ${tagline ? `<p class="instructor-tagline">${tagline}</p>` : ''}
+                </div>
               </div>
-              <div class="instructor-details-card">
+              <div class="instructor-details-pane">
                 ${rightPaneContent}
               </div>
             </div>
@@ -337,11 +537,19 @@ function generateSlideHTML(slide, index, extraClass = '') {
         `;
       };
 
+      let categoryBadge = slide.categoryBadge || 'Industry Analysis & Solutions';
+      if (slide.categoryBadge && slide.categoryBadge.includes('Ask')) {
+        categoryBadge = netConf ? netConf.askBadge : slide.categoryBadge;
+      }
+
       innerContent = `
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">${slide.categoryBadge || 'Cross-Industry Business Automation'}</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+              <div class="slide-category-badge">${categoryBadge}</div>
+              ${timeTargetBadge}
+            </div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -378,6 +586,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
               <div class="slide-category-badge">${slide.categoryBadge || 'Core Architecture & Capabilities'}</div>
               <div class="slide-header-right-tools">
+                ${timeTargetBadge}
                 ${productBadge ? `
                   <div class="slide-header-product-badge">
                     <img src="${productBadge.icon}" alt="${productBadge.name}" class="product-badge-thumb">
@@ -425,7 +634,10 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">${slide.categoryBadge || 'Strategic Value & Market Focus'}</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+              <div class="slide-category-badge">${slide.categoryBadge || 'Strategic Value & Market Focus'}</div>
+              ${timeTargetBadge}
+            </div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -452,7 +664,10 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">${slide.categoryBadge || 'Competitive Advantage & System Stack'}</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+              <div class="slide-category-badge">${slide.categoryBadge || 'Competitive Advantage & System Stack'}</div>
+              ${timeTargetBadge}
+            </div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -490,7 +705,10 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">Engineering & Rollout Roadmap</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+              <div class="slide-category-badge">${slide.categoryBadge || 'The 30-Minute Transformation'}</div>
+              ${timeTargetBadge}
+            </div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -525,7 +743,10 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">Comparative Analysis & Metrics</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+              <div class="slide-category-badge">${slide.categoryBadge || 'Comparative Analysis & Value Stack'}</div>
+              ${timeTargetBadge}
+            </div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -570,29 +791,33 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">Commercial Scope & Investment Tiers</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+              <div class="slide-category-badge">${slide.categoryBadge || 'Commercial Scope & Investment Tiers'}</div>
+              ${timeTargetBadge}
+            </div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
           <div class="slide-body">
-            <div class="deal-options-grid">
-              ${(slide.cards || []).map(c => `
-                <div class="deal-card ${c.featured ? 'featured-deal' : ''}">
-                  <div class="deal-card-header">
-                    <div class="deal-header-top">
-                      <h3>${c.title}</h3>
-                      ${c.badge ? `<span class="deal-badge-tag">${c.badge}</span>` : ''}
+            <div class="pricing-card-grid">
+              ${(slide.cards || []).map(card => `
+                <div class="pricing-card ${card.featured ? 'featured' : ''}">
+                  ${card.badge ? `<div class="pricing-tier-badge">${card.badge}</div>` : ''}
+                  <div class="pricing-header">
+                    <h3>${card.title}</h3>
+                    <div class="price-display">
+                      <span class="currency">₹</span>
+                      <span class="amount">${card.price.replace('₹', '')}</span>
+                      <span class="period">${card.priceSub ? `/ ${card.priceSub}` : '/ month'}</span>
                     </div>
-                    <div class="deal-tagline">${c.tagline || ''}</div>
+                    ${card.tagline ? `<div class="pricing-tagline">${card.tagline}</div>` : ''}
                   </div>
-                  <div class="deal-price-box">
-                    <div class="deal-price-large">${c.price}</div>
-                    <div class="deal-price-sub">${c.priceSub || ''}</div>
+                  <div class="pricing-bullets">
+                    <ul>
+                      ${(card.bullets || []).map(b => `<li>${b}</li>`).join('')}
+                    </ul>
                   </div>
-                  <ul class="deal-bullets">
-                    ${(c.bullets || []).map(b => `<li>${b}</li>`).join('')}
-                  </ul>
-                  ${c.footerPitch ? `<div class="deal-footer-pitch">${c.footerPitch}</div>` : ''}
+                  ${card.footerPitch ? `<div class="pricing-footer-pitch">${card.footerPitch}</div>` : ''}
                 </div>
               `).join('')}
             </div>
@@ -606,6 +831,8 @@ function generateSlideHTML(slide, index, extraClass = '') {
       const cInfo = slide.contactInfo || (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.contact ? BRAND_CONFIG.contact.items : []);
       const qrL = slide.qrLabel || (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.contact ? BRAND_CONFIG.contact.qrLabel : 'Contact Info');
       const qrS = slide.qrSub || (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.contact ? BRAND_CONFIG.contact.qrSub : 'Scan to connect');
+      const qaBadge = netConf ? netConf.giveBadge : (slide.categoryBadge || 'Givers Gain • 1-to-1 Booking');
+      const giveTitle = netConf ? netConf.giveTitle : (slide.giveHighlight ? slide.giveHighlight.title : 'My Give to Chapter Members (Givers Gain):');
 
       innerContent = `
         <div class="slide${cls}">
@@ -613,7 +840,10 @@ function generateSlideHTML(slide, index, extraClass = '') {
           <div class="slide-body" style="height: 100%;">
             <div class="qa-slide-container">
               <div class="qa-left-pane">
-                <div class="slide-category-badge" style="width: fit-content;">Next Steps & Engagement</div>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+                  <div class="slide-category-badge" style="width: fit-content;">${qaBadge}</div>
+                  ${timeTargetBadge}
+                </div>
                 <h2>${slide.title}</h2>
                 <p>${slide.subtitle || ''}</p>
                 <div class="contact-info-list">
@@ -627,6 +857,14 @@ function generateSlideHTML(slide, index, extraClass = '') {
                     </div>
                   `).join('')}
                 </div>
+                ${slide.giveHighlight ? `
+                  <div class="qa-give-highlight-box">
+                    <div class="give-highlight-title">${giveTitle}</div>
+                    <ul class="give-highlight-list">
+                      ${slide.giveHighlight.items.map(it => `<li>${it}</li>`).join('')}
+                    </ul>
+                  </div>
+                ` : ''}
               </div>
               <div class="qa-right-pane">
                 <img src="Pics/tencore_digital_labs_logo.png" alt="TenCore Digital Labs" class="qa-studio-logo" onerror="this.style.display='none'">
@@ -686,6 +924,28 @@ function setupEventListeners() {
       return;
     }
 
+    // Toggle Script Drawer with 'S' or 's'
+    if (e.key === 's' || e.key === 'S') {
+      if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        toggleScriptDrawer();
+        return;
+      }
+    }
+
+    // Toggle Timer with 'T' or 't'
+    if (e.key === 't' || e.key === 'T') {
+      if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        if (e.shiftKey) {
+          resetTimer();
+        } else {
+          toggleTimer();
+        }
+        return;
+      }
+    }
+
     if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
       e.preventDefault();
       if (currentSlideIndex < slides.length - 1) { currentSlideIndex++; renderSlide(); }
@@ -730,24 +990,39 @@ function setupEventListeners() {
   btnExportPdf.addEventListener('click', openExportModal);
   btnCloseModal.addEventListener('click', closeExportModal);
   btnCancelExport.addEventListener('click', closeExportModal);
-  exportModal.addEventListener('click', (e) => {
-    if (e.target === exportModal) closeExportModal();
-  });
+  btnConfirmExport.addEventListener('click', executePrint);
 
   ratioCards.forEach(card => {
     card.addEventListener('click', () => {
       ratioCards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
       const radio = card.querySelector('input[type="radio"]');
-      if (radio) radio.checked = true;
-      selectedRatio = card.dataset.ratio;
+      if (radio) {
+        radio.checked = true;
+        selectedRatio = radio.value;
+      }
     });
   });
 
-  btnConfirmExport.addEventListener('click', executePdfExport);
+  chkPrintSlideNumbers.addEventListener('change', (e) => {
+    printWithSlideNumbers = e.target.checked;
+  });
 }
 
-// Switch to Presenter Mode
+// Fullscreen Mode Handler
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(err => {
+      console.warn('Error attempting to enable fullscreen:', err.message);
+    });
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
+// Mode Switchers
 function switchToPresentMode() {
   isEditMode = false;
   btnPresentMode.classList.add('active');
@@ -756,144 +1031,276 @@ function switchToPresentMode() {
   editorView.style.display = 'none';
   editorControls.style.display = 'none';
   renderSlide();
+  setupViewportScaling();
 }
 
-// Switch to Edit Mode
 function switchToEditMode() {
   isEditMode = true;
   btnEditMode.classList.add('active');
   btnPresentMode.classList.remove('active');
   presentationView.style.display = 'none';
-  editorView.style.display = 'block';
+  editorView.style.display = 'flex';
   editorControls.style.display = 'flex';
+  if (viewport) viewport.style.transform = 'none';
   renderEditor();
 }
 
-// Render All Slides in Edit Mode
-function renderEditor() {
-  editorView.innerHTML = '';
-  slides.forEach((slide, idx) => {
-    const card = document.createElement('div');
-    card.className = 'editor-slide-card';
-    card.innerHTML = `
-      <div class="editor-slide-header">
-        <span class="editor-slide-num">Slide ${idx + 1} • Layout: ${slide.layout.toUpperCase()}</span>
-        <div class="editor-slide-actions">
-          <button class="btn btn-sm" onclick="moveSlide(${idx}, -1)" ${idx === 0 ? 'disabled' : ''}>⬆️ Move Up</button>
-          <button class="btn btn-sm" onclick="moveSlide(${idx}, 1)" ${idx === slides.length - 1 ? 'disabled' : ''}>⬇️ Move Down</button>
-          <button class="btn btn-sm btn-danger" onclick="deleteSlide(${idx})" ${slides.length <= 1 ? 'disabled' : ''}>🗑️ Delete</button>
-        </div>
-      </div>
-      <div class="editor-preview-container">
-        ${generateSlideHTML(slide, idx)}
-      </div>
-    `;
-    editorView.appendChild(card);
-  });
-}
-
-// Reorder Slides
-window.moveSlide = function(index, direction) {
-  const target = index + direction;
-  if (target < 0 || target >= slides.length) return;
-  const temp = slides[index];
-  slides[index] = slides[target];
-  slides[target] = temp;
-  renderEditor();
-};
-
-// Delete Slide
-window.deleteSlide = function(index) {
-  if (slides.length <= 1) {
-    alert('A presentation must have at least one slide.');
-    return;
-  }
-  if (confirm(`Are you sure you want to delete Slide ${index + 1}?`)) {
-    slides.splice(index, 1);
-    if (currentSlideIndex >= slides.length) currentSlideIndex = slides.length - 1;
-    renderEditor();
-  }
-};
-
-// Add New Slide
+// Slide Creation
 function addNewSlide(layout) {
   const newSlide = {
     layout: layout,
     title: 'New Slide Title',
-    subtitle: 'Add supporting description or strategic takeaway'
+    subtitle: 'Add descriptive subtitle here',
+    timeTarget: '0:45',
+    script: 'Add your timed speaker script and cues for this slide here.'
   };
 
-  if (layout === 'twocol') {
-    newSlide.leftCol = { title: 'Left Heading', bullets: ['Key point 1', 'Key point 2'] };
-    newSlide.rightCol = { title: 'Right Heading', bullets: ['Key point 1', 'Key point 2'] };
-  } else if (layout === 'threecard') {
-    newSlide.cards = [
-      { title: 'Pillar 1', icon: '⚡', body: 'Description', metric: 'Metric' },
-      { title: 'Pillar 2', icon: '📱', body: 'Description', metric: 'Metric' },
-      { title: 'Pillar 3', icon: '📊', body: 'Description', metric: 'Metric' }
-    ];
-  } else if (layout === 'fourcard') {
-    newSlide.cards = [
-      { title: 'Card 1', icon: '📌', body: 'Description' },
-      { title: 'Card 2', icon: '📌', body: 'Description' },
-      { title: 'Card 3', icon: '📌', body: 'Description' },
-      { title: 'Card 4', icon: '📌', body: 'Description' }
-    ];
+  switch (layout) {
+    case 'twocol':
+      newSlide.leftCol = { title: 'Column 1', badge: 'POINTS', bullets: ['Key takeaway 1', 'Key takeaway 2'] };
+      newSlide.rightCol = { title: 'Column 2', badge: 'DETAILS', bullets: ['Benefit 1', 'Benefit 2'] };
+      break;
+    case 'threecard':
+      newSlide.cards = [
+        { title: 'Feature 1', icon: '⚡', body: 'Detail on feature 1', metric: '10x Speed' },
+        { title: 'Feature 2', icon: '📈', body: 'Detail on feature 2', metric: '+30% ROI' },
+        { title: 'Feature 3', icon: '🛡️', body: 'Detail on feature 3', metric: '100% Secure' }
+      ];
+      break;
+    case 'fourcard':
+      newSlide.cards = [
+        { title: 'Point 1', icon: '1️⃣', body: 'First point description' },
+        { title: 'Point 2', icon: '2️⃣', body: 'Second point description' },
+        { title: 'Point 3', icon: '3️⃣', body: 'Third point description' },
+        { title: 'Point 4', icon: '4️⃣', body: 'Fourth point description' }
+      ];
+      break;
+    case 'blueprint':
+      newSlide.phases = [
+        { phase: 'PHASE 1', title: 'Setup', duration: '5 Mins', budget: 'Zero Cost', deliverables: ['Deliverable 1'] },
+        { phase: 'PHASE 2', title: 'Execution', duration: '15 Mins', budget: 'Automated', deliverables: ['Deliverable 2'] }
+      ];
+      break;
+    case 'table':
+      newSlide.columns = ['Metric / Item', 'Traditional Approach', 'With Platform'];
+      newSlide.rows = [
+        ['Process Time', '5 Days', '30 Minutes'],
+        ['Staff Required', '1 Assistant', 'Zero Typists']
+      ];
+      break;
   }
 
-  slides.push(newSlide);
+  slides.splice(currentSlideIndex + 1, 0, newSlide);
+  currentSlideIndex++;
   renderEditor();
 }
 
-// Fullscreen Presentation Mode
-function toggleFullscreen() {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen().catch(err => console.log(err));
-  } else {
-    if (document.exitFullscreen) document.exitFullscreen();
+// Render Edit Mode (WYSIWYG Form Inputs)
+function renderEditor() {
+  editorView.innerHTML = '';
+
+  slides.forEach((slide, idx) => {
+    const cardWrapper = document.createElement('div');
+    cardWrapper.className = `editor-slide-wrapper ${idx === currentSlideIndex ? 'active-editor-slide' : ''}`;
+    cardWrapper.dataset.index = idx;
+
+    cardWrapper.innerHTML = `
+      <div class="editor-slide-header">
+        <div class="editor-slide-info">
+          <span class="editor-slide-num">#${idx + 1}</span>
+          <span class="editor-slide-layout">${slide.layout.toUpperCase()}</span>
+          ${slide.timeTarget ? `<span class="editor-slide-layout" style="background:#e0f2fe; color:#0369a1;">⏱️ ${slide.timeTarget}</span>` : ''}
+        </div>
+        <div class="editor-slide-actions">
+          <button class="btn-icon btn-move-up" title="Move slide up" ${idx === 0 ? 'disabled' : ''}>↑</button>
+          <button class="btn-icon btn-move-down" title="Move slide down" ${idx === slides.length - 1 ? 'disabled' : ''}>↓</button>
+          <button class="btn-icon btn-delete-slide" title="Delete slide">🗑️</button>
+        </div>
+      </div>
+      <div class="editor-slide-preview">
+        ${generateSlideHTML(slide, idx, 'editor-preview-mode')}
+      </div>
+      <div class="editor-slide-form">
+        <div class="form-group">
+          <label>Slide Title</label>
+          <input type="text" class="form-input input-title" value="${escapeHtml(slide.title || '')}">
+        </div>
+        <div class="form-group">
+          <label>Subtitle / Description</label>
+          <input type="text" class="form-input input-subtitle" value="${escapeHtml(slide.subtitle || '')}">
+        </div>
+        <div class="form-row-2col">
+          <div class="form-group">
+            <label>Target Timing (e.g., "0:35 - 1:20 (45s)")</label>
+            <input type="text" class="form-input input-time" value="${escapeHtml(slide.timeTarget || '')}">
+          </div>
+          <div class="form-group">
+            <label>Category Badge</label>
+            <input type="text" class="form-input input-badge" value="${escapeHtml(slide.categoryBadge || '')}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>7-Minute Presenter Talking Script & Cues</label>
+          <textarea class="form-textarea input-script" rows="3">${escapeHtml(slide.script || '')}</textarea>
+        </div>
+      </div>
+    `;
+
+    // Input Bindings
+    const inputTitle = cardWrapper.querySelector('.input-title');
+    const inputSub = cardWrapper.querySelector('.input-subtitle');
+    const inputTime = cardWrapper.querySelector('.input-time');
+    const inputBadge = cardWrapper.querySelector('.input-badge');
+    const inputScript = cardWrapper.querySelector('.input-script');
+
+    inputTitle.addEventListener('input', (e) => {
+      slides[idx].title = e.target.value;
+      updatePreview(cardWrapper, idx);
+    });
+    inputSub.addEventListener('input', (e) => {
+      slides[idx].subtitle = e.target.value;
+      updatePreview(cardWrapper, idx);
+    });
+    if (inputTime) {
+      inputTime.addEventListener('input', (e) => {
+        slides[idx].timeTarget = e.target.value;
+        updatePreview(cardWrapper, idx);
+      });
+    }
+    if (inputBadge) {
+      inputBadge.addEventListener('input', (e) => {
+        slides[idx].categoryBadge = e.target.value;
+        updatePreview(cardWrapper, idx);
+      });
+    }
+    if (inputScript) {
+      inputScript.addEventListener('input', (e) => {
+        slides[idx].script = e.target.value;
+      });
+    }
+
+    // Action Handlers
+    cardWrapper.querySelector('.btn-move-up').addEventListener('click', () => {
+      if (idx > 0) {
+        const temp = slides[idx];
+        slides[idx] = slides[idx - 1];
+        slides[idx - 1] = temp;
+        renderEditor();
+      }
+    });
+
+    cardWrapper.querySelector('.btn-move-down').addEventListener('click', () => {
+      if (idx < slides.length - 1) {
+        const temp = slides[idx];
+        slides[idx] = slides[idx + 1];
+        slides[idx + 1] = temp;
+        renderEditor();
+      }
+    });
+
+    cardWrapper.querySelector('.btn-delete-slide').addEventListener('click', () => {
+      if (slides.length <= 1) {
+        alert('Presentation must contain at least 1 slide.');
+        return;
+      }
+      if (confirm(`Delete slide #${idx + 1}?`)) {
+        slides.splice(idx, 1);
+        if (currentSlideIndex >= slides.length) currentSlideIndex = slides.length - 1;
+        renderEditor();
+      }
+    });
+
+    editorView.appendChild(cardWrapper);
+  });
+}
+
+function updatePreview(wrapper, idx) {
+  const previewContainer = wrapper.querySelector('.editor-slide-preview');
+  if (previewContainer) {
+    previewContainer.innerHTML = generateSlideHTML(slides[idx], idx, 'editor-preview-mode');
   }
 }
 
-// Open Export Modal
+function escapeHtml(str) {
+  return str.replace(/"/g, '&quot;');
+}
+
+// ----------------------------------------------------------------------------
+// PDF Export Handlers
+// ----------------------------------------------------------------------------
 function openExportModal() {
   exportModal.style.display = 'flex';
 }
 
-// Close Export Modal
 function closeExportModal() {
   exportModal.style.display = 'none';
 }
 
-// Execute PDF Print Export
-function executePdfExport() {
-  printWithSlideNumbers = chkPrintSlideNumbers.checked;
+function executePrint() {
   closeExportModal();
 
-  const printRatioClass = selectedRatio === '4:3' ? 'aspect-4-3' : 'aspect-16-9';
+  // Create Print Style Element
+  const existingPrintStyle = document.getElementById('dynamic-print-style');
+  if (existingPrintStyle) existingPrintStyle.remove();
 
-  // Build clean print deck
-  const printDeck = document.createElement('div');
-  printDeck.id = 'print-deck-container';
-  if (!printWithSlideNumbers) {
-    printDeck.classList.add('hide-slide-numbers');
-  }
+  const printStyle = document.createElement('style');
+  printStyle.id = 'dynamic-print-style';
 
-  slides.forEach((slide, idx) => {
-    const slideHTML = generateSlideHTML(slide, idx, printRatioClass);
-    printDeck.innerHTML += slideHTML;
-  });
+  const is16_9 = selectedRatio === '16:9';
+  const pageDim = is16_9 ? '297mm 167mm' : '297mm 210mm';
+  const slideAspectCls = is16_9 ? 'aspect-16-9' : 'aspect-4-3';
 
-  // Swap to print deck in presentation workspace
-  const previousHTML = viewport.innerHTML;
-  viewport.innerHTML = '';
-  viewport.appendChild(printDeck);
+  printStyle.innerHTML = `
+    @media print {
+      @page {
+        size: ${pageDim};
+        margin: 0;
+      }
+      header, .slide-navigation-controls, .editor-footer-controls, .script-drawer, #editor-view {
+        display: none !important;
+      }
+      body, main, #presentation-view, .slide-deck-viewport {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+        overflow: visible !important;
+      }
+      #slide-viewport {
+        transform: none !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+      .slide {
+        page-break-after: always !important;
+        break-after: page !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+      }
+      ${!printWithSlideNumbers ? '.slide-footer-tag span:last-child { display: none !important; }' : ''}
+    }
+  `;
+  document.head.appendChild(printStyle);
 
+  // Render all slides into viewport for printing
+  const originalHTML = viewport.innerHTML;
+  viewport.innerHTML = slides.map((s, idx) => generateSlideHTML(s, idx, slideAspectCls)).join('');
+
+  // Allow browser layout engine to paint before opening print dialog
   setTimeout(() => {
     window.print();
-    viewport.innerHTML = previousHTML;
-    renderSlide();
-  }, 350);
+    // Restore single slide view after print dialog closes
+    setTimeout(() => {
+      viewport.innerHTML = originalHTML;
+      setupViewportScaling();
+    }, 500);
+  }, 300);
 }
 
-// Kickoff
+// Start application when DOM is ready
 document.addEventListener('DOMContentLoaded', init);

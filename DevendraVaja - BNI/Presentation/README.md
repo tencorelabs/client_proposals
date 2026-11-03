@@ -1,90 +1,51 @@
-# TenCore Digital Labs • Master Presentation Template
-
-A production-grade, responsive executive presentation studio engineered by **TenCore Digital Labs**. Designed to rapidly generate visually stunning client pitch decks and export millimeter-perfect PDFs in **16:9 Widescreen** and **4:3 / A4 Standard**.
-
----
-
-## 📁 Template Structure
-
-```
-Templates/Master-Presentation/
-├── index.html         # Universal HTML presentation shell & export modal
-├── style.css          # Design system, responsive scale, and 16:9 / 4:3 print engine
-├── deck-config.js     # Client metadata, color theme & 11 slide layout templates
-├── app.js             # Presentation logic, keyboard navigation & print exporter
-├── Pics/              # Brand logos and client asset folder
-└── README.md          # Guide & layout documentation
-```
+# TenCore Digital Labs • 7-Minute Feature Presentation Studio
+## Solution: InsuranceSetu (BusinessSetu Suite)
+**Speaker**: Devendra Vaja (Founder & Principal Systems Architect)  
+**Target Duration**: Exactly 7 Minutes (420 Seconds)  
+**Audiences**: 
+- **BNI Chapter Feature Presentation** (Tomorrow)
+- **VBN (Vaishnav Business Network) Feature Presentation** (Day after tomorrow)
 
 ---
 
-## 🚀 How to Create a New Client Presentation (in 3 Minutes)
+## ⚡ Quick Start for Presenting
 
-### Step 1: Copy the Template Folder
-Duplicate the `Templates/Master-Presentation` folder into your client directory:
-```bash
-cp -r "Templates/Master-Presentation" "Clients/ParkingSetu/Presentation"
-```
-
-### Step 2: Open `deck-config.js` and Customize
-1. **Set Presentation Metadata**:
-   ```javascript
-   const DECK_META = {
-     title: "Parking Setu",
-     subtitle: "Digital Valet & Hospitality Operations Platform",
-     pillTag: "🚗 Digital Valet MVP Architecture",
-     version: "Version 1.0",
-     date: "September 2026",
-     category: "Client MVP Proposal",
-     storageKey: "parkingsetu_presentation_v1"
-   };
-   ```
-
-2. **(Optional) Set Client Color Theme**:
-   ```javascript
-   const THEME_CONFIG = {
-     primary: "#1e3a8a",       // Deep Navy
-     primaryDark: "#172554",
-     primaryLight: "#dbeafe",
-     secondary: "#d97706",     // Amber / Gold Accent
-     accent: "#2563eb"
-   };
-   ```
-
-3. **Populate Slides**:
-   Edit or add slide objects in the `DEFAULT_SLIDES` array using any of the 11 built-in layouts.
-
-### Step 3: View & Export
-- Double-click `index.html` in your browser.
-- Press **F** for Fullscreen presentation mode.
-- Click **📄 Export to PDF** to generate 16:9 widescreen or 4:3 A4 printouts.
+1. **Open Presentation**:
+   Open `DevendraVaja - BNI/Presentation/index.html` in Chrome, Safari, or Brave.
+2. **Switch Network Mode (BNI ⇋ VBN)**:
+   Click the **BNI** or **VBN** button in the top toolbar. The presentation immediately updates all titles, pill tags, badges, and terminology.
+3. **Presenter Keyboard Shortcuts**:
+   - `Right Arrow` / `Space` / `PageDown`: Next Slide
+   - `Left Arrow` / `PageUp`: Previous Slide
+   - `F`: Toggle Fullscreen Mode
+   - `T`: Start / Pause 7-Minute Presenter Timer (`Shift+T` to reset)
+   - `S`: Toggle Slide-out 7-Minute Speaker Script & Pacing Cues
+   - `Home` / `End`: Jump to First / Last Slide
 
 ---
 
-## 🎨 Supported 11 Slide Layouts
+## ⏱️ 7-Minute Master Slide Pacing & Timing Breakdown
 
-| Layout Key | Description | Best Used For |
-| :--- | :--- | :--- |
-| `title` | Title cover with pill tag & meta cards | Slide 1 (Opening Cover) |
-| `instructor` | Founder avatar card + 3 engineering pillars | Slide 2 (Devendra Vaja / Leadership) |
-| `divider` | Dark gradient section divider | Major agenda / topic transitions |
-| `twocol` | Two-column cards with bullet lists | Problem vs. Solution / Before vs. After |
-| `threecard` | 3-Card grid with icons & highlight metric tags | Core Capabilities, Product Pillars |
-| `fourcard` | 2×2 Card grid with custom icons | Strategic Asks, Commercial Benefits |
-| `differentiators`| Left feature list + Right vertical system stack | Architectural Differentiators & Tech Stack |
-| `blueprint` | 4-Phase horizontal roadmap with milestones | Rollout Timeline, Project SOW, Budget Phases |
-| `table` | Multi-column comparative data matrix | Feature Comparison, Competitor Benchmarks |
-| `pricing` | 3-Tier commercial deal cards | MVP Scope, Pricing, Annual SLA Tiers |
-| `qa` | Executive contact cards + QR scan box | Slide 18 (Closing, Next Steps & Q&A) |
+| # | Slide Title | Layout | Target Time | Cumulative | Visuals / Images | Core Takeaway |
+| :-: | :--- | :--- | :-: | :-: | :--- | :--- |
+| **1** | **InsuranceSetu: Document AI & Policy CRM** | `title` | **35s** | 0:00 – 0:35 | TenCore Logo, Network Pill Tag, Meta Cards | Hook: Cutting policy management from 5–6 days to under 30 minutes. |
+| **2** | **Meet Devendra Vaja — Systems Architect** | `instructor` | **45s** | 0:35 – 1:20 | Founder Photo, 3 Country Flags, 12 Global Logos | 24+ yrs pedigree (Tokyo gaming, US enterprise, SafetySetu security foundation). |
+| **3** | **The Silent 5-Day Crisis in Every Agency** | `twocol` | **55s** | 1:20 – 2:15 | Two-column bottleneck vs financial drain | The ongoing pain: unformatted PDFs, zero phone numbers, 25-hr typing trap, missed grace alerts. |
+| **4** | **How We Cut 5–6 Days to Under 30 Minutes** | `blueprint` | **60s** | 2:15 – 3:15 | 4-Phase Roadmap (`policy_speed_comparison.svg`) | 4-Step Zero-Data-Entry Engine (1-Click PDF ➡️ Phonetic Match ➡️ Vernacular WhatsApp ➡️ 360 Dossiers). |
+| **5** | **3 Transformative Agency Superpowers** | `threecard` | **50s** | 3:15 – 4:05 | 3 High-Impact Cards (`persistence_roi.svg`, `family_dossier_360.svg`) | 85% admin time saved, +35% renewal persistence, Family Customer 360 cross-sell radar. |
+| **6** | **₹20,500+ Value for Less Than ₹9/Day** | `table` | **50s** | 4:05 – 4:55 | Commercial Value Comparison Matrix | Save 95%+ vs traditional costs. 100% Breakeven Guarantee: save 1 policy in 6 mos = pays for year. |
+| **7** | **My Specific Ask: Who to Introduce Me To** | `twocol` | **55s** | 4:55 – 5:50 | 4 Target Profiles + 4 Trigger Quotes | LIC MDRT/COT advisors, General Brokers, Wealth Advisors, CAs. "My staff spends a week typing Excel..." |
+| **8** | **Book a 1-to-1 & Free 30-Min Audit** | `qa` | **45s** | 5:50 – 6:35 | QR Code, Contact Cards, Givers Gain Box | Free 30-min live PDF extraction audit + SafetySetu UPI security check. Buffer for Q&A to 7:00. |
 
 ---
 
-## 🖨️ PDF Export Settings
+## 🖨️ PDF Export Instructions
 
-When printing or saving as PDF from Chrome / Safari / Edge:
-- **Paper Size**: A4 (for standard printing) or Custom 297×167mm (for borderless 16:9).
-- **Layout**: `Landscape`
-- **Margins**: **`None`**
-- **Options**:
-  - ✅ **`Background graphics`** (Checked)
-  - ❌ **`Headers and footers`** (Unchecked)
+To generate a presentation handout or PDF:
+1. Click **📄 Export to PDF** in the toolbar.
+2. Choose **16:9 Widescreen** (or 4:3 / A4 Standard).
+3. In the browser print dialog:
+   - Destination: **Save as PDF**
+   - Layout: **Landscape**
+   - Margins: **None**
+   - Options: Check **Background graphics**, Uncheck **Headers and footers**

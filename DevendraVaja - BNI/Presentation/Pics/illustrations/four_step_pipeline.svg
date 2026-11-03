@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <rect width="280" height="120" rx="10" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1.5"/>
+
+  <!-- Step 1 -->
+  <g transform="translate(10, 16)">
+    <rect width="56" height="88" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="6" y="8" width="44" height="22" rx="3" fill="#E0F2FE"/>
+    <text x="28" y="23" font-family="-apple-system, sans-serif" font-size="12" text-anchor="middle">📄</text>
+    <text x="28" y="44" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#0369A1" text-anchor="middle">1. Ingest</text>
+    <text x="28" y="55" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="600" fill="#475569" text-anchor="middle">Portal PDF</text>
+    <rect x="6" y="66" width="44" height="14" rx="2" fill="#F1F5F9"/>
+    <text x="28" y="76" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#0F172A" text-anchor="middle">&lt; 30s OCR</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 69 60 L 77 60" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="74,56 78,60 74,64" stroke="#0284C7" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Step 2 -->
+  <g transform="translate(80, 16)">
+    <rect width="56" height="88" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="6" y="8" width="44" height="22" rx="3" fill="#FEF3C7"/>
+    <text x="28" y="23" font-family="-apple-system, sans-serif" font-size="12" text-anchor="middle">📇</text>
+    <text x="28" y="44" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#B45309" text-anchor="middle">2. Match</text>
+    <text x="28" y="55" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="600" fill="#475569" text-anchor="middle">Phonetics</text>
+    <rect x="6" y="66" width="44" height="14" rx="2" fill="#FEF3C7"/>
+    <text x="28" y="76" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#92400E" text-anchor="middle">98% Auto</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 139 60 L 147 60" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="144,56 148,60 144,64" stroke="#0284C7" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Step 3 -->
+  <g transform="translate(150, 16)">
+    <rect width="56" height="88" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="6" y="8" width="44" height="22" rx="3" fill="#DCFCE7"/>
+    <text x="28" y="23" font-family="-apple-system, sans-serif" font-size="12" text-anchor="middle">💬</text>
+    <text x="28" y="44" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#15803D" text-anchor="middle">3. Alerts</text>
+    <text x="28" y="55" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="600" fill="#475569" text-anchor="middle">WhatsApp</text>
+    <rect x="6" y="66" width="44" height="14" rx="2" fill="#DCFCE7"/>
+    <text x="28" y="76" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#166534" text-anchor="middle">Guj/Hin/Eng</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M 209 60 L 217 60" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="214,56 218,60 214,64" stroke="#0284C7" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Step 4 -->
+  <g transform="translate(220, 16)">
+    <rect width="50" height="88" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="5" y="8" width="40" height="22" rx="3" fill="#F3E8FF"/>
+    <text x="25" y="23" font-family="-apple-system, sans-serif" font-size="12" text-anchor="middle">👥</text>
+    <text x="25" y="44" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#7E22CE" text-anchor="middle">4. Dossier</text>
+    <text x="25" y="55" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="600" fill="#475569" text-anchor="middle">Family 360</text>
+    <rect x="5" y="66" width="40" height="14" rx="2" fill="#F3E8FF"/>
+    <text x="25" y="76" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#6B21A8" text-anchor="middle">IRDAI PDF</text>
+  </g>
+</svg>

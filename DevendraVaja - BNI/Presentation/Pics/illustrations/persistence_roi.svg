@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <rect width="280" height="120" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+
+  <!-- Left Circle Metric Badge -->
+  <g transform="translate(16, 16)">
+    <circle cx="44" cy="44" r="40" fill="#FFFFFF" stroke="#10B981" stroke-width="3"/>
+    <text x="44" y="38" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#047857" text-anchor="middle">+35%</text>
+    <text x="44" y="52" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#065F46" text-anchor="middle">RENEWAL</text>
+    <text x="44" y="62" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="700" fill="#059669" text-anchor="middle">PERSISTENCE</text>
+  </g>
+
+  <!-- Right: 3-Touch Grace Period Shield Pipeline -->
+  <g transform="translate(112, 14)">
+    <rect width="154" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+    <circle cx="14" cy="13" r="8" fill="#EFF6FF"/>
+    <text x="14" y="17" font-family="-apple-system, sans-serif" font-size="8" text-anchor="middle">📅</text>
+    <text x="28" y="12" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#1E40AF">Touch 1: 30 Days Advance</text>
+    <text x="28" y="21" font-family="-apple-system, sans-serif" font-size="6.5" fill="#64748B">Gentle WhatsApp heads-up</text>
+
+    <g transform="translate(0, 32)">
+      <rect width="154" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+      <circle cx="14" cy="13" r="8" fill="#FEF3C7"/>
+      <text x="14" y="17" font-family="-apple-system, sans-serif" font-size="8" text-anchor="middle">⏰</text>
+      <text x="28" y="12" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#92400E">Touch 2: 7 Days Prior</text>
+      <text x="28" y="21" font-family="-apple-system, sans-serif" font-size="6.5" fill="#64748B">Direct 1-Tap UPI pay link</text>
+    </g>
+
+    <g transform="translate(0, 64)">
+      <rect width="154" height="26" rx="5" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+      <circle cx="14" cy="13" r="8" fill="#FEE2E2"/>
+      <text x="14" y="17" font-family="-apple-system, sans-serif" font-size="8" text-anchor="middle">🚨</text>
+      <text x="28" y="12" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#991B1B">Touch 3: Grace Period Urgent</text>
+      <text x="28" y="21" font-family="-apple-system, sans-serif" font-size="6.5" fill="#DC2626">Stops policy lapse &amp; lost trail</text>
+    </g>
+  </g>
+</svg>
