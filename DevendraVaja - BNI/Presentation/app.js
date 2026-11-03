@@ -370,7 +370,6 @@ function generateSlideHTML(slide, index, extraClass = '') {
   const copyright = (typeof BRAND_CONFIG !== 'undefined' && BRAND_CONFIG.copyright) ? BRAND_CONFIG.copyright : 'TenCore Digital Labs © 2026';
 
   const netConf = (typeof NETWORK_CONFIG !== 'undefined' && NETWORK_CONFIG[activeNetwork]) ? NETWORK_CONFIG[activeNetwork] : null;
-  const timeTargetBadge = slide.timeTarget ? `<span class="slide-time-target-badge" title="Pacing guide for 7-minute delivery">⏱️ ${slide.timeTarget}</span>` : '';
 
   switch (slide.layout) {
     case 'title':
@@ -383,7 +382,6 @@ function generateSlideHTML(slide, index, extraClass = '') {
           <div class="title-top-brand-row">
             <img src="Pics/tencore_digital_labs_logo.png" alt="TenCore Digital Labs" class="title-slide-logo" onerror="this.style.display='none'">
             <div class="title-pill-tag">${titlePill}</div>
-            ${timeTargetBadge}
           </div>
           <h1>${slide.title}</h1>
           <div class="title-deck-subtitle">${slide.subtitle || ''}</div>
@@ -463,10 +461,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
-              <div class="slide-category-badge">${slide.categoryBadge || 'Leadership & Engineering Track Record'}</div>
-              ${timeTargetBadge}
-            </div>
+            <div class="slide-category-badge">${slide.categoryBadge || 'Leadership & Engineering Track Record'}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -551,10 +546,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
-              <div class="slide-category-badge">${categoryBadge}</div>
-              ${timeTargetBadge}
-            </div>
+            <div class="slide-category-badge">${categoryBadge}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -591,7 +583,6 @@ function generateSlideHTML(slide, index, extraClass = '') {
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
               <div class="slide-category-badge">${slide.categoryBadge || 'Core Architecture & Capabilities'}</div>
               <div class="slide-header-right-tools">
-                ${timeTargetBadge}
                 ${productBadge ? `
                   <div class="slide-header-product-badge">
                     <img src="${productBadge.icon}" alt="${productBadge.name}" class="product-badge-thumb">
@@ -639,10 +630,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
-              <div class="slide-category-badge">${slide.categoryBadge || 'Strategic Value & Market Focus'}</div>
-              ${timeTargetBadge}
-            </div>
+            <div class="slide-category-badge">${slide.categoryBadge || 'Strategic Value & Market Focus'}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -669,10 +657,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
-              <div class="slide-category-badge">${slide.categoryBadge || 'Competitive Advantage & System Stack'}</div>
-              ${timeTargetBadge}
-            </div>
+            <div class="slide-category-badge">${slide.categoryBadge || 'Competitive Advantage & System Stack'}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -710,10 +695,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
-              <div class="slide-category-badge">${slide.categoryBadge || 'The 30-Minute Transformation'}</div>
-              ${timeTargetBadge}
-            </div>
+            <div class="slide-category-badge">${slide.categoryBadge || 'The 30-Minute Transformation'}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -748,10 +730,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
-              <div class="slide-category-badge">${slide.categoryBadge || 'Comparative Analysis & Value Stack'}</div>
-              ${timeTargetBadge}
-            </div>
+            <div class="slide-category-badge">${slide.categoryBadge || 'Comparative Analysis & Value Stack'}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -796,10 +775,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
-              <div class="slide-category-badge">${slide.categoryBadge || 'Commercial Scope & Investment Tiers'}</div>
-              ${timeTargetBadge}
-            </div>
+            <div class="slide-category-badge">${slide.categoryBadge || 'Commercial Scope & Investment Tiers'}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -845,10 +821,7 @@ function generateSlideHTML(slide, index, extraClass = '') {
           <div class="slide-body" style="height: 100%;">
             <div class="qa-slide-container">
               <div class="qa-left-pane">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
-                  <div class="slide-category-badge" style="width: fit-content;">${qaBadge}</div>
-                  ${timeTargetBadge}
-                </div>
+                <div class="slide-category-badge" style="width: fit-content;">${qaBadge}</div>
                 <h2>${slide.title}</h2>
                 <p>${slide.subtitle || ''}</p>
                 <div class="contact-info-list">

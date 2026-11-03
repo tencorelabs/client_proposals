@@ -64,7 +64,7 @@ const DECK_META = {
   version: "7-Minute Master Edition • Version 2.0",
   date: "November 2026",
   category: "Feature Presentation",
-  storageKey: "tencore_insurancesetu_7min_presentation_v2",
+  storageKey: "tencore_insurancesetu_7min_presentation_v3",
   targetDurationSeconds: 420 // 7 Minutes
 };
 
