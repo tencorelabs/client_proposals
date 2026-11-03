@@ -471,24 +471,29 @@ function generateSlideHTML(slide, index, extraClass = '') {
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
           <div class="slide-body">
-            <div class="instructor-grid">
-              <div class="instructor-card">
-                <div class="instructor-photo-container">
-                  <img src="Pics/devendra_vaja.jpeg" alt="Devendra Vaja" class="instructor-photo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                  <div class="instructor-avatar-fallback" style="display: none;">${f.avatarInitials || 'DV'}</div>
-                  <div class="pedigree-flag-badges">
-                    <img src="Pics/flags/india.svg" alt="India" class="pedigree-flag-icon" title="India Systems & Architecture">
-                    <img src="Pics/flags/japan.svg" alt="Japan" class="pedigree-flag-icon" title="Tokyo Gaming & Device Drivers">
-                    <img src="Pics/flags/usa.svg" alt="USA" class="pedigree-flag-icon" title="US Enterprise Systems">
+            <div class="instructor-slide-grid">
+              <div class="instructor-avatar-card">
+                <img src="Pics/devendra_vaja.jpeg" alt="${name}" class="instructor-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="instructor-avatar-fallback" style="display:none;">${f.avatarInitials || 'DV'}</div>
+                <h3>${name}</h3>
+                <p>${role}</p>
+                ${tagline ? `<div class="instructor-tagline-text">${tagline}</div>` : ''}
+                <div class="instructor-global-flags">
+                  <div class="global-flag-pill" title="India Systems & Architecture">
+                    <img src="Pics/flags/india.svg" alt="India" class="flag-img">
+                    <span>India</span>
+                  </div>
+                  <div class="global-flag-pill" title="Tokyo Gaming & Device Drivers">
+                    <img src="Pics/flags/japan.svg" alt="Japan" class="flag-img">
+                    <span>Japan</span>
+                  </div>
+                  <div class="global-flag-pill" title="US Enterprise Systems">
+                    <img src="Pics/flags/usa.svg" alt="USA" class="flag-img">
+                    <span>USA</span>
                   </div>
                 </div>
-                <div class="instructor-meta">
-                  <h3>${name}</h3>
-                  <div class="role-badge">${role}</div>
-                  ${tagline ? `<p class="instructor-tagline">${tagline}</p>` : ''}
-                </div>
               </div>
-              <div class="instructor-details-pane">
+              <div class="instructor-details-card">
                 ${rightPaneContent}
               </div>
             </div>
