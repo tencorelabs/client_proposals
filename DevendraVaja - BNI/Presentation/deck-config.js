@@ -64,7 +64,7 @@ const DECK_META = {
   version: "Master Edition • Version 2.0",
   date: "November 2026",
   category: "Feature Presentation",
-  storageKey: "tencore_insurancesetu_presentation_v4"
+  storageKey: "tencore_insurancesetu_presentation_v5"
 };
 
 // 3. COLOR THEME CONFIGURATION (TenCore Slate Navy & Tech Blue)
@@ -183,20 +183,20 @@ const DEFAULT_SLIDES = [
       title: "The 5-Day Clerical Nightmare",
       badge: "OPERATIONAL BOTTLENECK",
       bullets: [
-        "<strong>Messy Unstructured PDF Statements:</strong> Insurers (LIC, Star Health, HDFC Ergo, ICICI Lombard) send multi-page PDF tables with hundreds of policy rows in varying column formats.",
-        "<strong>The 'Zero-Contact' Trap:</strong> Statements list policy numbers, installment dues, and dates, but <strong>ZERO customer phone numbers or emails</strong>!",
-        "<strong>The 25+ Hour Typing Trap:</strong> Staff waste 5–6 days retyping PDFs into Excel spreadsheets, frantically searching old paper diaries to find who to follow up with.",
-        "<strong>Silent Revenue Bleed:</strong> 20% to 35% of renewal reminders are missed or sent too late; policies lapse during grace periods, and lifetime trail commissions vanish permanently."
+        "<strong>Unstructured Insurer PDFs:</strong> LIC, Star, & HDFC send multi-page PDF tables with zero format consistency.",
+        "<strong>The Zero-Contact Trap:</strong> Statements list policy dues, but <strong>zero customer phone numbers</strong>.",
+        "<strong>25+ Hours Wasted on Excel:</strong> Staff waste 5–6 days manually retyping data and searching paper diaries.",
+        "<strong>Silent Revenue Bleed:</strong> 20%–35% renewal reminders missed; policies lapse and trail commissions vanish."
       ]
     },
     rightCol: {
       title: "The Financial & Operational Toll",
       badge: "ANNUAL REVENUE DRAIN",
       bullets: [
-        "<strong>₹1,20,000+ Annual Clerical Drain:</strong> Paying ₹8,000–₹12,000/month for a dedicated typist or assistant just to copy-paste numbers from PDFs into Excel.",
-        "<strong>70% Time Spent on Paperwork, Not Sales:</strong> High-performing advisors spend their prime selling hours doing clerical data entry instead of meeting HNI prospects.",
-        "<strong>Fragmented Client Records:</strong> If a family has 2 LIC policies, 1 Star Health cover, and 2 car policies, the agent has zero unified view of the household.",
-        "<strong>Frustrated Policyholders:</strong> Clients miss grace period deadlines because they never received timely WhatsApp notifications in their native mother tongue."
+        "<strong>₹1,20,000+ Annual Typist Salary:</strong> Burning ₹10,000/mo just for copy-pasting numbers from PDFs.",
+        "<strong>70% Prime Selling Time Lost:</strong> Top advisors trapped doing clerical data entry instead of meeting HNIs.",
+        "<strong>Zero Unified Family View:</strong> Scattered life, health, and motor records across multiple insurer portals.",
+        "<strong>Missed Grace Deadlines:</strong> Policyholders never receive timely automated vernacular WhatsApp alerts."
       ]
     }
   },
@@ -214,51 +214,47 @@ const DEFAULT_SLIDES = [
     phases: [
       {
         phase: "STEP 1 • MIN 00–05",
-        title: "1-Click PDF Extraction & Math Audit",
+        title: "1-Click PDF Extraction",
         duration: "5 Mins",
-        budget: "Zero Typing",
+        budget: "500 in 30s",
         deliverables: [
-          "Drag & drop raw insurer due lists (PDF, Excel, CSV) from LIC, Star Health, HDFC, or portal aggregators.",
-          "Spatial PDF engine extracts 500+ policy records in 30 seconds with 100% precision.",
-          "Deterministic Mathematical Validation: (Installment × Dues) + GST == Total Due verified before database commit."
+          "<strong>Drag & Drop PDFs:</strong> Instant intake from LIC, Star Health, & HDFC.",
+          "<strong>Deterministic Math Audit:</strong> Formula check: Premium + GST == Total."
         ],
-        payment: "⚡ 5-Day Typing ➡️ 30 Secs"
+        payment: "⚡ 5 Days ➡️ 30 Secs"
       },
       {
         phase: "STEP 2 • MIN 05–15",
-        title: "2-Tier Indian Phonetic Contact Bridge",
+        title: "Phonetic Contact Bridge",
         duration: "10 Mins",
         budget: "98%+ Auto-Match",
         deliverables: [
-          "Upload phonebook (VCF file or Google Contacts CSV export).",
-          "Proprietary 2-tier phonetic matcher connects policyholder names to mobile numbers.",
-          "Handles Indian spelling variances seamlessly ('Smitaben' vs 'Smita Patel', 'Virendra' vs 'Viren')."
+          "<strong>Phonebook Sync:</strong> 1-click import from Google Contacts or VCF.",
+          "<strong>Phonetic AI Matcher:</strong> Bridges Indian name spelling variations."
         ],
         payment: "📇 Zero Diary Searching"
       },
       {
         phase: "STEP 3 • MIN 15–25",
-        title: "1-Tap Multilingual WhatsApp Outreach",
+        title: "Vernacular WhatsApp",
         duration: "10 Mins",
-        budget: "3x Higher Response",
+        budget: "1-Tap Outreach",
         deliverables: [
-          "Dispatches personalized, pre-formatted renewal notices directly to WhatsApp Web.",
-          "Native mother-tongue templates in Gujarati, Hindi, Marathi, and English.",
-          "Includes exact policy numbers, premium dues, due dates, and 1-tap direct UPI payment link."
+          "<strong>Multilingual Outreach:</strong> Gujarati, Hindi, & English reminders.",
+          "<strong>Direct UPI Pay:</strong> Includes 1-tap payment link with policy dues."
         ],
         payment: "💬 1-Tap Auto-Dispatch"
       },
       {
         phase: "STEP 4 • MIN 25–30",
-        title: "Real-Time Audit & Family Customer 360",
+        title: "Audit & Family 360",
         duration: "5 Mins",
-        budget: "Zero Policy Lapses",
+        budget: "Zero Lapses",
         deliverables: [
-          "Live dashboard tracks paid vs due, auto-scheduling 30-day, 7-day, and 24-hr grace alerts.",
-          "Compiles 1-page executive consolidated portfolio PDFs with agency logo & IRDAI license.",
-          "Cross-sell radar highlights families with motor insurance but zero health or term cover."
+          "<strong>Real-Time Tracking:</strong> Live dashboard monitors paid vs overdue.",
+          "<strong>Family Dossier 360:</strong> Branded IRDAI portfolio summary PDF."
         ],
-        payment: "🚀 Done in Under 30 Mins!"
+        payment: "🚀 Done in Under 30 Mins"
       }
     ]
   },

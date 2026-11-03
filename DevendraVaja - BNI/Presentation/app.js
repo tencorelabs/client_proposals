@@ -703,18 +703,15 @@ function generateSlideHTML(slide, index, extraClass = '') {
             <div class="roadmap-phases-grid">
               ${(slide.phases || []).map((p, pIdx) => `
                 <div class="roadmap-phase-card ${pIdx === 0 ? 'active-phase' : ''}">
-                  <div class="phase-badge">${p.phase}</div>
+                  <div class="phase-number-tag phase-badge">${p.phase}</div>
                   <div class="phase-title">${p.title}</div>
                   <div class="phase-duration-budget">
                     <span>⏱️ ${p.duration}</span>
                     <span>📦 ${p.budget}</span>
                   </div>
-                  <div class="phase-deliverables">
-                    <strong>Deliverables:</strong>
-                    <ul>
-                      ${(p.deliverables || []).map(d => `<li>${d}</li>`).join('')}
-                    </ul>
-                  </div>
+                  <ul class="phase-deliverables">
+                    ${(p.deliverables || p.bullets || []).map(d => `<li>${d}</li>`).join('')}
+                  </ul>
                   ${p.payment ? `<div class="phase-payment-box">${p.payment}</div>` : ''}
                 </div>
               `).join('')}
