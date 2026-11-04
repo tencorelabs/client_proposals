@@ -359,7 +359,7 @@ main {
 .slide {
   width: var(--slide-width);
   height: var(--slide-height);
-  padding: 44px 54px;
+  padding: 26px 44px 22px;
   background: var(--bg-slide);
   display: flex;
   flex-direction: column;
@@ -370,7 +370,7 @@ main {
 
 /* Slide Header & Footer Chrome */
 .slide-header {
-  margin-bottom: 22px;
+  margin-bottom: 10px;
   position: relative;
   z-index: 2;
 }
@@ -382,28 +382,28 @@ main {
   background: var(--primary-light);
   color: var(--primary-dark);
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 4px 10px;
+  padding: 2px 8px;
   border-radius: 20px;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
 }
 
 .slide-header h2 {
   font-family: var(--font-display);
-  font-size: 1.85rem;
+  font-size: 1.65rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--text-primary);
 }
 
 .slide-header .slide-subtitle {
   font-family: var(--font-body);
-  font-size: 0.98rem;
+  font-size: 0.86rem;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 2px;
   font-weight: 500;
 }
 
@@ -1228,7 +1228,7 @@ main {
   background: white;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 20px 22px;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1243,29 +1243,41 @@ main {
 
 .showcase-card-badge {
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.64rem;
   font-weight: 800;
   color: var(--secondary);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
 
 .showcase-content-card h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.02rem;
   font-weight: 800;
   color: var(--primary-dark);
-  margin-bottom: 12px;
+  margin-bottom: 6px;
+  line-height: 1.2;
 }
 
 .showcase-bullet-list {
-  gap: 12px;
+  gap: 5px;
 }
 
 .showcase-bullet-list li {
-  font-size: 0.98rem;
-  line-height: 1.45;
+  font-size: 0.78rem;
+  line-height: 1.28;
+  padding-left: 18px;
+}
+
+.showcase-bullet-list li strong {
+  font-size: 0.80rem;
+  font-weight: 800;
+}
+
+.showcase-bullet-list li::before {
+  font-size: 0.90rem;
+  top: 0px;
 }
 
 .showcase-callout-pill {
@@ -1273,12 +1285,12 @@ main {
   background: #f0f9ff;
   border: 1px solid #bae6fd;
   border-radius: var(--radius-md);
-  padding: 8px 14px;
+  padding: 4px 10px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-family: var(--font-display);
-  font-size: 0.82rem;
+  font-size: 0.70rem;
   font-weight: 750;
   color: #0369a1;
 }
@@ -3670,23 +3682,23 @@ body.hide-slide-numbers .slide-number-tag {
   }
 
   .showcase-content-card h3 {
-    font-size: 1.05rem !important;
-    margin-bottom: 6px !important;
+    font-size: 0.98rem !important;
+    margin-bottom: 4px !important;
   }
 
   .showcase-bullet-list {
-    gap: 6px !important;
+    gap: 4px !important;
   }
 
   .showcase-bullet-list li {
-    font-size: 0.78rem !important;
-    line-height: 1.34 !important;
+    font-size: 0.74rem !important;
+    line-height: 1.24 !important;
   }
 
   .showcase-callout-pill {
     margin-top: auto !important;
-    padding: 5px 8px !important;
-    font-size: 0.72rem !important;
+    padding: 3px 8px !important;
+    font-size: 0.68rem !important;
   }
 
   /* Vision & Mission Layout in Print */
