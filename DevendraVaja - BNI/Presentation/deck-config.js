@@ -64,7 +64,7 @@ const DECK_META = {
   version: "Master Edition • Version 2.0",
   date: "November 2026",
   category: "Feature Presentation",
-  storageKey: "tencore_insurancesetu_presentation_v7"
+  storageKey: "tencore_insurancesetu_presentation_v8"
 };
 
 // 3. COLOR THEME CONFIGURATION (TenCore Slate Navy & Tech Blue)
@@ -588,16 +588,22 @@ const DEFAULT_SLIDES = [
     timeTarget: "6:20 - 7:00 (40s)",
     title: "Book a 1-to-1 & Free 30-Min Agency Automation Audit",
     subtitle: "Bring 1 raw insurer PDF statement to our 1-to-1 meeting, and I will extract it live on screen in 60 seconds!",
-    script: "In the spirit of Givers Gain, my give to every member is a Free 30-Minute Automation Audit. Bring just ONE raw insurer PDF statement to our 1-to-1, and I will extract and organize it live on screen in 60 seconds with zero obligation. Plus, a complimentary SafetySetu cyber security check for your family's smartphones. Scan the QR code, let's connect, and thank you!",
+    script: "In the spirit of Givers Gain, my special give today goes to Neha Kawa, our chapter's Nutritionist. I am committed to actively passing high-trust client and family referrals to Neha for clinical nutrition, metabolic diet plans, and lifestyle wellness. In addition, my give to every member is a Free 30-Minute Automation Audit: bring just ONE raw insurer PDF statement to our 1-to-1, and I will extract and organize it live on screen in 60 seconds with zero obligation. Plus, a complimentary SafetySetu cyber security check for your family's smartphones. Scan the QR code, let's connect, and thank you!",
     contactInfo: BRAND_CONFIG.contact.items,
     qrLabel: BRAND_CONFIG.contact.qrLabel,
     qrSub: BRAND_CONFIG.contact.qrSub,
     giveHighlight: {
       title: "My Give to Chapter Members (Givers Gain):",
+      featuredMember: {
+        name: "Neha Kawa",
+        category: "Nutritionist",
+        icon: "🥗",
+        tag: "Givers Gain • Featured Member Give",
+        desc: "Committed referral partner: Actively passing high-trust client referrals for customized clinical nutrition, metabolic diet therapy, and lifestyle wellness."
+      },
       items: [
         "🎁 <strong>Free 30-Min Agency Automation Audit:</strong> Live demo parsing your actual insurer PDF in 60 seconds with zero obligation.",
-        "🛡️ <strong>SafetySetu Digital Peace of Mind:</strong> Complimentary smartphone cybersecurity & UPI fraud protection audit for your family and business.",
-        "🤝 <strong>Warm High-Trust Connections:</strong> Leveraging 24+ years systems engineering network across India, USA, and Japan."
+        "🛡️ <strong>SafetySetu Digital Peace of Mind:</strong> Complimentary smartphone cybersecurity & UPI fraud protection audit for your family and business."
       ]
     }
   }

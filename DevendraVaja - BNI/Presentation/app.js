@@ -976,8 +976,21 @@ function generateSlideHTML(slide, index, extraClass = '') {
                 ${slide.giveHighlight ? `
                   <div class="qa-give-highlight-box">
                     <div class="give-highlight-title">${giveTitle}</div>
+                    ${slide.giveHighlight.featuredMember ? `
+                      <div class="give-featured-member-card">
+                        <div class="gfm-icon-badge">${slide.giveHighlight.featuredMember.icon || '🥗'}</div>
+                        <div class="gfm-content">
+                          <div class="gfm-header-row">
+                            <span class="gfm-tag">${slide.giveHighlight.featuredMember.tag || 'CHAPTER MEMBER GIVE'}</span>
+                            <span class="gfm-role-pill">${slide.giveHighlight.featuredMember.category || 'Nutritionist'}</span>
+                          </div>
+                          <div class="gfm-name">${slide.giveHighlight.featuredMember.name}</div>
+                          <div class="gfm-desc">${slide.giveHighlight.featuredMember.desc}</div>
+                        </div>
+                      </div>
+                    ` : ''}
                     <ul class="give-highlight-list">
-                      ${slide.giveHighlight.items.map(it => `<li>${it}</li>`).join('')}
+                      ${(slide.giveHighlight.items || []).map(it => `<li>${it}</li>`).join('')}
                     </ul>
                   </div>
                 ` : ''}

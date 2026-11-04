@@ -3463,6 +3463,39 @@ body.hide-slide-numbers .slide-number-tag {
     line-height: 1.22 !important;
   }
 
+  .give-featured-member-card {
+    padding: 3px 6px !important;
+    margin-bottom: 3px !important;
+    gap: 6px !important;
+    border: 1px solid #86efac !important;
+    border-left: 3px solid #16a34a !important;
+    background: #ffffff !important;
+  }
+
+  .gfm-icon-badge {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 1rem !important;
+  }
+
+  .gfm-tag {
+    font-size: 0.52rem !important;
+  }
+
+  .gfm-role-pill {
+    font-size: 0.54rem !important;
+    padding: 0 4px !important;
+  }
+
+  .gfm-name {
+    font-size: 0.82rem !important;
+  }
+
+  .gfm-desc {
+    font-size: 0.64rem !important;
+    line-height: 1.18 !important;
+  }
+
   .qa-right-pane {
     padding: 12px 14px !important;
     border-radius: 10px !important;
@@ -4490,4 +4523,79 @@ body.hide-slide-numbers .slide-number-tag {
 
 .give-highlight-list li strong {
   color: #0f172a;
+}
+
+/* Featured Member Give Card */
+.give-featured-member-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1.5px solid #86efac;
+  border-left: 4px solid #16a34a;
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  box-shadow: 0 1px 3px rgba(22, 163, 74, 0.08);
+}
+
+.gfm-icon-badge {
+  font-size: 1.30rem;
+  width: 32px;
+  height: 32px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gfm-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.gfm-header-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1px;
+}
+
+.gfm-tag {
+  font-family: var(--font-display);
+  font-size: 0.60rem;
+  font-weight: 800;
+  color: #15803d;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.gfm-role-pill {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #166534;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+}
+
+.gfm-name {
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #14532d;
+  line-height: 1.15;
+}
+
+.gfm-desc {
+  font-family: var(--font-body);
+  font-size: 0.70rem;
+  color: #1e293b;
+  line-height: 1.25;
+  margin-top: 1px;
 }
