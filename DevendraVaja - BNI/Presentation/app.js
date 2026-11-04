@@ -638,6 +638,40 @@ function generateSlideHTML(slide, index, extraClass = '') {
       `;
       break;
 
+    case 'logogrid':
+      const logoCols = slide.columns || 4;
+      innerContent = `
+        <div class="slide${cls}">
+          <div class="slide-bg-glow"></div>
+          <div class="slide-header">
+            <div class="slide-category-badge">${slide.categoryBadge || 'Universal Coverage • Insurer Ecosystem'}</div>
+            <h2>${slide.title}</h2>
+            <div class="slide-subtitle">${slide.subtitle || ''}</div>
+          </div>
+          <div class="slide-body">
+            <div class="logo-grid-container cols-${logoCols}">
+              ${(slide.logos || slide.cards || []).map(item => `
+                <div class="logo-grid-card">
+                  <div class="logo-card-frame">
+                    <img src="${item.logo}" alt="${item.name || item.title}" class="logo-card-img" onerror="this.style.display='none'">
+                  </div>
+                  <div class="logo-card-name">${item.name || item.title}</div>
+                  ${item.tag ? `<div class="logo-card-tag">${item.tag}</div>` : ''}
+                </div>
+              `).join('')}
+            </div>
+            ${slide.callout ? `
+              <div class="logo-grid-callout">
+                <span class="callout-icon">${slide.callout.icon || '⚡'}</span>
+                <span class="callout-text">${slide.callout.text}</span>
+              </div>
+            ` : ''}
+          </div>
+          ${renderFooter(index)}
+        </div>
+      `;
+      break;
+
     case 'twocol':
       const renderColContent = (col) => {
         if (col.items && col.items.length > 0) {

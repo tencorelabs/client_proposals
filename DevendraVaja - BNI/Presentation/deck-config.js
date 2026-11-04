@@ -64,7 +64,7 @@ const DECK_META = {
   version: "Master Edition • Version 2.0",
   date: "November 2026",
   category: "Feature Presentation",
-  storageKey: "tencore_insurancesetu_presentation_v8"
+  storageKey: "tencore_insurancesetu_presentation_v9"
 };
 
 // 3. COLOR THEME CONFIGURATION (TenCore Slate Navy & Tech Blue)
@@ -443,106 +443,71 @@ const DEFAULT_SLIDES = [
   },
 
   // ==========================================================================
-  // SLIDE 12: CYBER DEFENSE FOUNDATION & GLOBAL PEDIGREE [4:55 – 5:25] (Target: 30s)
+  // SLIDE 12: UNIVERSAL MULTI-INSURER STATEMENT COMPATIBILITY [4:55 – 5:30] (Target: 35s)
   // ==========================================================================
   {
-    layout: "instructor",
-    categoryBadge: "Trust & Security • Engineering Pedigree",
-    timeTarget: "4:55 - 5:25 (30s)",
-    title: "Bank-Grade Cyber Defense Foundation & Pedigree",
-    subtitle: "Engineered on the exact same zero-trust cybersecurity foundation that powers SafetySetu.",
-    instructorName: BRAND_CONFIG.founder.name,
-    instructorRole: "Systems Architect • Creator of SafetySetu & InsuranceSetu",
-    instructorTagline: "High-security systems engineering across Tokyo Gaming, Silicon Valley, and Indian Enterprise SaaS.",
-    script: "When we built SafetySetu, our on-device cybersecurity shield, we engineered bank-grade UPI scam interception with zero data leakage. Today, we bring that exact same high-precision, mathematical engineering and privacy to InsuranceSetu.",
-    highlights: [
-      {
-        title: "Zero Cloud Data Leakage (On-Device Privacy)",
-        desc: "Sensitive policyholder databases and financial records remain on the advisor's secure local system — zero unauthorized cloud exposure."
-      },
-      {
-        title: "SafetySetu Smartphone Threat Shield",
-        desc: "Proven on-device defense blocking UPI payment hijackers, fake screen overlay scams, and malicious phishing apps."
-      },
-      {
-        title: "Enterprise Systems Pedigree",
-        desc: "24+ years building high-security device drivers, fintech platforms, and scalable vertical SaaS across global technology leaders."
-      }
-    ],
-    companiesTitle: "Trusted Engineering Pedigree Across Global Enterprises:",
-    companies: [
-      { name: "Larsen & Toubro", logo: "Pics/logos/lt.png" },
-      { name: "Wipro", logo: "Pics/logos/wipro.png" },
-      { name: "Capgemini", logo: "Pics/logos/capgemini.png" },
-      { name: "eInfochips", logo: "Pics/logos/einfochips.png" },
-      { name: "Intel", logo: "Pics/logos/intel.png" },
-      { name: "Sony", logo: "Pics/logos/sony.png" },
-      { name: "EMC", logo: "Pics/logos/emc.png" },
-      { name: "Rakuten (Japan)", logo: "Pics/logos/rakuten.svg" },
-      { name: "Konami Gaming (Tokyo)", logo: "Pics/logos/konami.png" },
-      { name: "Chartboost", logo: "Pics/logos/chartboost.png" },
-      { name: "Vungle", logo: "Pics/logos/vungle.png" },
-      { name: "Fundtech", logo: "Pics/logos/fundtech.png" }
-    ]
-  },
-
-  // ==========================================================================
-  // SLIDE 13: MULTI-INSURER COMPATIBILITY & ECOSYSTEM [5:25 – 5:50] (Target: 25s)
-  // ==========================================================================
-  {
-    layout: "sixgrid",
+    layout: "logogrid",
+    columns: 4,
     categoryBadge: "Universal Coverage • Insurer Ecosystem",
-    timeTarget: "5:25 - 5:50 (25s)",
+    timeTarget: "4:55 - 5:30 (35s)",
     title: "Universal Multi-Insurer Statement Compatibility",
     subtitle: "One unified platform for all your life, health, and general insurance statements across India.",
-    script: "InsuranceSetu works seamlessly with every major insurer in India. Whether your agency handles LIC of India, Star Health, HDFC ERGO, ICICI Lombard, Care Health, or Tata AIG, our Document AI parses each unique statement layout flawlessly.",
-    cards: [
+    script: "InsuranceSetu works out-of-the-box with all major public and private insurance companies in India. Whether your client portfolio is with LIC of India, Star Health, HDFC ERGO, ICICI Lombard, Care Health, Tata AIG, Bajaj Allianz, or Niva Bupa, simply drop the PDF statement and let our Document AI extract and audit every policy row automatically.",
+    logos: [
       {
+        name: "LIC of India",
         logo: "Pics/logos/lic.svg",
-        tag: "LIFE INSURANCE",
-        title: "LIC of India",
-        desc: "Ingests multi-page life, endowment, and pension due lists with complete premium breakdowns."
+        tag: "Life Insurance"
       },
       {
+        name: "Star Health Insurance",
         logo: "Pics/logos/star_health.svg",
-        tag: "HEALTH COVER",
-        title: "Star Health Insurance",
-        desc: "Extracts retail and corporate health policy renewal schedules with automated client phone linking."
+        tag: "Health Insurance"
       },
       {
+        name: "HDFC ERGO",
         logo: "Pics/logos/hdfc_ergo.svg",
-        tag: "GENERAL & MOTOR",
-        title: "HDFC ERGO",
-        desc: "Parses health, commercial, and comprehensive motor insurance statements with GST calculations."
+        tag: "General & Motor"
       },
       {
+        name: "ICICI Lombard",
         logo: "Pics/logos/icici_lombard.svg",
-        tag: "GENERAL INSURANCE",
-        title: "ICICI Lombard",
-        desc: "Processes motor and general portfolios, identifying expiring policies before grace periods end."
+        tag: "General Insurance"
       },
       {
+        name: "Care Health Insurance",
         logo: "Pics/logos/care_health.svg",
-        tag: "HEALTH FLOATERS",
-        title: "Care Health Insurance",
-        desc: "Organizes family floater renewal dues and matches family member records under one household."
+        tag: "Health Floaters"
       },
       {
+        name: "Tata AIG",
         logo: "Pics/logos/tata_aig.svg",
-        tag: "COMMERCIAL & RETAIL",
-        title: "Tata AIG & Bajaj Allianz",
-        desc: "Universal statement parsing across all remaining private and public sector general insurers."
+        tag: "General & Commercial"
+      },
+      {
+        name: "Bajaj Allianz",
+        logo: "Pics/logos/bajaj_allianz.svg",
+        tag: "Life & General"
+      },
+      {
+        name: "Niva Bupa",
+        logo: "Pics/logos/niva_bupa.svg",
+        tag: "Health Cover"
       }
-    ]
+    ],
+    callout: {
+      icon: "⚡",
+      text: "Ingest statements from ANY public or private Indian insurer with zero manual column mapping!"
+    }
   },
 
   // ==========================================================================
-  // SLIDE 14: MY SPECIFIC ASK — WHO TO INTRODUCE [5:50 – 6:20] (Target: 30s)
+  // SLIDE 13: MY SPECIFIC ASK — WHO TO INTRODUCE [5:30 – 6:15] (Target: 45s)
   // ==========================================================================
   {
     layout: "fourcard",
     categoryBadge: "Specific Ask • Ideal Referrals",
-    timeTarget: "5:50 - 6:20 (30s)",
+    timeTarget: "5:30 - 6:15 (45s)",
     title: "My Specific Ask: Who Can You Introduce Me To?",
     subtitle: "Help me connect with insurance professionals who want to eliminate clerical paperwork and stop policy lapses.",
     script: "Who is my specific ask? First: High-Volume LIC advisors and MDRT/COT members managing over 500 policies. Second: Health and general insurance brokers managing Star Health or HDFC books. Third: Agency principals running multi-agent firms. Fourth: CAs and wealth planners managing client portfolios.",
@@ -580,12 +545,12 @@ const DEFAULT_SLIDES = [
   },
 
   // ==========================================================================
-  // SLIDE 15: MY GIVE TO MEMBERS & 1-TO-1 BOOKING [6:20 – 7:00] (Target: 40s)
+  // SLIDE 14: MY GIVE TO MEMBERS & 1-TO-1 BOOKING [6:15 – 7:00] (Target: 45s)
   // ==========================================================================
   {
     layout: "qa",
     categoryBadge: "Givers Gain • 1-to-1 Booking",
-    timeTarget: "6:20 - 7:00 (40s)",
+    timeTarget: "6:15 - 7:00 (45s)",
     title: "Book a 1-to-1 & Free 30-Min Agency Automation Audit",
     subtitle: "Bring 1 raw insurer PDF statement to our 1-to-1 meeting, and I will extract it live on screen in 60 seconds!",
     script: "In the spirit of Givers Gain, my special give today goes to Neha Kawa, our chapter's Nutritionist. I am committed to actively passing high-trust client and family referrals to Neha for clinical nutrition, metabolic diet plans, and lifestyle wellness. In addition, my give to every member is a Free 30-Minute Automation Audit: bring just ONE raw insurer PDF statement to our 1-to-1, and I will extract and organize it live on screen in 60 seconds with zero obligation. Plus, a complimentary SafetySetu cyber security check for your family's smartphones. Scan the QR code, let's connect, and thank you!",

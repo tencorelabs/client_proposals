@@ -1,48 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
-  <rect width="280" height="120" rx="10" fill="#FAF5FF" stroke="#E9D5FF" stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dossierBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF5FF"/>
+      <stop offset="100%" stop-color="#F3E8FF"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#581C87"/>
+      <stop offset="100%" stop-color="#7E22CE"/>
+    </linearGradient>
+    <filter id="dossierShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#581C87" flood-opacity="0.10"/>
+    </filter>
+  </defs>
 
-  <!-- Left: Family Head Avatar Card -->
-  <g transform="translate(14, 14)">
-    <rect width="82" height="92" rx="6" fill="#FFFFFF" stroke="#D8B4FE" stroke-width="1.2"/>
-    <circle cx="41" cy="24" r="14" fill="#F3E8FF"/>
-    <text x="41" y="29" font-family="-apple-system, sans-serif" font-size="14" text-anchor="middle">👨‍👩‍👧‍👦</text>
-    <text x="41" y="48" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#6B21A8" text-anchor="middle">Shah Family</text>
-    <text x="41" y="58" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="600" fill="#64748B" text-anchor="middle">4 Members • 5 Policies</text>
-    <rect x="8" y="68" width="66" height="16" rx="3" fill="#ECFDF5"/>
-    <text x="41" y="79" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="800" fill="#047857" text-anchor="middle">₹1.5 Cr Cover</text>
+  <!-- Background Canvas -->
+  <rect width="500" height="340" rx="14" fill="url(#dossierBg)" stroke="#D8B4FE" stroke-width="1.5"/>
+
+  <!-- Top Banner -->
+  <rect x="18" y="14" width="464" height="34" rx="8" fill="url(#purpleGrad)"/>
+  <text x="32" y="35" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" fill="#E9D5FF" letter-spacing="0.05em">FAMILY 360 WEALTH DOSSIER</text>
+  <text x="470" y="35" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="end">Consolidated Multi-Insurer Household View</text>
+
+  <!-- LEFT: Household Head Card -->
+  <g transform="translate(18, 58)">
+    <rect width="180" height="206" rx="10" fill="#FFFFFF" stroke="#C084FC" stroke-width="1.5" filter="url(#dossierShadow)"/>
+    <circle cx="90" cy="46" r="26" fill="#F3E8FF" stroke="#A855F7" stroke-width="1.5"/>
+    <text x="90" y="54" font-family="-apple-system, sans-serif" font-size="24" text-anchor="middle">👨‍👩‍👧‍👦</text>
+
+    <text x="90" y="92" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" fill="#4A044E" text-anchor="middle">Shah Household</text>
+    <text x="90" y="107" font-family="-apple-system, sans-serif" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">Rajiv Shah • HNI Client</text>
+
+    <!-- Stats Pills -->
+    <g transform="translate(14, 120)">
+      <rect width="152" height="26" rx="5" fill="#FAF5FF" stroke="#E9D5FF"/>
+      <text x="12" y="17" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#6B21A8">4 Family Members</text>
+      <text x="140" y="17" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="800" fill="#15803D" text-anchor="end">5 Policies</text>
+    </g>
+
+    <g transform="translate(14, 154)">
+      <rect width="152" height="38" rx="6" fill="#047857"/>
+      <text x="76" y="16" font-family="-apple-system, sans-serif" font-size="8" font-weight="700" fill="#D1FAE5" text-anchor="middle">TOTAL HOUSEHOLD COVER</text>
+      <text x="76" y="30" font-family="-apple-system, sans-serif" font-size="12" font-weight="900" fill="#FFFFFF" text-anchor="middle">₹1.50 Crore Protection</text>
+    </g>
   </g>
 
-  <!-- Right: 3 Policy Badges Linked -->
-  <g transform="translate(106, 14)">
-    <!-- Policy 1: Life -->
-    <rect width="160" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-    <circle cx="14" cy="13" r="8" fill="#EFF6FF"/>
-    <text x="14" y="17" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle">🛡️</text>
-    <text x="28" y="12" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#1E40AF">LIC Jeevan Labh (Father)</text>
-    <text x="28" y="21" font-family="-apple-system, sans-serif" font-size="6.5" fill="#64748B">Due: 15 Nov • ₹42,500</text>
-    <rect x="118" y="6" width="36" height="14" rx="2" fill="#DCFCE7"/>
-    <text x="136" y="16" font-family="-apple-system, sans-serif" font-size="6" font-weight="800" fill="#15803D" text-anchor="middle">ACTIVE</text>
-
-    <!-- Policy 2: Health -->
-    <g transform="translate(0, 32)">
-      <rect width="160" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <circle cx="14" cy="13" r="8" fill="#ECFDF5"/>
-      <text x="14" y="17" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle">🏥</text>
-      <text x="28" y="12" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#065F46">Star Family Health Optima</text>
-      <text x="28" y="21" font-family="-apple-system, sans-serif" font-size="6.5" fill="#64748B">Due: 28 Dec • ₹24,000</text>
-      <rect x="118" y="6" width="36" height="14" rx="2" fill="#E0F2FE"/>
-      <text x="136" y="16" font-family="-apple-system, sans-serif" font-size="6" font-weight="800" fill="#0284C7" text-anchor="middle">FLOATER</text>
+  <!-- RIGHT: Linked Multi-Insurer Policies -->
+  <g transform="translate(210, 58)">
+    <!-- Policy 1: Life Insurance (LIC) -->
+    <g transform="translate(0, 0)">
+      <rect width="272" height="48" rx="8" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.2" filter="url(#dossierShadow)"/>
+      <circle cx="26" cy="24" r="14" fill="#EFF6FF"/>
+      <text x="26" y="30" font-family="-apple-system, sans-serif" font-size="14" text-anchor="middle">🛡️</text>
+      
+      <text x="50" y="20" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="800" fill="#1E3A8A">LIC Jeevan Labh (Father)</text>
+      <text x="50" y="34" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" fill="#64748B">Policy #8392019 • Due: 15 Nov • ₹42,500</text>
+      
+      <rect x="214" y="14" width="46" height="20" rx="4" fill="#DCFCE7"/>
+      <text x="237" y="28" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#15803D" text-anchor="middle">ACTIVE</text>
     </g>
 
-    <!-- Policy 3: Motor -->
-    <g transform="translate(0, 64)">
-      <rect width="160" height="26" rx="5" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-      <circle cx="14" cy="13" r="8" fill="#FEF3C7"/>
-      <text x="14" y="17" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle">🚗</text>
-      <text x="28" y="12" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="800" fill="#92400E">HDFC Ergo Car Package</text>
-      <text x="28" y="21" font-family="-apple-system, sans-serif" font-size="6.5" fill="#64748B">Due: 10 Jan • ₹14,200</text>
-      <rect x="118" y="6" width="36" height="14" rx="2" fill="#FEF3C7"/>
-      <text x="136" y="16" font-family="-apple-system, sans-serif" font-size="6" font-weight="800" fill="#B45309" text-anchor="middle">RENEW</text>
+    <!-- Policy 2: Health Floater (Star Health) -->
+    <g transform="translate(0, 56)">
+      <rect width="272" height="48" rx="8" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="1.2" filter="url(#dossierShadow)"/>
+      <circle cx="26" cy="24" r="14" fill="#ECFDF5"/>
+      <text x="26" y="30" font-family="-apple-system, sans-serif" font-size="14" text-anchor="middle">🏥</text>
+      
+      <text x="50" y="20" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="800" fill="#065F46">Star Family Health Optima</text>
+      <text x="50" y="34" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" fill="#64748B">Policy #9920184 • Due: 28 Dec • ₹24,000</text>
+      
+      <rect x="214" y="14" width="46" height="20" rx="4" fill="#E0F2FE"/>
+      <text x="237" y="28" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#0284C7" text-anchor="middle">FLOATER</text>
     </g>
+
+    <!-- Policy 3: Motor Insurance (HDFC ERGO) -->
+    <g transform="translate(0, 112)">
+      <rect width="272" height="48" rx="8" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.2" filter="url(#dossierShadow)"/>
+      <circle cx="26" cy="24" r="14" fill="#FEF3C7"/>
+      <text x="26" y="30" font-family="-apple-system, sans-serif" font-size="14" text-anchor="middle">🚗</text>
+      
+      <text x="50" y="20" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="800" fill="#92400E">HDFC ERGO Comprehensive</text>
+      <text x="50" y="34" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" fill="#64748B">Creta • Due: 10 Jan • ₹14,200</text>
+      
+      <rect x="214" y="14" width="46" height="20" rx="4" fill="#FEF3C7"/>
+      <text x="237" y="28" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#B45309" text-anchor="middle">RENEW</text>
+    </g>
+
+    <!-- Policy 4: Top-Up Health (ICICI Lombard) -->
+    <g transform="translate(0, 168)">
+      <rect width="272" height="38" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <circle cx="22" cy="19" r="10" fill="#F1F5F9"/>
+      <text x="22" y="24" font-family="-apple-system, sans-serif" font-size="11" text-anchor="middle">➕</text>
+      <text x="42" y="17" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#334155">ICICI Lombard Super Top-Up (₹50L Cover)</text>
+      <text x="42" y="28" font-family="-apple-system, sans-serif" font-size="7.5" fill="#64748B">Due: 18 Mar • ₹8,400</text>
+      <rect x="214" y="11" width="46" height="16" rx="3" fill="#F1F5F9"/>
+      <text x="237" y="23" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="700" fill="#475569" text-anchor="middle">TOP-UP</text>
+    </g>
+  </g>
+
+  <!-- Bottom Cross-Sell Opportunity Alert -->
+  <g transform="translate(18, 276)">
+    <rect width="464" height="50" rx="8" fill="#FFFFFF" stroke="#A855F7" stroke-width="1.5" filter="url(#dossierShadow)"/>
+    <rect x="8" y="8" width="34" height="34" rx="6" fill="#F3E8FF"/>
+    <text x="25" y="30" font-family="-apple-system, sans-serif" font-size="16" text-anchor="middle">🎯</text>
+    
+    <text x="50" y="24" font-family="-apple-system, sans-serif" font-size="10" font-weight="900" fill="#6B21A8">CROSS-SELL RADAR DETECTED:</text>
+    <text x="218" y="24" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="600" fill="#1E293B">Son (Age 26, Working Professional) has ₹0 Critical Illness & Term Cover.</text>
+    <text x="50" y="42" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" fill="#047857">⚡ 1-Tap Branded PDF Advisory Dossier generated for instant WhatsApp sharing!</text>
   </g>
 </svg>
