@@ -511,6 +511,133 @@ function generateSlideHTML(slide, index, extraClass = '') {
       `;
       break;
 
+    case 'showcase':
+      const isImgRight = slide.imagePosition === 'right';
+      const showcaseImgHTML = `
+        <div class="showcase-media-card">
+          ${slide.imageBadge ? `<div class="showcase-media-badge">${slide.imageBadge}</div>` : ''}
+          <div class="showcase-media-frame">
+            <img src="${slide.image}" alt="${slide.title}" class="showcase-img" onerror="this.style.display='none'">
+          </div>
+          ${slide.imageCaption ? `<div class="showcase-media-caption">${slide.imageCaption}</div>` : ''}
+        </div>
+      `;
+      const showcaseContentHTML = `
+        <div class="showcase-content-card ${slide.highlight ? 'highlight' : ''}">
+          ${slide.cardBadge ? `<div class="showcase-card-badge">${slide.cardBadge}</div>` : ''}
+          ${slide.cardTitle ? `<h3>${slide.cardTitle}</h3>` : ''}
+          <ul class="bullet-list showcase-bullet-list">
+            ${(slide.bullets || []).map(b => `<li>${b}</li>`).join('')}
+          </ul>
+          ${slide.callout ? `
+            <div class="showcase-callout-pill">
+              <span class="callout-icon">${slide.callout.icon || '⚡'}</span>
+              <span class="callout-text">${slide.callout.text}</span>
+            </div>
+          ` : ''}
+        </div>
+      `;
+
+      let showcaseCat = slide.categoryBadge || 'Product Capabilities';
+      if (slide.categoryBadge && slide.categoryBadge.includes('Ask')) {
+        showcaseCat = netConf ? netConf.askBadge : slide.categoryBadge;
+      }
+
+      innerContent = `
+        <div class="slide${cls}">
+          <div class="slide-bg-glow"></div>
+          <div class="slide-header">
+            <div class="slide-category-badge">${showcaseCat}</div>
+            <h2>${slide.title}</h2>
+            <div class="slide-subtitle">${slide.subtitle || ''}</div>
+          </div>
+          <div class="slide-body">
+            <div class="showcase-grid ${isImgRight ? 'img-right' : 'img-left'}">
+              ${isImgRight ? showcaseContentHTML + showcaseImgHTML : showcaseImgHTML + showcaseContentHTML}
+            </div>
+          </div>
+          ${renderFooter(index)}
+        </div>
+      `;
+      break;
+
+    case 'vision-mission':
+      innerContent = `
+        <div class="slide${cls}">
+          <div class="slide-bg-glow"></div>
+          <div class="slide-header">
+            <div class="slide-category-badge">${slide.categoryBadge || 'Corporate Purpose'}</div>
+            <h2>${slide.title}</h2>
+            <div class="slide-subtitle">${slide.subtitle || ''}</div>
+          </div>
+          <div class="slide-body">
+            <div class="vision-mission-grid">
+              <div class="vm-card vision-card">
+                <div class="vm-card-header">
+                  <div class="vm-icon-wrap">🔭</div>
+                  <div>
+                    <span class="vm-badge">THE FUTURE WE BUILD</span>
+                    <h3>Our Vision</h3>
+                  </div>
+                </div>
+                <div class="vm-statement">
+                  "${slide.vision.statement}"
+                </div>
+                <ul class="bullet-list vm-bullet-list">
+                  ${(slide.vision.bullets || []).map(b => `<li>${b}</li>`).join('')}
+                </ul>
+              </div>
+
+              <div class="vm-card mission-card highlight">
+                <div class="vm-card-header">
+                  <div class="vm-icon-wrap">🎯</div>
+                  <div>
+                    <span class="vm-badge badge-primary">WHAT WE DELIVER DAILY</span>
+                    <h3>Our Mission</h3>
+                  </div>
+                </div>
+                <div class="vm-statement">
+                  "${slide.mission.statement}"
+                </div>
+                <ul class="bullet-list vm-bullet-list">
+                  ${(slide.mission.bullets || []).map(b => `<li>${b}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+          ${renderFooter(index)}
+        </div>
+      `;
+      break;
+
+    case 'sixgrid':
+      innerContent = `
+        <div class="slide${cls}">
+          <div class="slide-bg-glow"></div>
+          <div class="slide-header">
+            <div class="slide-category-badge">${slide.categoryBadge || 'Platform Architecture'}</div>
+            <h2>${slide.title}</h2>
+            <div class="slide-subtitle">${slide.subtitle || ''}</div>
+          </div>
+          <div class="slide-body">
+            <div class="six-grid-container">
+              ${(slide.cards || []).map(c => `
+                <div class="six-grid-card ${c.highlight ? 'highlight' : ''}">
+                  <div class="six-card-top">
+                    ${c.logo ? `<img src="${c.logo}" alt="${c.title}" class="six-card-logo">` : `<div class="six-card-icon">${c.icon || '📌'}</div>`}
+                    ${c.tag ? `<span class="six-card-tag">${c.tag}</span>` : ''}
+                  </div>
+                  <h3>${c.title}</h3>
+                  <p>${c.desc || c.body}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          ${renderFooter(index)}
+        </div>
+      `;
+      break;
+
     case 'twocol':
       const renderColContent = (col) => {
         if (col.items && col.items.length > 0) {
@@ -626,11 +753,15 @@ function generateSlideHTML(slide, index, extraClass = '') {
       break;
 
     case 'fourcard':
+      let fourCardCat = slide.categoryBadge || 'Strategic Value & Market Focus';
+      if (slide.categoryBadge && slide.categoryBadge.includes('Ask')) {
+        fourCardCat = netConf ? netConf.askBadge : slide.categoryBadge;
+      }
       innerContent = `
         <div class="slide${cls}">
           <div class="slide-bg-glow"></div>
           <div class="slide-header">
-            <div class="slide-category-badge">${slide.categoryBadge || 'Strategic Value & Market Focus'}</div>
+            <div class="slide-category-badge">${fourCardCat}</div>
             <h2>${slide.title}</h2>
             <div class="slide-subtitle">${slide.subtitle || ''}</div>
           </div>
@@ -640,12 +771,22 @@ function generateSlideHTML(slide, index, extraClass = '') {
                 <div class="four-card-item">
                   <div class="four-card-icon">${c.icon || '📌'}</div>
                   <div class="four-card-content">
+                    ${c.badge ? `<span class="four-card-badge">${c.badge}</span>` : ''}
                     <h3>${c.title}</h3>
-                    <p>${c.body}</p>
+                    <p>${c.body || c.desc}</p>
                   </div>
                 </div>
               `).join('')}
             </div>
+            ${slide.triggerBox ? `
+              <div class="four-card-trigger-box">
+                <span class="trigger-icon">${slide.triggerBox.icon || '🗣️'}</span>
+                <div class="trigger-content">
+                  <span class="trigger-label">${slide.triggerBox.label || 'CONVERSATIONS TO LISTEN FOR:'}</span>
+                  <span class="trigger-quote">"${slide.triggerBox.quote}"</span>
+                </div>
+              </div>
+            ` : ''}
           </div>
           ${renderFooter(index)}
         </div>

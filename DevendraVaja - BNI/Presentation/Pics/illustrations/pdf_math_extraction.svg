@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="460" height="300">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EFF6FF"/>
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F2942"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0F2942" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="460" height="300" rx="14" fill="url(#bgGrad)" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Left: Raw Insurer PDF Document -->
+  <g transform="translate(24, 30)" filter="url(#shadow)">
+    <rect width="160" height="230" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <!-- PDF Header Red Bar -->
+    <rect width="160" height="36" rx="10" fill="#EF4444"/>
+    <rect y="26" width="160" height="10" fill="#EF4444"/>
+    <text x="14" y="23" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF">RAW STATEMENT</text>
+    <rect x="118" y="10" width="30" height="16" rx="3" fill="#DC2626"/>
+    <text x="133" y="21" font-family="-apple-system, sans-serif" font-size="9" font-weight="900" fill="#FFFFFF" text-anchor="middle">PDF</text>
+    
+    <!-- PDF Table Mockup -->
+    <text x="14" y="56" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#334155">LIC • STAR • HDFC</text>
+    <text x="14" y="68" font-family="-apple-system, sans-serif" font-size="8" fill="#64748B">Due List (500+ Rows)</text>
+    
+    <!-- Table Header -->
+    <rect x="12" y="78" width="136" height="16" fill="#F1F5F9" rx="3"/>
+    <text x="18" y="89" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#475569">POL NO</text>
+    <text x="65" y="89" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#475569">NAME</text>
+    <text x="118" y="89" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#475569">DUE</text>
+
+    <!-- Table Rows -->
+    <line x1="12" y1="110" x2="148" y2="110" stroke="#E2E8F0"/>
+    <text x="18" y="106" font-family="-apple-system, sans-serif" font-size="7" fill="#64748B">8392019</text>
+    <text x="65" y="106" font-family="-apple-system, sans-serif" font-size="7" fill="#1E293B">R. Patel</text>
+    <text x="118" y="106" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#0F172A">₹12,450</text>
+
+    <line x1="12" y1="128" x2="148" y2="128" stroke="#E2E8F0"/>
+    <text x="18" y="124" font-family="-apple-system, sans-serif" font-size="7" fill="#64748B">9920184</text>
+    <text x="65" y="124" font-family="-apple-system, sans-serif" font-size="7" fill="#1E293B">S. Shah</text>
+    <text x="118" y="124" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#0F172A">₹8,920</text>
+
+    <line x1="12" y1="146" x2="148" y2="146" stroke="#E2E8F0"/>
+    <text x="18" y="142" font-family="-apple-system, sans-serif" font-size="7" fill="#64748B">1102948</text>
+    <text x="65" y="142" font-family="-apple-system, sans-serif" font-size="7" fill="#1E293B">A. Joshi</text>
+    <text x="118" y="142" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#0F172A">₹24,100</text>
+
+    <!-- Red Alert Badge: Zero Contacts -->
+    <rect x="12" y="180" width="136" height="34" rx="6" fill="#FEF2F2" stroke="#FECACA"/>
+    <text x="20" y="194" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#DC2626">⚠️ ZERO PHONE NUMBERS</text>
+    <text x="20" y="206" font-family="-apple-system, sans-serif" font-size="7" fill="#991B1B">Missing client contact data</text>
+  </g>
+
+  <!-- Middle: Spatial AI Processing Arrow -->
+  <g transform="translate(196, 120)">
+    <circle cx="28" cy="20" r="24" fill="#0284C7" filter="url(#shadow)"/>
+    <text x="28" y="26" font-family="-apple-system, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">⚡</text>
+    <text x="28" y="58" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" fill="#0284C7" text-anchor="middle">SPATIAL AI</text>
+    <text x="28" y="70" font-family="-apple-system, sans-serif" font-size="8" font-weight="700" fill="#059669" text-anchor="middle">&lt; 30 SECONDS</text>
+  </g>
+
+  <!-- Right: Mathematically Audited Database -->
+  <g transform="translate(268, 30)" filter="url(#shadow)">
+    <rect width="168" height="230" rx="10" fill="#FFFFFF" stroke="#10B981" stroke-width="1.8"/>
+    <!-- Header Green Bar -->
+    <rect width="168" height="36" rx="10" fill="#10B981"/>
+    <rect y="26" width="168" height="10" fill="#10B981"/>
+    <text x="14" y="23" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF">MATHEMATICAL AUDIT</text>
+    <circle cx="148" cy="18" r="8" fill="#059669"/>
+    <text x="148" y="22" font-family="-apple-system, sans-serif" font-size="10" font-weight="900" fill="#FFFFFF" text-anchor="middle">✓</text>
+    
+    <!-- Formula Verification Box -->
+    <rect x="12" y="48" width="144" height="42" rx="6" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="20" y="64" font-family="-apple-system, sans-serif" font-size="8" font-weight="800" fill="#065F46">DETERMINISTIC MATH AUDIT</text>
+    <text x="20" y="78" font-family="monospace" font-size="7.5" font-weight="700" fill="#047857">(Premium × Dues) + GST == Total</text>
+
+    <!-- Verified Records Output -->
+    <rect x="12" y="100" width="144" height="32" rx="5" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="20" y="114" font-family="-apple-system, sans-serif" font-size="8" font-weight="700" fill="#0F172A">500+ Policies Audited</text>
+    <text x="20" y="125" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="600" fill="#10B981">✓ 100% Precision • 0 Errors</text>
+
+    <rect x="12" y="140" width="144" height="32" rx="5" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="20" y="154" font-family="-apple-system, sans-serif" font-size="8" font-weight="700" fill="#0F172A">Multi-Insurer Engine</text>
+    <text x="20" y="165" font-family="-apple-system, sans-serif" font-size="7.5" fill="#64748B">LIC • Star • HDFC • Care</text>
+
+    <!-- Speed Achievement Pill -->
+    <rect x="12" y="184" width="144" height="32" rx="6" fill="url(#primaryGrad)"/>
+    <text x="84" y="198" font-family="-apple-system, sans-serif" font-size="8" font-weight="700" fill="#93C5FD" text-anchor="middle">PROCESSING TIME</text>
+    <text x="84" y="210" font-family="-apple-system, sans-serif" font-size="10" font-weight="900" fill="#FFFFFF" text-anchor="middle">5 Days ➡️ 30 Seconds</text>
+  </g>
+</svg>

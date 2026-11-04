@@ -1048,26 +1048,27 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 18px;
-  height: 100%;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
 }
 
 .four-card-item {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 20px 22px;
+  padding: 12px 16px;
   display: flex;
-  gap: 16px;
+  gap: 12px;
   align-items: flex-start;
   box-shadow: var(--card-shadow);
 }
 
 .four-card-icon {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   background: white;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -1079,17 +1080,373 @@ main {
 
 .four-card-content h3 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 800;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
   color: var(--primary-dark);
 }
 
 .four-card-content p {
   font-family: var(--font-body);
-  font-size: 0.94rem;
+  font-size: 0.84rem;
   color: var(--text-secondary);
-  line-height: 1.52;
+  line-height: 1.38;
+}
+
+.four-card-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--secondary);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.four-card-trigger-box {
+  margin-top: 12px;
+  background: linear-gradient(90deg, #eff6ff 0%, #ffffff 100%);
+  border: 1.5px dashed #93c5fd;
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.four-card-trigger-box .trigger-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.four-card-trigger-box .trigger-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.four-card-trigger-box .trigger-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.four-card-trigger-box .trigger-quote {
+  font-family: var(--font-body);
+  font-size: 0.90rem;
+  font-weight: 700;
+  color: #0f2942;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   SHOWCASE / SPLIT-IMAGE LAYOUT
+   ========================================================================== */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  height: 100%;
+  align-items: stretch;
+}
+
+.showcase-grid.img-right {
+  grid-template-columns: 1fr 1.08fr;
+}
+
+.showcase-grid.img-left {
+  grid-template-columns: 1.08fr 1fr;
+}
+
+.showcase-media-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--card-shadow);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-media-badge {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  background: #0f2942;
+  color: #38bdf8;
+  font-family: var(--font-display);
+  font-size: 0.70rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  z-index: 2;
+}
+
+.showcase-media-frame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #f8fafc;
+}
+
+.showcase-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+.showcase-media-caption {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.showcase-content-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: var(--card-shadow);
+  height: 100%;
+}
+
+.showcase-content-card.highlight {
+  border-color: #99f6e4;
+  background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+}
+
+.showcase-card-badge {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.showcase-content-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.showcase-bullet-list {
+  gap: 12px;
+}
+
+.showcase-bullet-list li {
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.showcase-callout-pill {
+  margin-top: auto;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 750;
+  color: #0369a1;
+}
+
+/* ==========================================================================
+   VISION & MISSION LAYOUT
+   ========================================================================== */
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  height: 100%;
+}
+
+.vm-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: var(--card-shadow);
+  height: 100%;
+}
+
+.vm-card.highlight {
+  border-color: #93c5fd;
+  background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+.vm-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.vm-icon-wrap {
+  font-size: 2.0rem;
+  width: 50px;
+  height: 50px;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vm-badge {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--secondary);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.vm-badge.badge-primary {
+  color: #1d4ed8;
+}
+
+.vm-card-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.vm-statement {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.48;
+  color: #1e293b;
+  font-style: italic;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border-left: 3.5px solid var(--secondary);
+  border-radius: 4px;
+}
+
+.vm-card.highlight .vm-statement {
+  border-left-color: #2563eb;
+}
+
+.vm-bullet-list {
+  gap: 10px;
+}
+
+.vm-bullet-list li {
+  font-size: 0.94rem;
+  line-height: 1.42;
+}
+
+/* ==========================================================================
+   SIX-GRID PILLARS & LOGOS LAYOUT
+   ========================================================================== */
+.six-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 14px;
+  height: 100%;
+}
+
+.six-grid-card {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: var(--card-shadow);
+  transition: all 0.2s ease;
+}
+
+.six-grid-card.highlight {
+  border-color: #93c5fd;
+  background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+.six-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.six-card-icon {
+  font-size: 1.4rem;
+}
+
+.six-card-logo {
+  height: 28px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.six-card-tag {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.six-grid-card h3 {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.six-grid-card p {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.38;
+  margin: 0;
 }
 
 /* 6. ROADMAP BLUEPRINT LAYOUT (4 PHASES) */
@@ -1618,36 +1975,36 @@ main {
 }
 
 .instructor-avatar-img {
-  width: 130px;
-  height: 130px;
-  max-width: 130px;
-  max-height: 130px;
+  width: 105px;
+  height: 105px;
+  max-width: 105px;
+  max-height: 105px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top center;
   border: 3.5px solid var(--primary-light);
   box-shadow: 0 6px 20px rgba(15, 41, 66, 0.18);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   flex-shrink: 0;
 }
 
 .instructor-photo-img {
-  width: 130px;
-  height: 130px;
-  max-width: 130px;
-  max-height: 130px;
+  width: 105px;
+  height: 105px;
+  max-width: 105px;
+  max-height: 105px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top center;
   border: 3.5px solid var(--primary-light);
   box-shadow: 0 6px 20px rgba(15, 41, 66, 0.18);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   flex-shrink: 0;
 }
 
 .instructor-avatar-fallback {
-  width: 130px;
-  height: 130px;
+  width: 105px;
+  height: 105px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
@@ -1655,21 +2012,21 @@ main {
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 800;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .instructor-avatar-card h3 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.10rem;
   font-weight: 800;
   margin-top: 2px;
 }
 
 .instructor-avatar-card p {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   font-weight: 600;
   margin-top: 2px;
@@ -1773,7 +2130,7 @@ main {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  padding: 6px 12px;
+  padding: 5px 10px;
 }
 
 .instructor-highlight-item.has-desc {
@@ -1784,24 +2141,24 @@ main {
 .instructor-highlight-icon {
   color: var(--secondary);
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 0.90rem;
   line-height: 1.25;
 }
 
 .instructor-highlight-text h4 {
   font-family: var(--font-display);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 800;
   color: var(--primary-dark);
-  margin-bottom: 2px;
+  margin-bottom: 1px;
   line-height: 1.25;
 }
 
 .instructor-highlight-text p {
   font-family: var(--font-body);
-  font-size: 0.80rem;
+  font-size: 0.76rem;
   color: var(--text-secondary);
-  line-height: 1.35;
+  line-height: 1.30;
   margin: 0;
 }
 
@@ -1809,18 +2166,18 @@ main {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 8px 12px;
+  padding: 6px 10px;
   margin-top: 2px;
 }
 
 .company-pedigree-header {
   font-family: var(--font-display);
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1829,15 +2186,15 @@ main {
 .company-logo-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 6px;
+  gap: 4px;
 }
 
 .company-badge-pill {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
-  padding: 2px 6px;
-  height: 38px;
+  padding: 2px 4px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1854,7 +2211,7 @@ main {
 }
 
 .company-pill-logo {
-  max-height: 26px;
+  max-height: 20px;
   max-width: 92%;
   width: auto;
   object-fit: contain;
@@ -1888,36 +2245,36 @@ main {
 
 .qa-left-pane h2 {
   font-family: var(--font-display);
-  font-size: 1.55rem;
+  font-size: 1.40rem;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   color: var(--primary-dark);
 }
 
 .qa-left-pane p {
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   color: var(--text-secondary);
-  line-height: 1.36;
-  margin-bottom: 10px;
+  line-height: 1.30;
+  margin-bottom: 6px;
 }
 
 .contact-info-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 5px;
+  margin-bottom: 6px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  padding: 6px 10px;
-  border-radius: var(--radius-md);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   min-width: 0;
 }
@@ -1927,7 +2284,7 @@ main {
 }
 
 .contact-icon {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--primary);
   flex-shrink: 0;
 }
@@ -1942,7 +2299,7 @@ main {
 
 .contact-text-wrap .label {
   font-family: var(--font-body);
-  font-size: 0.64rem;
+  font-size: 0.60rem;
   text-transform: uppercase;
   color: var(--text-muted);
   font-weight: 700;
@@ -1953,7 +2310,7 @@ main {
 
 .contact-text-wrap .val {
   font-family: var(--font-display);
-  font-size: 0.84rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.2;
@@ -1975,7 +2332,7 @@ main {
   background: white;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 18px 20px;
+  padding: 14px 16px;
   text-align: center;
   box-shadow: var(--card-shadow);
   display: flex;
@@ -1986,22 +2343,22 @@ main {
 }
 
 .qa-studio-logo {
-  max-width: 130px;
+  max-width: 120px;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .qr-code-box {
-  width: 134px;
-  height: 134px;
+  width: 118px;
+  height: 118px;
   background: #f8fafc;
   border: 2px dashed #93c5fd;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-  padding: 6px;
+  margin-bottom: 8px;
+  padding: 5px;
 }
 
 .qr-img {
@@ -2909,33 +3266,104 @@ body.hide-slide-numbers .slide-number-tag {
 
   /* Speaker / Instructor Slide in Print */
   .instructor-slide-grid {
-    gap: 18px !important;
+    grid-template-columns: 240px 1fr !important;
+    gap: 14px !important;
     height: 100% !important;
     align-items: stretch !important;
   }
 
   .instructor-avatar-card {
-    padding: 16px !important;
+    padding: 10px !important;
     justify-content: center !important;
   }
 
+  .instructor-avatar-img,
+  .instructor-photo-img {
+    width: 90px !important;
+    height: 90px !important;
+    margin-bottom: 4px !important;
+  }
+
   .instructor-avatar-fallback {
-    width: 95px !important;
-    height: 95px !important;
+    width: 90px !important;
+    height: 90px !important;
     font-size: 2rem !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 4px !important;
   }
 
   .instructor-avatar-card h3 {
-    font-size: 1.15rem !important;
+    font-size: 1.05rem !important;
+    margin-top: 2px !important;
+  }
+
+  .instructor-avatar-card p {
+    font-size: 0.74rem !important;
+  }
+
+  .instructor-tagline-text {
+    font-size: 0.68rem !important;
+    line-height: 1.22 !important;
+    margin-top: 3px !important;
+  }
+
+  .instructor-global-flags {
+    margin-top: 4px !important;
+    gap: 4px !important;
+  }
+
+  .global-flag-pill {
+    padding: 1px 6px !important;
+    font-size: 0.64rem !important;
   }
 
   .instructor-details-card {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    gap: 8px !important;
+    gap: 6px !important;
     height: 100% !important;
+  }
+
+  .instructor-highlights-list {
+    gap: 4px !important;
+  }
+
+  .instructor-highlight-item {
+    padding: 4px 8px !important;
+    gap: 6px !important;
+  }
+
+  .instructor-highlight-text h4 {
+    font-size: 0.82rem !important;
+    margin-bottom: 1px !important;
+  }
+
+  .instructor-highlight-text p {
+    font-size: 0.72rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .company-pedigree-section {
+    padding: 6px 8px !important;
+    margin-top: 2px !important;
+  }
+
+  .company-pedigree-header {
+    font-size: 0.65rem !important;
+    margin-bottom: 3px !important;
+  }
+
+  .company-logo-grid {
+    gap: 4px !important;
+  }
+
+  .company-badge-pill {
+    height: 26px !important;
+    padding: 2px 4px !important;
+  }
+
+  .company-pill-logo {
+    max-height: 18px !important;
   }
 
   .detail-box {
@@ -2943,24 +3371,24 @@ body.hide-slide-numbers .slide-number-tag {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
-    padding: 10px 14px !important;
+    padding: 8px 12px !important;
   }
 
   .detail-box h4 {
-    font-size: 0.90rem !important;
+    font-size: 0.86rem !important;
     margin-bottom: 2px !important;
   }
 
   .detail-box p {
-    font-size: 0.80rem !important;
-    line-height: 1.38 !important;
+    font-size: 0.75rem !important;
+    line-height: 1.32 !important;
   }
 
-  /* Slide 18 QA / Contact Slide in Print */
+  /* Slide 15 QA / Contact Slide in Print */
   .qa-slide-container {
     display: grid !important;
-    grid-template-columns: 1.25fr 0.95fr !important;
-    gap: 18px !important;
+    grid-template-columns: 1.30fr 0.90fr !important;
+    gap: 14px !important;
     height: 100% !important;
     align-items: stretch !important;
   }
@@ -2973,25 +3401,28 @@ body.hide-slide-numbers .slide-number-tag {
   }
 
   .qa-left-pane h2 {
-    font-size: 1.65rem !important;
-    margin-bottom: 4px !important;
+    font-size: 1.35rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 2px !important;
   }
 
   .qa-left-pane p {
-    font-size: 0.88rem !important;
-    margin-bottom: 10px !important;
+    font-size: 0.80rem !important;
+    line-height: 1.30 !important;
+    margin-bottom: 6px !important;
   }
 
   .contact-info-list {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 6px !important;
+    gap: 4px !important;
+    margin-bottom: 4px !important;
   }
 
   .contact-item {
-    padding: 6px 10px !important;
-    gap: 8px !important;
-    border-radius: 6px !important;
+    padding: 4px 8px !important;
+    gap: 6px !important;
+    border-radius: 4px !important;
   }
 
   .contact-item.span-two {
@@ -2999,23 +3430,42 @@ body.hide-slide-numbers .slide-number-tag {
   }
 
   .contact-item .contact-icon {
-    font-size: 1rem !important;
+    font-size: 0.90rem !important;
   }
 
   .contact-text-wrap .label {
-    font-size: 0.62rem !important;
+    font-size: 0.56rem !important;
     line-height: 1 !important;
     margin-bottom: 1px !important;
   }
 
   .contact-text-wrap .val {
-    font-size: 0.84rem !important;
-    line-height: 1.2 !important;
+    font-size: 0.74rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .qa-give-highlight-box {
+    margin-top: 3px !important;
+    padding: 5px 8px !important;
+  }
+
+  .give-highlight-title {
+    font-size: 0.74rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  .give-highlight-list {
+    gap: 2px !important;
+  }
+
+  .give-highlight-list li {
+    font-size: 0.68rem !important;
+    line-height: 1.22 !important;
   }
 
   .qa-right-pane {
-    padding: 16px 14px !important;
-    border-radius: 12px !important;
+    padding: 12px 14px !important;
+    border-radius: 10px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -3024,26 +3474,213 @@ body.hide-slide-numbers .slide-number-tag {
     height: 100% !important;
   }
 
+  .qa-studio-logo {
+    max-width: 105px !important;
+    margin-bottom: 6px !important;
+  }
+
   .qr-code-box {
-    width: 95px !important;
-    height: 95px !important;
-    margin-bottom: 8px !important;
-    padding: 4px !important;
+    width: 90px !important;
+    height: 90px !important;
+    margin-bottom: 6px !important;
+    padding: 3px !important;
     border: 1px dashed #cbd5e1 !important;
   }
 
-  .qr-code-box svg {
-    width: 82px !important;
-    height: 82px !important;
+  .qr-img {
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .qr-label {
-    font-size: 0.80rem !important;
+    font-size: 0.76rem !important;
     margin-bottom: 2px !important;
   }
 
   .qr-sub {
-    font-size: 0.68rem !important;
+    font-size: 0.64rem !important;
+  }
+
+  /* Showcase Layout in Print */
+  .showcase-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    height: 100% !important;
+    align-items: stretch !important;
+  }
+
+  .showcase-grid.img-right {
+    grid-template-columns: 1fr 1.05fr !important;
+  }
+
+  .showcase-grid.img-left {
+    grid-template-columns: 1.05fr 1fr !important;
+  }
+
+  .showcase-media-card {
+    padding: 8px !important;
+    height: 100% !important;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    background: #ffffff !important;
+  }
+
+  .showcase-media-frame {
+    height: 100% !important;
+    background: #f8fafc !important;
+  }
+
+  .showcase-content-card {
+    padding: 12px 14px !important;
+    height: 100% !important;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    background: #ffffff !important;
+  }
+
+  .showcase-card-badge {
+    font-size: 0.64rem !important;
+    margin-bottom: 3px !important;
+  }
+
+  .showcase-content-card h3 {
+    font-size: 1.05rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .showcase-bullet-list {
+    gap: 6px !important;
+  }
+
+  .showcase-bullet-list li {
+    font-size: 0.78rem !important;
+    line-height: 1.34 !important;
+  }
+
+  .showcase-callout-pill {
+    margin-top: auto !important;
+    padding: 5px 8px !important;
+    font-size: 0.72rem !important;
+  }
+
+  /* Vision & Mission Layout in Print */
+  .vision-mission-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    height: 100% !important;
+  }
+
+  .vm-card {
+    padding: 12px 14px !important;
+    height: 100% !important;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  .vm-card-header {
+    gap: 10px !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 6px !important;
+  }
+
+  .vm-icon-wrap {
+    font-size: 1.5rem !important;
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .vm-badge {
+    font-size: 0.62rem !important;
+  }
+
+  .vm-card-header h3 {
+    font-size: 1.05rem !important;
+  }
+
+  .vm-statement {
+    font-size: 0.84rem !important;
+    line-height: 1.36 !important;
+    margin-bottom: 8px !important;
+    padding: 6px 10px !important;
+  }
+
+  .vm-bullet-list {
+    gap: 5px !important;
+  }
+
+  .vm-bullet-list li {
+    font-size: 0.76rem !important;
+    line-height: 1.30 !important;
+  }
+
+  /* Six Grid Layout in Print */
+  .six-grid-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    height: 100% !important;
+  }
+
+  .six-grid-card {
+    padding: 8px 10px !important;
+    height: 100% !important;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  .six-card-top {
+    margin-bottom: 3px !important;
+  }
+
+  .six-card-icon {
+    font-size: 1.15rem !important;
+  }
+
+  .six-card-logo {
+    height: 22px !important;
+    max-width: 90px !important;
+  }
+
+  .six-card-tag {
+    font-size: 0.60rem !important;
+    padding: 1px 5px !important;
+  }
+
+  .six-grid-card h3 {
+    font-size: 0.86rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  .six-grid-card p {
+    font-size: 0.72rem !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Four Card Ask & Trigger Box in Print */
+  .four-card-badge {
+    font-size: 0.60rem !important;
+    padding: 1px 5px !important;
+  }
+
+  .four-card-trigger-box {
+    margin-top: 6px !important;
+    padding: 6px 10px !important;
+    gap: 8px !important;
+  }
+
+  .four-card-trigger-box .trigger-icon {
+    font-size: 1.1rem !important;
+  }
+
+  .four-card-trigger-box .trigger-label {
+    font-size: 0.60rem !important;
+  }
+
+  .four-card-trigger-box .trigger-quote {
+    font-size: 0.78rem !important;
   }
 
   .slide-footer-tag {
