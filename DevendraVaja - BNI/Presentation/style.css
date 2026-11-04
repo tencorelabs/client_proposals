@@ -1405,14 +1405,20 @@ main {
 
 .six-grid-card {
   background: white;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 14px 16px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   box-shadow: var(--card-shadow);
   transition: all 0.2s ease;
+}
+
+.six-grid-card:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.12);
+  transform: translateY(-2px);
 }
 
 .six-grid-card.highlight {
@@ -1424,11 +1430,12 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .six-card-icon {
-  font-size: 1.4rem;
+  font-size: 1.70rem;
+  line-height: 1;
 }
 
 .six-card-logo {
@@ -1439,27 +1446,29 @@ main {
 
 .six-card-tag {
   font-family: var(--font-display);
-  font-size: 0.68rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  padding: 2px 7px;
+  padding: 3px 8px;
   border-radius: 10px;
-  background: #f1f5f9;
-  color: #475569;
+  background: #e0f2fe;
+  color: #0369a1;
+  letter-spacing: 0.03em;
 }
 
 .six-grid-card h3 {
   font-family: var(--font-display);
-  font-size: 0.98rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--primary-dark);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  line-height: 1.25;
 }
 
 .six-grid-card p {
   font-family: var(--font-body);
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  line-height: 1.38;
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.45;
   margin: 0;
 }
 
@@ -2224,7 +2233,7 @@ main {
 .instructor-highlights-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .instructor-highlight-item {
@@ -2251,7 +2260,7 @@ main {
 
 .instructor-highlight-text h4 {
   font-family: var(--font-display);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 800;
   color: var(--primary-dark);
   margin-bottom: 1px;
@@ -2260,28 +2269,32 @@ main {
 
 .instructor-highlight-text p {
   font-family: var(--font-body);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--text-secondary);
-  line-height: 1.30;
+  line-height: 1.28;
   margin: 0;
 }
 
 .company-pedigree-section {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 6px 10px;
-  margin-top: 2px;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-lg);
+  padding: 10px 14px;
+  margin-top: 4px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .company-pedigree-header {
   font-family: var(--font-display);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-muted);
-  margin-bottom: 4px;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -2289,45 +2302,45 @@ main {
 
 .company-logo-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 4px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
 }
 
 .company-badge-pill {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 2px 4px;
-  height: 30px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 4px 8px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   overflow: hidden;
 }
 
 .company-badge-pill:hover {
   border-color: var(--secondary);
   background: #f0f9ff;
-  box-shadow: 0 3px 8px rgba(2, 132, 199, 0.18);
-  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.18);
+  transform: translateY(-2px);
 }
 
 .company-pill-logo {
-  max-height: 20px;
-  max-width: 92%;
+  max-height: 34px;
+  max-width: 90%;
   width: auto;
   object-fit: contain;
 }
 
 .company-pill-text {
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--text-primary);
   text-align: center;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 /* 10. CONTACT / QA SLIDE */
@@ -3423,7 +3436,7 @@ body.hide-slide-numbers .slide-number-tag {
   .instructor-details-card {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
     gap: 6px !important;
     height: 100% !important;
   }
@@ -3433,41 +3446,72 @@ body.hide-slide-numbers .slide-number-tag {
   }
 
   .instructor-highlight-item {
-    padding: 4px 8px !important;
+    padding: 3px 8px !important;
     gap: 6px !important;
+    border-radius: 6px !important;
   }
 
   .instructor-highlight-text h4 {
-    font-size: 0.82rem !important;
+    font-size: 0.80rem !important;
     margin-bottom: 1px !important;
   }
 
   .instructor-highlight-text p {
-    font-size: 0.72rem !important;
-    line-height: 1.25 !important;
+    font-size: 0.68rem !important;
+    line-height: 1.20 !important;
   }
 
   .company-pedigree-section {
-    padding: 6px 8px !important;
-    margin-top: 2px !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 8px 10px !important;
+    margin-top: 3px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
   }
 
   .company-pedigree-header {
-    font-size: 0.65rem !important;
-    margin-bottom: 3px !important;
+    font-size: 0.68rem !important;
+    font-weight: 800 !important;
+    color: #0f2942 !important;
+    margin-bottom: 5px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
   }
 
   .company-logo-grid {
-    gap: 4px !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
   }
 
   .company-badge-pill {
-    height: 26px !important;
-    padding: 2px 4px !important;
+    height: 42px !important;
+    padding: 3px 6px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .company-pill-logo {
-    max-height: 18px !important;
+    max-height: 30px !important;
+    max-width: 90% !important;
+    object-fit: contain !important;
+  }
+
+  .company-pill-text {
+    font-size: 0.68rem !important;
+    font-weight: 700 !important;
   }
 
   .detail-box {
@@ -3757,23 +3801,26 @@ body.hide-slide-numbers .slide-number-tag {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     grid-template-rows: repeat(2, 1fr) !important;
-    gap: 8px !important;
+    gap: 10px !important;
     height: 100% !important;
   }
 
   .six-grid-card {
-    padding: 8px 10px !important;
+    padding: 10px 12px !important;
     height: 100% !important;
     box-shadow: none !important;
     border: 1px solid #cbd5e1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
   }
 
   .six-card-top {
-    margin-bottom: 3px !important;
+    margin-bottom: 4px !important;
   }
 
   .six-card-icon {
-    font-size: 1.15rem !important;
+    font-size: 1.35rem !important;
   }
 
   .six-card-logo {
@@ -3782,18 +3829,22 @@ body.hide-slide-numbers .slide-number-tag {
   }
 
   .six-card-tag {
-    font-size: 0.60rem !important;
-    padding: 1px 5px !important;
+    font-size: 0.68rem !important;
+    padding: 2px 6px !important;
   }
 
   .six-grid-card h3 {
-    font-size: 0.86rem !important;
-    margin-bottom: 2px !important;
+    font-size: 1.10rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 4px !important;
+    line-height: 1.22 !important;
+    color: #0a1929 !important;
   }
 
   .six-grid-card p {
-    font-size: 0.72rem !important;
-    line-height: 1.25 !important;
+    font-size: 0.86rem !important;
+    line-height: 1.35 !important;
+    color: #334155 !important;
   }
 
   /* Four Card Ask & Trigger Box in Print */

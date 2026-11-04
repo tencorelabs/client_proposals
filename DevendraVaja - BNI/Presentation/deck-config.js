@@ -64,7 +64,7 @@ const DECK_META = {
   version: "Master Edition • Version 2.0",
   date: "November 2026",
   category: "Feature Presentation",
-  storageKey: "tencore_insurancesetu_presentation_v10"
+  storageKey: "tencore_insurancesetu_presentation_v11"
 };
 
 // 3. COLOR THEME CONFIGURATION (TenCore Slate Navy & Tech Blue)
@@ -140,32 +140,32 @@ const DEFAULT_SLIDES = [
     script: "For 24 years, I have architected mission-critical systems across Tokyo, Silicon Valley, and India. From building high-security gaming machine device drivers at Konami Tokyo to enterprise mobile platforms, we engineer bank-grade precision and zero data leakage into InsuranceSetu.",
     highlights: [
       {
-        title: "24+ Years Global Systems Experience (India • Japan • USA)",
-        desc: "Built high-security gaming machine device drivers in Tokyo (Konami Gaming), enterprise software in the US, and scalable digital platforms in India."
+        title: "24+ Years Global Systems Architecture (Tokyo • Silicon Valley • India)",
+        desc: "Engineered gaming machine device drivers at Konami Tokyo, enterprise platforms in the US, and scalable software in India."
       },
       {
-        title: "Android OS & Mobile Platform Pioneer (Since 2007)",
-        desc: "Engineering native mobile applications and Android OS systems since 2007 — turning complex enterprise software into simple, 1-tap mobile workflows."
+        title: "Android OS & Native Mobile Systems Pioneer (Since 2007)",
+        desc: "Pioneering native Android systems since 2007 — transforming complex multi-portal insurance operations into 1-tap mobile workflows."
       },
       {
-        title: "Bank-Grade Cyber Defense Foundation (SafetySetu)",
-        desc: "Creator of SafetySetu (on-device UPI scam blocker & screen-hijack shield), bringing the exact same bank-grade security and zero-cloud data leakage to InsuranceSetu."
+        title: "Bank-Grade Cyber Defense Foundation (Creator of SafetySetu)",
+        desc: "Built on-device UPI scam blocker & screen-hijack shield; bringing identical zero-cloud data leakage and bank-grade privacy to InsuranceSetu."
       }
     ],
     companiesTitle: "Trusted Engineering Pedigree Across Global Enterprises:",
     companies: [
-      { name: "Larsen & Toubro", logo: "Pics/logos/lt.png" },
-      { name: "Wipro", logo: "Pics/logos/wipro.png" },
-      { name: "Capgemini", logo: "Pics/logos/capgemini.png" },
-      { name: "eInfochips", logo: "Pics/logos/einfochips.png" },
-      { name: "Intel", logo: "Pics/logos/intel.png" },
-      { name: "Sony", logo: "Pics/logos/sony.png" },
-      { name: "EMC", logo: "Pics/logos/emc.png" },
+      { name: "Larsen & Toubro", logo: "Pics/logos/lt.svg" },
+      { name: "Wipro", logo: "Pics/logos/wipro.svg" },
+      { name: "Capgemini", logo: "Pics/logos/capgemini.svg" },
+      { name: "eInfochips", logo: "Pics/logos/einfochips.svg" },
+      { name: "Intel", logo: "Pics/logos/intel.svg" },
+      { name: "Sony", logo: "Pics/logos/sony.svg" },
+      { name: "EMC", logo: "Pics/logos/emc.svg" },
       { name: "Rakuten (Japan)", logo: "Pics/logos/rakuten.svg" },
-      { name: "Konami Gaming (Tokyo)", logo: "Pics/logos/konami.png" },
-      { name: "Chartboost", logo: "Pics/logos/chartboost.png" },
-      { name: "Vungle", logo: "Pics/logos/vungle.png" },
-      { name: "Fundtech", logo: "Pics/logos/fundtech.png" }
+      { name: "Konami Gaming (Tokyo)", logo: "Pics/logos/konami.svg" },
+      { name: "Chartboost", logo: "Pics/logos/chartboost.svg" },
+      { name: "Vungle", logo: "Pics/logos/vungle.svg" },
+      { name: "Fundtech", logo: "Pics/logos/fundtech.svg" }
     ]
   },
 
