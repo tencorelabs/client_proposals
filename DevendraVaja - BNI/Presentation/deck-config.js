@@ -64,7 +64,7 @@ const DECK_META = {
   version: "Master Edition • Version 2.0",
   date: "November 2026",
   category: "Feature Presentation",
-  storageKey: "tencore_insurancesetu_presentation_v11"
+  storageKey: "tencore_insurancesetu_presentation_v12"
 };
 
 // 3. COLOR THEME CONFIGURATION (TenCore Slate Navy & Tech Blue)
@@ -154,18 +154,18 @@ const DEFAULT_SLIDES = [
     ],
     companiesTitle: "Trusted Engineering Pedigree Across Global Enterprises:",
     companies: [
-      { name: "Larsen & Toubro", logo: "Pics/logos/lt.svg" },
-      { name: "Wipro", logo: "Pics/logos/wipro.svg" },
-      { name: "Capgemini", logo: "Pics/logos/capgemini.svg" },
-      { name: "eInfochips", logo: "Pics/logos/einfochips.svg" },
-      { name: "Intel", logo: "Pics/logos/intel.svg" },
-      { name: "Sony", logo: "Pics/logos/sony.svg" },
-      { name: "EMC", logo: "Pics/logos/emc.svg" },
+      { name: "Larsen & Toubro", logo: "Pics/logos/lt.png" },
+      { name: "Wipro", logo: "Pics/logos/wipro.png" },
+      { name: "Capgemini", logo: "Pics/logos/capgemini.png" },
+      { name: "eInfochips", logo: "Pics/logos/einfochips.png" },
+      { name: "Intel", logo: "Pics/logos/intel.png" },
+      { name: "Sony", logo: "Pics/logos/sony.png" },
+      { name: "EMC", logo: "Pics/logos/emc.png" },
       { name: "Rakuten (Japan)", logo: "Pics/logos/rakuten.svg" },
-      { name: "Konami Gaming (Tokyo)", logo: "Pics/logos/konami.svg" },
-      { name: "Chartboost", logo: "Pics/logos/chartboost.svg" },
-      { name: "Vungle", logo: "Pics/logos/vungle.svg" },
-      { name: "Fundtech", logo: "Pics/logos/fundtech.svg" }
+      { name: "Konami Gaming (Tokyo)", logo: "Pics/logos/konami.png" },
+      { name: "Chartboost", logo: "Pics/logos/chartboost.png" },
+      { name: "Vungle", logo: "Pics/logos/vungle.png" },
+      { name: "Fundtech", logo: "Pics/logos/fundtech.png" }
     ]
   },
 
